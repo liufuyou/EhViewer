@@ -1,6 +1,6 @@
 # EhViewer
 
-无论什么时候，都没有人有资格要求别人，一直做一件吃力不讨好的，为爱发电的事。 提出问题前请当解了[《提问的智慧》](<[https://markdown.com.cn](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)>)
+请知道无论什么时候，都没有人有资格要求别人，一直做一件吃力不讨好的，为爱发电的事。 提出问题前请当解了[《提问的智慧》](<[https://markdown.com.cn](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)>)
 
 下面为链接：
 \*EhViewer 各版本链接\*\*
