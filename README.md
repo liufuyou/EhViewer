@@ -1,8 +1,8 @@
 # EhViewer
 
-请知道无论什么时候，都没有任何人有资格要求别人，一直做一件吃力不讨好的，为爱发电的事。
+请知道无论什么时候，都没有任何人有资格要求别人一直做一件吃力不讨好的,为爱发电的事。
 
-# 提出问题前,请适当解了-[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+# 提出问题前,请适当了解-[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 下面为链接：
 # 链                接
@@ -22,6 +22,19 @@
 - FEhViewer [全平台，活跃]：[https://github.com/honjow/FEhViewer](https://github.com/honjow/FEhViewer)
 - JHenTai [全平台，活跃]：[https://github.com/jiangtian616/JHenTai](https://github.com/jiangtian616/JHenTai)
 - EhPanda [iOS，活跃]：[https://github.com/EhPanda-Team/EhPanda](https://github.com/EhPanda-Team/EhPanda)
+
+**参考和感谢**
+- [EhViewer-修白](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+- [JHenTai](https://github.com/jiangtian616/JHenTai)
+- [FEhviewer](https://github.com/honjow/FEhViewer) 
+- [Overhauled-EhViewer](https://github.com/Ehviewer-Overhauled/Ehviewer)
+- [EHPanda](https://github.com/tatsuz0u/EhPanda)
+- [SXJ-EhViewer](https://github.com/xiaojieonly/Ehviewer_CN_SXJ)
+- [Hippo Seven-EhViewer](https://github.com/seven332/EhViewer)
+- [NekoInverter-EhViewer](https://gitlab.com/NekoInverter/EhViewer) 
+
+
+https://github.com/liufuyou/EhViewer/tree/References
 
 **E-Hentai 官方网站**
 
