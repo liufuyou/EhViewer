@@ -2,13 +2,13 @@
 
 请知道无论什么时候，都没有任何人有资格要求别人一直做一件吃力不讨好的,为爱发电的事。
 
-# 若无法翻页，请确保你使用的是最新版本
+# 若遇到无法翻页等等问题,请确保你使用的是最新版本
 请在下方本项目中挑选自己的喜欢的EhViewer版本下载
 
 **如有任何问题，请本项目中提出Issues**
 
 所有 APP 均为第三方，请勿在 E 站评论区提及 APP
-# 提出问题前,请适当了解-[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
+# 提出问题前,请适当了解 --[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 下面为链接：
 # 链                接
