@@ -7,7 +7,9 @@
 
 **如有任何问题，请本项目中提出Issues**
 
-所有 APP 均为第三方，请勿在 E 站评论区提及 APP
+所有 APP 均为第三方，请勿在 E 站评论区提及 APP,
+
+该行为已严重污染评论区环境,请将本项目提供给他人、其他人
 # 提出问题前,请适当了解 --[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 下面为链接：
