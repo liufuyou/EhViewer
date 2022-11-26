@@ -13,7 +13,7 @@
 -  EhViewer 白版-（非MD3风格）[白 E，推荐使用，活跃]：[下载链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 -  - SXJ 版 [绿E新版，**提示与其他版本不兼容**]：[下载链接](https://github.com/xiaojieonly/Ehviewer_CN_SXJ)
 
-- Overhauled 版 （非MD3风格）[彩 E，推荐使用，活跃]：[下载链接](https://github.com/Ehviewer-Overhauled/Ehviewer)
+- Overhauled 版 （MD3风格）[彩 E，推荐使用，活跃]：[下载链接](https://github.com/Ehviewer-Overhauled/Ehviewer)
 - Hippo Seven 版 [绿 E 原版，半停更，最新 [1.7.8]
 - NekoInverter 版 [白E，已停更，最新 [1.7.26.4]
 
