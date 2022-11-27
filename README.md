@@ -19,7 +19,7 @@
 **EhViewer 各版本链接**
 
 -  EhViewer 修白版 (非MD3风格) [白 E，推荐使用，活跃]：[下载链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
-- Epix 版 [绿E MOD，最接近原版，活跃]：[下载链接](https://github.com/exzhawk/EhViewer/releases)
+- Epix 版 [绿E MOD，最接近原版 ]：[下载链接](https://github.com/exzhawk/EhViewer/releases)
 - Overhauled 版 (MD3风格) [彩 E，推荐使用，活跃]：[下载链接](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
 
 # 其他 E-Hentai Viewer 链接
