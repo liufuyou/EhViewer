@@ -1,14 +1,14 @@
 # EhViewer
 
 <p align="right">
-  <strong>简体中文<strong>
+  <strong>English<strong>
   <span> | </span>
-  <a href="https://github.com/liufuyou/EhViewer/blob/main/README-US.md">
-  English
+  <a href="https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md">
+  简体中文
   </a>
 </p>
 
-最新的,能使用的E-Hentai Viewer 链接,The latest, available E-Hentai Viewer link
+The latest, available E-Hentai Viewer link,最新的,能使用的E-Hentai Viewer 链接
 
 Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.
 
