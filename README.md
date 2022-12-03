@@ -36,9 +36,9 @@ Below is the link:
 
 # Other E-Hentai Viewer Links
 
-- FEhViewer [present on all major platforms, active]: [https://github.com/honjow/FEhViewer] (https://github.com/honjow/FEhViewer)
-- JHenTai [present on all major platforms, active]: [https://github.com/jiangtian616/JHenTai] (https://github.com/jiangtian616/JHenTai)
-- EhPanda [iOS, active]: [https://github.com/EhPanda-Team/EhPanda] (https://github.com/EhPanda-Team/EhPanda)
+- FEhViewer [present on all major platforms, active]:[https://github.com/honjow/FEhViewer](https://github.com/honjow/FEhViewer)
+- JHenTai [present on all major platforms, active]:[https://github.com/jiangtian616/JHenTai](https://github.com/jiangtian616/JHenTai)
+- EhPanda [iOS, active]:[https://github.com/EhPanda-Team/EhPanda](https://github.com/EhPanda-Team/EhPanda)
 
 **APK archive download link, currently suspended and not recommended APP**
 - - SXJ version [Green E new version, ** Not recommended, prompt incompatibility with other versions **], latest [1.9.4.1]: [Archive APK download link]
