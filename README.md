@@ -1,5 +1,11 @@
 # EhViewer
-
+<p align="right">
+  <strong>简体中文<strong>
+  <span> | </span>
+  <a href="https://github.com/liufuyou/EhViewer/blob/main/README-US.md">
+  English
+  </a>
+</p>
 请知道无论什么时候，都没有任何人有资格要求别人一直做一件吃力不讨好的,为爱发电的事。
 
 # 若遇到无法翻页等等问题,请确保你使用的是最新版本
