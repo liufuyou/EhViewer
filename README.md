@@ -1,14 +1,12 @@
 # EhViewer
 
-<p align="right">
-  <strong>English<strong>
-  <span> | </span>
-  <a href="https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md">
-  简体中文
-  </a>
-</p>
+[简体中文](https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md) | English
 
-最新的,能使用的E-Hentai Viewer 链接
+最新的,可以使用的E-Hentai Viewer 链接
+
+**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://www.sharelikes.com.cn/s/1k4tZ)** 
+
+最低要求 Android 9，arm64-v8a架构(安卓手机常用)
 
 The latest, available E-Hentai Viewer link
 
