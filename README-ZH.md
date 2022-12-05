@@ -1,17 +1,19 @@
 # EhViewer
-<p align="right">
-  <strong>简体中文<strong>
-  <span> | </span>
-  <a href="https://github.com/liufuyou/EhViewer/blob/main/README.md">
-  English
-  </a>
-</p>
-请知道无论什么时候，都没有任何人有资格要求别人一直做一件吃力不讨好的,为爱发电的事。
+
+[English](https://github.com/liufuyou/EhViewer) | 简体中文
+
+ 最新的,可以使用的E-Hentai Viewer 链接
+
+**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://www.sharelikes.com.cn/s/1k4tZ)** 
+
+最低要求 Android 9，arm64-v8a架构(安卓手机常用)
+
+### 请知道无论什么时候，都没有任何人有资格要求别人一直做一件吃力不讨好的,为爱发电的事。
 
 # 若遇到无法翻页等等问题,请确保你使用的是最新版本
 请在下方本项目中挑选自己的喜欢的EhViewer版本下载
 
-**如有任何问题，请本项目中提出Issues**
+### 如有任何问题，请本项目中提出Issues
 
 所有 APP 均为第三方，请勿在 E 站评论区提及 APP,
 
