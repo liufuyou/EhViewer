@@ -40,9 +40,9 @@
 就像 XP一样，都有自己的喜好，有任何问题，请本项目中提出
 
 ## APK存档-目前停更,不推荐
--  - SXJ 版 [绿E新版，**不推荐,提示与其他版本不兼容**，半停更，最新[1.9.4.1]：[APK存档]
+-  - <s>SXJ 版 [绿E新版，**不推荐,提示与其他版本不兼容**，半停更，最新[1.9.4.1]：[APK存档]
 - Hippo Seven 版 [绿 E 原版，半停更，最新[1.7.8]：[APK存档]
-- NekoInverter 版 [白E，已停更，最新[1.7.26.4]：[APK存档]
+- NekoInverter 版 [白E，已停更，最新[1.7.26.4]：[APK存档]</s>
 
 ## 参考和感谢
 - **https://github.com/liufuyou/EhViewer/tree/References**
