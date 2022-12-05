@@ -4,13 +4,14 @@
 
 最新的,可以使用的E-Hentai Viewer 链接
 
-**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://www.sharelikes.com.cn/s/1k4tZ)** 
+**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://www.sharelikes.com.cn/s/1k4tZ)***
 
 最低要求 Android 9，arm64-v8a架构(安卓手机常用)
 
-The latest, available E-Hentai Viewer link
 
-Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.
+#### The latest, available E-Hentai Viewer link
+
+### Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.
 
 # If you encounter problems such as unable to turn pages, please make sure you are using the latest version
 Please select your favorite EhViewer version in this project below to download
@@ -20,11 +21,10 @@ Please select your favorite EhViewer version in this project below to download
 All APPs are third parties, please do not mention APPs in the comment area of the E station,
 
 This behavior has seriously polluted the environment of the comment area, please provide this item to others and others
-#Before asking a question, please understand properly -- [The Wisdom of Asking] (http://www.catb.org/~esr/faqs/smart-questions.html)
+# Before asking a question, please understand properly -- [The Wisdom of Asking](http://www.catb.org/~esr/faqs/smart-questions.html)
 
 Below is the link:
-# link
-
+## link
 
 **EhViewer version link**
 
@@ -39,9 +39,9 @@ Below is the link:
 - EhPanda [iOS, active]:[https://github.com/EhPanda-Team/EhPanda](https://github.com/EhPanda-Team/EhPanda)
 
 **APK archive download link, currently suspended and not recommended APP**
-- - SXJ version [Green E new version, ** Not recommended, prompt incompatibility with other versions **], latest [1.9.4.1]: [Archive APK download link]
-- Hippo Seven Edition [Green E Original, Half-stopped Update, Latest [1.7.8]: [Archive APK Download Link]
-- NekoInverter Version [White E, Stopped, Latest [1.7.26.4]: [Archive APK Download Links]
+- - SXJ version [Green E new version, ** Not recommended, prompt incompatibility with other versions **], latest [1.9.4.1]:[Archive APK download link]
+- Hippo Seven Edition [Green E Original, Half-stopped Update, Latest [1.7.8]:[Archive APK Download Link]
+- NekoInverter Version [White E, Stopped, Latest [1.7.26.4]:[Archive APK Download Links]
 
 **References and thanks**
 - [EhViewer- whitening] (https://github.com/EhViewer-NekoInverter/EhViewer/releases)
