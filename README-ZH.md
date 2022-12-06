@@ -4,8 +4,8 @@
 
  最新的,可以使用的E-Hentai Viewer 链接
 
-**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://github.com/liufuyou/EhViewer/edit/main/README-ZH.md#%E8%AF%B7%E7%9F%A5%E9%81%93%E6%97%A0%E8%AE%BA%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E9%83%BD%E6%B2%A1%E6%9C%89%E4%BB%BB%E4%BD%95%E4%BA%BA%E6%9C%89%E8%B5%84%E6%A0%BC%E8%A6%81%E6%B1%82%E5%88%AB%E4%BA%BA%E4%B8%80%E7%9B%B4%E5%81%9A%E4%B8%80%E4%BB%B6%E5%90%83%E5%8A%9B%E4%B8%8D%E8%AE%A8%E5%A5%BD%E7%9A%84%E4%B8%BA%E7%88%B1%E5%8F%91%E7%94%B5%E7%9A%84%E4%BA%8B)**<s><sup>  暂时提供，之后也许会删除，
-因为流量费用<sup>（已删除,小伪装）</sup></sup></s>
+**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：<s>[APK下载链接]<sup>  暂时提供，之后也许会删除，
+因为流量费用</sup><sup></s>（已删除,小伪装）</sup>
 
 最低要求 Android 9，arm64-v8a架构(安卓手机常用)
 
@@ -31,9 +31,9 @@
 
 # 其他 E-Hentai Viewer 链接
 
-- FEhViewer [全平台，活跃]：[https://github.com/honjow/FEhViewer](https://github.com/honjow/FEhViewer/releases/releases/releases)
-- JHenTai [全平台，活跃]：[https://github.com/jiangtian616/JHenTai](https://github.com/jiangtian616/JHenTai/releases/releases)
-- EhPanda [iOS，活跃]：[https://github.com/EhPanda-Team/EhPanda](https://github.com/EhPanda-Team/EhPanda/releases)
+- FEhViewer [全平台，活跃]：[https://github.com/honjow/FEhViewer](https://github.com/honjow/FEhViewer/releases)
+- JHenTai [全平台，活跃]：[https://github.com/jiangtian616/JHenTai](https://github.com/jiangtian616/JHenTai/releases)
+- EhPanda [iOS，活跃]：[https://github.com/EhPanda-Team/EhPanda](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md)
 ## 我该选择那个版本？
 随你喜欢，或者一个一个去尝试一下？
 
