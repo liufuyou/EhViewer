@@ -4,16 +4,19 @@
 
 最新的,可以使用的E-Hentai Viewer 链接
 
-**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://www.sharelikes.com.cn/s/1k4tZ)***
+**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://github.com/liufuyou/EhViewer/edit/main/README-ZH.md#链接)**<s><sup>暂时提供，之后也许会删除，
+因为流量费用<sup>（已删除,小伪装）</sup></sup></s>
+
 
 最低要求 Android 9，arm64-v8a架构(安卓手机常用)
 
 
-#### The latest, available E-Hentai Viewer link
 
-### Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.
+### The latest, available E-Hentai Viewer link
 
-# If you encounter problems such as unable to turn pages, please make sure you are using the latest version
+**Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.**
+
+## If you encounter problems such as unable to turn pages, please make sure you are using the latest version
 Please select your favorite EhViewer version in this project below to download
 
 **If you have any questions, please raise them in this item Issues**
@@ -21,10 +24,10 @@ Please select your favorite EhViewer version in this project below to download
 All APPs are third parties, please do not mention APPs in the comment area of the E station,
 
 This behavior has seriously polluted the environment of the comment area, please provide this item to others and others
-# Before asking a question, please understand properly -- [The Wisdom of Asking](http://www.catb.org/~esr/faqs/smart-questions.html)
+## Before asking a question, please understand properly -- [The Wisdom of Asking](http://www.catb.org/~esr/faqs/smart-questions.html)
 
 Below is the link:
-## link
+# EhViewer link
 
 **EhViewer version link**
 
