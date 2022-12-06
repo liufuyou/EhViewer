@@ -4,12 +4,12 @@
 
  最新的,可以使用的E-Hentai Viewer 链接
 
-**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://github.com/liufuyou/EhViewer/edit/main/README-ZH.md#链接)**<s><sup>暂时提供，之后也许会删除，
+**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://github.com/liufuyou/EhViewer/edit/main/README-ZH.md#%E8%AF%B7%E7%9F%A5%E9%81%93%E6%97%A0%E8%AE%BA%E4%BB%80%E4%B9%88%E6%97%B6%E5%80%99%E9%83%BD%E6%B2%A1%E6%9C%89%E4%BB%BB%E4%BD%95%E4%BA%BA%E6%9C%89%E8%B5%84%E6%A0%BC%E8%A6%81%E6%B1%82%E5%88%AB%E4%BA%BA%E4%B8%80%E7%9B%B4%E5%81%9A%E4%B8%80%E4%BB%B6%E5%90%83%E5%8A%9B%E4%B8%8D%E8%AE%A8%E5%A5%BD%E7%9A%84%E4%B8%BA%E7%88%B1%E5%8F%91%E7%94%B5%E7%9A%84%E4%BA%8B)**<s><sup>  暂时提供，之后也许会删除，
 因为流量费用<sup>（已删除,小伪装）</sup></sup></s>
 
 最低要求 Android 9，arm64-v8a架构(安卓手机常用)
 
-### 请知道无论什么时候，都没有任何人有资格要求别人一直做一件吃力不讨好的,为爱发电的事。
+- ## 请知道无论什么时候,都没有任何人有资格，要求别人一直做一件吃力不讨好的,为爱发电的事。
 
 # 若遇到无法翻页等等问题,请确保你使用的是最新版本
 请在下方本项目中挑选自己的喜欢的EhViewer版本下载
@@ -21,7 +21,6 @@
 该行为已严重污染评论区环境,请将本项目提供给他人、其他人
 # 提出问题前,请适当了解 --[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
-下面为链接：
 # 链接
 
 **EhViewer 各版本链接**
