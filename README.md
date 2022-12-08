@@ -4,15 +4,13 @@
 
 最新的,可以使用的E-Hentai Viewer 链接
 
-**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：[APK下载链接](https://www.sharelikes.com.cn/s/gdyIZ)**<s><sup>暂时提供，之后也许会删除，
-因为流量费用<sup>（小伪装）</sup></sup></s>
-
+**推荐：EhViewer 修白版 [推荐使用，项目活跃]：[简体中文](https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md) | English**
 
 最低要求 Android 9，arm64-v8a架构(安卓手机常用)
 
 
 
-### The latest, available E-Hentai Viewer link
+## The latest, available E-Hentai Viewer link
 
 **Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.**
 
