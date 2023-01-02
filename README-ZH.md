@@ -3,8 +3,10 @@
 [English](https://github.com/liufuyou/EhViewer) | 简体中文
 
  最新的,可以使用的E-Hentai Viewer 链接
+ ### 推荐使用
+**EhViewer 彩白 ``MD3风格``[APK下载链接](https://wwxk.lanzouy.com/inZNk0jy219g)<s><sup>  暂时提供，之后也许会删除，</sup></s>**
 
-**推荐：EhViewer 修白 [修白 E，推荐使用，活跃]：<s>[APK下载链接]<sup>  暂时提供，之后也许会删除，因为流量费用</sup></s>（删除,小伪装）**
+**EhViewer 修白 ``非MD3风格``[APK下载链接](https://wwxk.lanzouy.com/iaY7j0jy218f)<s><sup>  暂时提供</sup></s>**
 
 最低要求 Android 9，arm64-v8a架构(安卓手机常用)
 
