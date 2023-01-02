@@ -3,34 +3,39 @@
 **English | [简体中文](https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md)**
 
 最新的,可以使用的E-Hentai Viewer 链接
+ ### 推荐使用
+**EhViewer 彩白 ``MD3风格``：[APK下载链接](https://wwxk.lanzouy.com/inZNk0jy219g)<s><sup>  暂时提供，之后也许会删除，</sup></s>**
 
-**推荐：EhViewer 修白版 [推荐使用，项目活跃]**
+最低支持 Android 9
 
-最低要求 Android 9，arm64-v8a架构(安卓常用)
+# Latest available E-Hentai Viewer link
+
+> **Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.**
 
 
-## The latest, available E-Hentai Viewer link
 
-**Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.**
+# If you encounter problems such as not being able to turn pages, please make sure you are using the latest version.
 
-## If you encounter problems such as unable to turn pages, please make sure you are using the latest version
-Please select your favorite EhViewer version in this project below to download
 
-**If you have any questions, please raise them in this item Issues**
 
-All APPs are third parties, please do not mention APPs in the comment area of the E station,
+### If you have any questions, please ask about this project.
 
-This behavior has seriously polluted the environment of the comment area, please provide this item to others and others
-## Before asking a question, please understand properly -- [The Wisdom of Asking](http://www.catb.org/~esr/faqs/smart-questions.html)
+
+
+Tip: All APPs are third parties. Please try not to mention them in the comment area.
+
+This behavior has seriously polluted the environment of the comment area. Please provide this project to those in need.
+## Before asking a question, please understand—[The Wisdom of Asking](http://www.catb.org/~esr/faqs/smart-questions.html)
 
 Below is the link:
+**Minimum support for Android 9**
 # EhViewer link
 
 **EhViewer version link**
 
+- Overhauled version (MD3 style) [Color E, recommended, active]: [Download link] (https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
 - EhViewer whitening version (not MD3 style) [white E, recommended, active]: [Download link] (https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 - Epix version [Green E MOD, closest to the original]: [Download link] (https://github.com/exzhawk/EhViewer/releases)
-- Overhauled version (MD3 style) [Color E, recommended, active]: [Download link] (https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
 
 # Other E-Hentai Viewer Links
 
