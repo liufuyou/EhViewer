@@ -12,6 +12,7 @@
 
 > **Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.**
 
+Please star
 
 
 # If you encounter problems such as not being able to turn pages, please make sure you are using the latest version.
@@ -19,8 +20,7 @@
 
 
 ### If you have any questions, please ask about this project.
-
-
+#### Propose issues
 
 Tip: All APPs are third parties. Please try not to mention them in the comment area.
 
