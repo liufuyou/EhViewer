@@ -8,8 +8,7 @@
 
 **EhViewer 修白 ``非MD3风格``：[APK下载链接](https://wwxk.lanzouy.com/iaY7j0jy218f)<s><sup>  暂时提供</sup></s>**
 
-最低支持 Android 9
-
+最低支持 Android 9，求⭐️star
 > **请知道无论什么时候,都没有任何人有资格，要求别人一直做一件吃力不讨好的,为爱发电的事。**
 
 # 若遇到无法翻页等等问题,请确保你使用的是最新版本
