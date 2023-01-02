@@ -6,18 +6,15 @@
  ### 推荐使用
 **EhViewer 彩白 ``MD3风格``：[APK下载链接](https://wwxk.lanzouy.com/inZNk0jy219g)<s><sup>  暂时提供，之后也许会删除，</sup></s>**
 
-最低支持 Android 9
+最低支持 Android 9,求⭐️star
 
 # Latest available E-Hentai Viewer link
 
 > **Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.**
 
-Please star
-
+Please ⭐️star
 
 # If you encounter problems such as not being able to turn pages, please make sure you are using the latest version.
-
-
 
 ### If you have any questions, please ask about this project.
 #### Propose issues
