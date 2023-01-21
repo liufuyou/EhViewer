@@ -1,23 +1,24 @@
 # EhViewer
 
-简体中文 | [English](https://github.com/liufuyou/EhViewer)
+**[简体中文](https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md)** | [English](https://github.com/liufuyou/EhViewer)
 
  最新的,可以使用的E-Hentai Viewer 链接
  ### 推荐使用
-**EhViewer 彩白 ``MD3风格``：[APK下载链接](https://wwxk.lanzouy.com/inZNk0jy219g)<s><sup>  暂时提供，之后也许会删除，</sup></s>**
+**EhViewer 彩白 ``MD3风格``：[Releases-1.8.5.3-rc01](https://github.com/Ehviewer-Overhauled/Ehviewer/releases/tag/1.8.5.3-rc01)<s><sup>大更改</sup></s>**
 
-**EhViewer 修白 ``非MD3风格``：[APK下载链接](https://wwxk.lanzouy.com/iaY7j0jy218f)<s><sup>  暂时提供</sup></s>**
+**EhViewer 修白 ``非MD3风格``：[Releases-v1.7.28.4](https://github.com/EhViewer-NekoInverter/EhViewer/releases/tag/v1.7.28.4)**
 
 最低支持 Android 9，求⭐️star
 > **请知道无论什么时候,都没有任何人有资格，要求别人一直做一件吃力不讨好的,为爱发电的事。**
 
-# 若遇到无法翻页等等问题,请确保你使用的是最新版本
+# 若遇到无法翻页等等问题,要确保你使用的是最新版本
+更新到最新的版本
 
-### 如有任何问题，请本项目中提出
+### 如有任何问题，在本项目中提出
 
-提示：所有 APP 均为第三方，请尽量不在评论区提及
+提示：所有 APP 均为第三方，尽量不在评论区提及
 
-该行为已严重污染评论区环境,请将本项目提供给有需求者
+该行为已严重污染评论区环境，可以将本项目提供给有需求者
 # 提出问题前,请适当了解 --[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 # 链接
@@ -35,7 +36,7 @@
 ## 我该选择那个版本？
 请随你喜欢，或者一个一个去尝试一下？
 
-就像 XP一样，都有自己的喜好，有任何问题，请本项目中提出<sup>重要的事情说三遍，虽然已经三遍了</sup>
+就像 XP一样，都有自己的喜好，有任何问题，请在本项目中提出<sup>重要的事情说三遍，虽然已经三遍了</sup>
 
 ## APK存档-停更项目
 
