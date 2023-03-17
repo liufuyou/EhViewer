@@ -1,6 +1,6 @@
 # EhViewer
 
-**English | [简体中文](https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md)**
+**[English](https://github.com/liufuyou/EhViewer) | [简体中文](https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md)**
 
 最低支持 Android 9,求⭐️star
 
