@@ -4,9 +4,9 @@
 
  最新的,可以使用的E-Hentai Viewer 链接
  ### 推荐使用
-**EhViewer 彩白 ``MD3风格``：[Releases-1.8.5.3-rc01](https://github.com/Ehviewer-Overhauled/Ehviewer/releases/tag/1.8.5.3-rc01)<s><sup>大更改</sup></s>**
+**EhViewer 彩白 ``MD3风格``：最新[1.8.7.2](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)<s><sup>大更改</sup></s>**
 
-**EhViewer 修白 ``非MD3风格``：[Releases-v1.7.28.4](https://github.com/EhViewer-NekoInverter/EhViewer/releases/tag/v1.7.28.4)**
+**EhViewer 修白 ``非MD3风格``：最新[v1.7.29.0](https://github.com/EhViewer-NekoInverter/EhViewer/releases)**
 
 最低支持 Android 9，求⭐️star
 > **请知道无论什么时候,都没有任何人有资格，要求别人一直做一件吃力不讨好的,为爱发电的事。**
@@ -18,7 +18,7 @@
 
 提示：所有 APP 均为第三方，尽量不在评论区提及
 
-该行为已严重污染评论区环境，可以将本项目提供给有需求者
+该行为已污染评论区环境，可以将本项目提供给有需求者
 # 提出问题前,请适当了解 --[《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)
 
 # 链接
