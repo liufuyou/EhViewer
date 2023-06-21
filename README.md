@@ -6,7 +6,9 @@
   <a href="https://github.com/liufuyou/EhViewer">[English]</a>
 </p>
 
-<p align="center">求⭐️star</p>
+<p align="center">求⭐️star
+  <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
+    <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="github star"></p>
 <p align="center">EhViewer is a collection of E-Hentai viewers that provides the latest available versions.</p>
 
 ## Recommended Versions
@@ -67,7 +69,7 @@ verter Version [Whitened E, discontinued, latest [1.7.26.4]]
 * SXJ Version **Special Reminder**: Data is not compatible with other versions [New Green E version, semi-discontinued, latest [1.9.4.4]]
   * [Archive]
 
-###### References and Thanks:
+##### References and Thanks:
 
 * [References](https://github.com/liufuyou/EhViewer/tree/References)
 
