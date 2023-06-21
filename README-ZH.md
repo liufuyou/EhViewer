@@ -1,5 +1,5 @@
 <h1 align="center">
-<img src="https://meowing-dirt-plantain.glitch.me/3/f627d4c042136c5f730b7734c0ce055e.webp" width="185">
+<img src="https://meowing-dirt-plantain.glitch.me/3/632c0c786e8a94c76f3e4c2b203c3aef.png" width="200">
     
 <br>EhViewer<br>
 </h1>
@@ -18,25 +18,25 @@ EhViewer   一个提供最新可用版本的 E-Hentai Viewer 集合。
 
 ## 推荐版本
 
-* **EhViewer Overhauled "MD3 风格"：** [1.8.7.2](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
-* **EhViewer NekoInverter "非 MD3 风格"：** [v1.7.29.0](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+* **EhViewer Overhauled "MD3 风格"：** [1.8.8.3](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
+* **EhViewer NekoInverter "非 MD3 风格"：** [v1.7.29.4](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 
-支持 最低Android 9，请给予⭐️星星支持。
+支持 最低Android 9，求⭐️star支持,感谢！
 
 > 请记住，无论何时何地，没有人有权利要求别人一直为爱发电。
 
-#### 若遇到无法翻页，缩略图等问题。请确保您使用的是最新版本。
+## 若遇到无法翻页，缩略图等问题。请确保您使用的是最新版本。
 
 #### 如有任何问题，请在本项目中提出。
 >所有 APP 均为第三方，尽量避免在评论区提及
 该行为已污染评论区环境，请将本项目提供给有需求的人。
 
-在评论区中，请尽量避免提及任何第三方应用程序，以免对评论区环境造成污染。您可以将本项目链接提供给有需要的人。
+<br>在评论区中，请尽量避免提及任何第三方应用程序，以免对评论区环境造成不可逆的污染。您可以将本项目链接提供给有需要的人。
 
 在提出问题之前，请确保您已适当地了解并遵循 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)。
 这份指南将为您提供一些有用的建议，帮助您更好地提出问题并获得高质量的回答。
 
-如果您需要该项目的解答，请提供更具体的信息，我将竭诚为您提供帮助。
+如果您需要该项目的解答，请提供更具体的信息，我将竭诚为您提供帮助。<br>
 
 ## 链接
 
@@ -70,7 +70,7 @@ EhViewer   一个提供最新可用版本的 E-Hentai Viewer 集合。
 
 就像选择 XP 系统一样，每个人都有自己的喜好。
 
-如果有任何问题，请在本项目中提出（重要的事情说三遍，虽然已经三遍了）。
+如果有任何问题，请在本项目中提出（重要的事情说三遍，虽然已经三遍了）
 
 ## 存档项目
 
