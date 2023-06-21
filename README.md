@@ -7,8 +7,7 @@
 </p>
 
 <p align="center">求⭐️star</p>
-
-EhViewer is a collection of E-Hentai viewers that provides the latest available versions.
+<p align="center">EhViewer is a collection of E-Hentai viewers that provides the latest available versions.</p>
 
 ## Recommended Versions
 
