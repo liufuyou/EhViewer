@@ -16,7 +16,7 @@
 
 Minimum Android 9 is supported. Please consider giving a ⭐️ star for support. Thank you!
 
-> Remember, no one has the right to demand others to generate love forever.
+> Please remember that no one has the right to demand selfless contributions from others indefinitely, regardless of time or place.
 
 ## If you encounter issues with pagination or thumbnails, please ensure that you are using the latest version.
 
