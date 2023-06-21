@@ -54,7 +54,6 @@ Below are the links, arranged by project:
 Links to other platforms' E-Hentai viewers:
 
 * JHenTai [Available on all platforms, active]:
-
   * [Download Link](https://github.com/jiangtian616/JHenTai/releases)
 * FEhViewer [Available on all platforms, active]:
 
@@ -88,6 +87,7 @@ If you have any questions, please raise them in this project (important
 ###### References and Thanks:
 
 * [References](https://github.com/liufuyou/EhViewer/tree/References)
+
 
 **E-Hentai Official Website**
 
