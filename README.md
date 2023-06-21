@@ -1,61 +1,77 @@
 # EhViewer
 
-**[English](https://github.com/liufuyou/EhViewer) | [简体中文](https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md)**
+**[简体中文](https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md) | [English](https://github.com/liufuyou/EhViewer)**
 
 最低支持 Android 9,求⭐️star
 
-# Latest available E-Hentai Viewer link
+Discover the latest and usable collection of E-Hentai Viewers.
 
-> **Please know that no one has the right to ask others to do a thankless thing all the time to generate electricity for love at any time.**
+## Recommended Versions
 
-Please ⭐️star,Android 9
+* **EhViewer Colorful "MD3 Style": Latest** [1.8.7.2](https://github.com/Ehviewer-Overhauled/Ehviewer/releases) **(Major Update)**
+* **EhViewer Repaint "Non-MD3 Style": Latest** [v1.7.29.0](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 
-# If you encounter problems such as not being able to turn pages, please make sure you are using the latest version.
+Minimum support for Android 9. Please show your support by giving it a star⭐️.
 
-### If you have any questions, please ask about this project.
-#### Propose issues
+> Remember, no one has the right to demand that others continuously engage in thankless efforts for the sake of love.
 
-Tip: All APPs are third parties. Please try not to mention them in the comment area.
+## **If you encounter any issues, please make sure you are using the latest version.**
 
-This behavior has seriously polluted the environment of the comment area. Please provide this project to those in need.
-## Before asking a question, please understand—[The Wisdom of Asking](http://www.catb.org/~esr/faqs/smart-questions.html)
+#### **If you have any questions, please raise them in this project.**
 
-Below is the link:
-**Minimum support for Android 9**
-# EhViewer link
+## Links
 
-**EhViewer version link**
+Below are the links arranged by the update time of each project:
 
-- Overhauled version (MD3 style) [Color E, recommended, active]: [Download link] (https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
-- EhViewer whitening version (not MD3 style) [white E, recommended, active]: [Download link] (https://github.com/EhViewer-NekoInverter/EhViewer/releases)
-- Epix version [Green E MOD, closest to the original]: [Download link] (https://github.com/exzhawk/EhViewer/releases)
+* Overhauled version (MD3 Style) [Colorful E, recommended, active]:
 
-# Other E-Hentai Viewer Links
+  * [Download Link](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
+* EhViewer Repaint version (Non-MD3 Style) [Repaint E, recommended, active]:
 
-- FEhViewer [present on all major platforms, active]:[https://github.com/honjow/FEhViewer](https://github.com/honjow/FEhViewer)
-- JHenTai [present on all major platforms, active]:[https://github.com/jiangtian616/JHenTai](https://github.com/jiangtian616/JHenTai)
-- EhPanda [iOS, active]:[https://github.com/EhPanda-Team/EhPanda](https://github.com/EhPanda-Team/EhPanda)
+  * [Download Link](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+* Epix version [Green E MOD, closest to the original]:
 
-**APK archive download link, currently suspended and not recommended APP**
-- - SXJ version [Green E new version, ** Not recommended, prompt incompatibility with other versions **], latest [1.9.4.1]:[Archive APK download link]
-- Hippo Seven Edition [Green E Original, Half-stopped Update, Latest [1.7.8]:[Archive APK Download Link]
-- NekoInverter Version [White E, Stopped, Latest [1.7.26.4]:[Archive APK Download Links]
+  * [Download Link](https://github.com/exzhawk/EhViewer/releases)
 
-**References and thanks**
-- [EhViewer- whitening] (https://github.com/EhViewer-NekoInverter/EhViewer/releases)
-- [JHenTai] (https://github.com/jiangtian616/JHenTai)
-- [FEHViewer] (https://github.com/honjow/FEhViewer) 
-- [Overhauled-EhViewer] (https://github.com/Ehviewer-Overhauled/Ehviewer)
-- [EHPanda] (https://github.com/tatsuz0u/EhPanda)
-- [SXJ-EhViewer] (https://github.com/xiaojieonly/Ehviewer_CN_SXJ)
-- [Hippo Seven-EhViewer] (https://github.com/seven332/EhViewer)
-- [NekoInverter-EhViewer] (https://gitlab.com/NekoInverter/EhViewer) 
-- [Epix MOD-EhViewer] (https://github.com/exzhawk/EhViewer)
+Links to other E-Hentai Viewer platforms
 
-https://github.com/liufuyou/EhViewer/tree/References
+* JHenTai [Available on all platforms, active]:
+
+  * [Download Link](https://github.com/jiangtian616/JHenTai/releases)
+* FEhViewer [Available on all platforms, active]:
+
+  * [Download Link](https://github.com/honjow/FEhViewer/releases)
+* EhPanda [iOS, active]:
+
+  * [Download Link](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md)
+
+## Which Version Should I Choose?
+
+Feel free to choose any version or try them one by one.
+
+Just like choosing an XP system, everyone has their own preferences. If you have any questions, please raise them in this project (important things are repeated three times, even though they have already been repeated three times).
+
+## Archived APK Projects - Discontinued
+
+* Hippo Seven version [Green E Original, semi-discontinued, latest [1.7.8]:
+
+  * [Archive]
+* NekoInverter version [Repaint E, discontinued, latest [1.7.26.4]:
+
+  * [Archive]
+* SXJ version [Green E New Version, not recommended, incompatible with other versions, semi-discontinued, latest [1.9.4.4]:
+
+  * [Archive]
+
+## Other Open Source Projects Used in This Project
+
+* References and acknowledgments, for others, see:
+
+  * [References](https://github.com/liufuyou/EhViewer/tree/References)
 
 **E-Hentai Official Website**
 
-- [https://e-hentai.org] (https://e-hentai.org)
-- [https://exhentai.org] (https://exhentai.org)
+* [https://e-hentai.org](https://e-hentai.org)
+
+I hope this translation accurately conveys the intended meaning without relying on machine translation.
 
