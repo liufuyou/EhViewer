@@ -62,9 +62,7 @@ If you have any questions, please raise them in this project (important things s
 
 * Hippo Seven Version [Original Green E, semi-discontinued, latest [1.7.8]]
   * [Archive]
-* NekoIn
-
-verter Version [Whitened E, discontinued, latest [1.7.26.4]]
+* NekoInverter Version [Whitened E, discontinued, latest [1.7.26.4]]
   * [Archive]
 * SXJ Version **Special Reminder**: Data is not compatible with other versions [New Green E version, semi-discontinued, latest [1.9.4.4]]
   * [Archive]
