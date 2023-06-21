@@ -6,7 +6,8 @@
   <a href="https://github.com/liufuyou/EhViewer">[English]</a>
 </p>
 
-<p align="center">求⭐️star</p>
+<p align="center">求⭐️star<img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub"
+             alt="github star"></p>
 <p align="center">EhViewer is a collection of E-Hentai viewers that provides the latest available versions.</p>
 
 ## Recommended Versions
