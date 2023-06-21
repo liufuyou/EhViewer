@@ -7,7 +7,7 @@
 </p>
 
 <p align="center">求⭐️star
-  <a target="_blank" href='https://github.com/liufuyou/EhViewer/stargazers'><img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub"
+  <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'><img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub"
              alt="github star"></p>
 <p align="center">EhViewer is a collection of E-Hentai viewers that provides the latest available versions.</p>
 
