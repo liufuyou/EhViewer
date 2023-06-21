@@ -21,7 +21,7 @@ EhViewer   一个提供最新可用版本的 E-Hentai Viewer 集合。
 * **EhViewer Overhauled "MD3 风格"：** [1.8.8.3](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
 * **EhViewer NekoInverter "非 MD3 风格"：** [v1.7.29.4](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 
-支持 最低Android 9，请给予⭐️star支持,感谢！
+支持 最低Android 9，求⭐️star支持,感谢！
 
 > 请记住，无论何时何地，没有人有权利要求别人一直为爱发电。
 
