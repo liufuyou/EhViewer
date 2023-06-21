@@ -69,7 +69,7 @@ verter Version [Whitened E, discontinued, latest [1.7.26.4]]
 * SXJ Version **Special Reminder**: Data is not compatible with other versions [New Green E version, semi-discontinued, latest [1.9.4.4]]
   * [Archive]
 
-###### References and Thanks:
+##### References and Thanks:
 
 * [References](https://github.com/liufuyou/EhViewer/tree/References)
 
