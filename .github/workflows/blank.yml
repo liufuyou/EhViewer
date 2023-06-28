@@ -1,0 +1,27 @@
+name: Check GitHub Releases
+on:
+  push:
+    branches:
+      - main  # 替换为你的主要分支名称
+
+jobs:
+  check_releases:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+      
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install requests
+      
+      - name: Run script to check releases
+        run: |
+          python script.py  # 替换为你的脚本文件名
