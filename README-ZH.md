@@ -17,9 +17,8 @@
 EhViewer   一个提供最新可用版本的 E-Hentai Viewer 集合。
 
 ## 推荐版本
-
-* **EhViewer Overhauled "MD3 风格"：** [1.8.8.3](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
-* **EhViewer NekoInverter "非 MD3 风格"：** [v1.7.29.4](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+~~EhViewer Overhauled "MD3 风格（目前存档中）"：** [1.8.8.3](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)~~
+* **EhViewer NekoInverter "非 MD3 风格"：** [v1.8.0](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 
 <p>支持 最低Android 9，求⭐️star支持,感谢！
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
@@ -44,12 +43,14 @@ EhViewer   一个提供最新可用版本的 E-Hentai Viewer 集合。
 
 下方链接,按照项目排列：
 
-* Overhauled 版（MD3 风格）[彩 E，推荐使用，活跃]：
-
-  * [下载链接](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
 * NekoInverter 版（非 MD3 风格）[修白 E，推荐使用，活跃]：
 
   * [下载链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+
+* Overhauled 版（MD3 风格）[彩 E]：
+
+  * [下载链接](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
+    
 * Epix 版 [绿 E MOD，最接近原版]：
 
   * [下载链接](https://github.com/exzhawk/EhViewer/releases)
@@ -75,8 +76,9 @@ EhViewer   一个提供最新可用版本的 E-Hentai Viewer 集合。
 如果有任何问题，请在本项目中提出（重要的事情说三遍，虽然已经三遍了）
 
 ## 存档项目
+* EhViewer Overhauled "MD3 风格 [1.8.8.3]
 
-* Hippo Seven 版 [绿 E 原版，半停更，最新 [1.7.8]
+* Hippo Seven 版 [绿 E 原版，停更，最新 [1.7.8]
 
   * [存档]
 * NekoInverter 版 [白 E，已停更，最新 [1.7.26.4]
