@@ -75,6 +75,9 @@ If you have any questions, please raise them in this project (important things s
 
 * [https://e-hentai.org](https://e-hentai.org)
 
+> [cloudflare.com](www.cloudflare.com/),Thanks to Cloudflare for their help with this project.
+
+
 > Disclaimer: This project is for personal learning and communication purposes only. Do not use it for illegal activities.
 the end, thank you OpenAI.
 
