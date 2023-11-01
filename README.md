@@ -6,15 +6,21 @@
   <a href="https://github.com/liufuyou/EhViewer">[English]</a>
 </p>
 
-<p align="center">求⭐️star
+<p align="center">⭐️ Seeking your support
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
-    <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="github star"></p>
+    <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub Stars"></p>
 <p align="center">EhViewer is a collection of E-Hentai viewers that provides the latest available versions.</p>
+
+> After the latest update on October 28th, we have noticed several issues across multiple versions. However, given that many of these versions have already ceased updates and are now in an archived state, we are compelled to consider compiling a list of these archived projects. This decision is aimed at preventing further allocation of time and resources to these archived projects and, instead, focusing our efforts on those that are still actively maintained and updated.
 
 ## Recommended Versions
 
-* **EhViewer Overhauled "MD3 Style":** [1.8.8.3](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
-* **EhViewer NekoInverter "Non-MD3 Style":** [v1.7.29.4](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+Happy Halloween! Although this may seem like a belated greeting and update.
+
+* **JHenTai [Available on all platforms, active]:** 
+  * [Link to releases](https://github.com/jiangtian616/JHenTai/releases)
+* **EhViewer NekoInverter "White E [Android 9, active]:** 
+  * [Link to releases](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 
 Minimum Android 9 is supported. Please consider giving a ⭐️ star for support. Thank you!
 
@@ -34,20 +40,20 @@ If you need assistance with this project, please provide more specific informati
 
 Below are the links, arranged by project:
 
-* Overhauled Version (MD3 Style) [Colored E, recommended and active]:
-  * [Download Link](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)
-* NekoInverter Version (Non-MD3 Style) [Whitened E, recommended and active]:
-  * [Download Link](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
-* Epix Version [Green E MOD, closest to the original]:
-  * [Download Link](https://github.com/exzhawk/EhViewer/releases)
+* **NekoInverter Version (Non-MD3 Style) [Whitened E, recommended and active]:**
+  * [Download releases](https://github.com/EhViewer-NekoInverter/EhViewer/releases) 
+* **Epix Version [Green E MOD, closest to the original]:**
+  * [Download releases](https://github.com/exzhawk/EhViewer/releases) 
+* **SXJ Version [New Green E version, semi-discontinued, latest [1.9.4.4]]**
+  * [Download releases](insert_link_here)
 
 Links to other platforms' E-Hentai viewers:
 
-* JHenTai [Available on all platforms, active]:
+* **JHenTai [Available on all platforms, active]:**
   * [Download Link](https://github.com/jiangtian616/JHenTai/releases)
-* FEhViewer [Available on all platforms, active]:
+* **FEhViewer [Available on all platforms, active]:**
   * [Download Link](https://github.com/honjow/FEhViewer/releases)
-* EhPanda [iOS, active]:
+* **EhPanda [iOS, active]:**
   * [Download Link](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.md)
 
 ## Which version should I choose?
@@ -60,12 +66,13 @@ If you have any questions, please raise them in this project (important things s
 
 ## Archived Projects
 
-* Hippo Seven Version [Original Green E, semi-discontinued, latest [1.7.8]]
-  * [Archive]
-* NekoInverter Version [Whitened E, discontinued, latest [1.7.26.4]]
-  * [Archive]
-* SXJ Version **Special Reminder**: Data is not compatible with other versions [New Green E version, semi-discontinued, latest [1.9.4.4]]
-  * [Archive]
+**Special Reminder: Please be aware that the following versions may result in data incompatibility. Make sure to back up your data.**
+* **EhViewer Overhauled "MD3 Style": [1.8.8.3]**
+  * [Archive](insert_link_here)
+* **Hippo Seven Version [Original Green E, semi-discontinued, latest [1.7.8]]**
+  * [Archive](insert_link_here)
+* **NekoInverter Version [Whitened E, discontinued, latest [1.7.26.4]]**
+  * [Archive](insert_link_here)
 
 ##### References and Thanks:
 
@@ -77,7 +84,6 @@ If you have any questions, please raise them in this project (important things s
 
 > [cloudflare.com](www.cloudflare.com/),Thanks to Cloudflare for their help with this project.
 
-
 > Disclaimer: This project is for personal learning and communication purposes only. Do not use it for illegal activities.
-the end, thank you OpenAI.
 
+the end, thank you OpenAI.
