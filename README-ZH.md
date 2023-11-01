@@ -14,10 +14,14 @@
 </p>
 
 EhViewer 是一个提供最新版本的 E-Hentai Viewer 的集合。
+>> 万圣节快乐！！
 
 ## 推荐版本
 ~~EhViewer Overhauled "MD3 风格（目前存档中）"：** [1.8.8.3](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)~~
 * **EhViewer NekoInverter "非 MD3 风格"：** [v1.8.0](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+* JHenTai [全平台，活跃]：最新更新,推荐
+
+  * [下载链接](https://github.com/jiangtian616/JHenTai/releases)
 
 <p>支持最低 Android 9，欢迎⭐️star支持，感谢！
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
