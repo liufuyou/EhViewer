@@ -3,27 +3,27 @@
     
 <br>EhViewer<br>
 </h1>
-<p align="center">  
-<a href="https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md">
-[简体中文]
- </a>
-  <span> | </span>
-<a href="https://github.com/liufuyou/EhViewer">
-[English]
-</a>
+<p align="center">
+  <a href="https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md">[简体中文]</a>
+  <span>|</span>
+  <a href="https://github.com/liufuyou/EhViewer">[English]</a>
 </p>
 
-EhViewer 是一个提供最新版本的 E-Hentai Viewer 的集合。
-> 万圣节快乐！！
+<p align="center">  ⭐️star支持，感谢！
+  <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
+    <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub Stars"></p>
+<p align="center">EhViewer 是一个提供最新版本的 E-Hentai Viewer 的集合。</p>
+
+> > 万圣节快乐！！
 
 ## 推荐版本
 
 祝大家万圣节快乐！
->>虽然这个祝福和更新来得有点晚，但仍然想在这个特殊的节日里向大家表达祝福。自从10月28日的最新更新以来，一些第三方版本出现了问题。但目前很多第三方版本已停止更新并处于归档状态，可能无法修复这些问题。因此，不得不将已封存的项目下调并特别标识，以便更方便地关注仍在持续更新的项目，以避免浪费更多时间和精力。
+> 虽然这个祝福和更新来得有点晚，但仍然想在这个特殊的节日里向大家表达祝福。自从10月28日的最新更新以来，一些第三方版本出现了问题。但目前很多第三方版本已停止更新并处于归档状态，可能无法修复这些问题。因此，不得不将已封存的项目下调并特别标识，以便更方便地关注仍在持续更新的项目，以避免浪费更多时间和精力。
 祝大家度过一个愉快的万圣节！
-- **JHenTai [适用于所有平台，活跃]**
+- **JHenTai  -  [适用于所有平台，活跃]**
   - [发布链接](https://github.com/jiangtian616/JHenTai/releases)
-- **EhViewer NekoInverter "白E [Android 9，活跃]**
+- **EhViewer NekoInverter  -  "白E [Android 9，活跃]**
   - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 
 <p>支持最低 Android 9，欢迎⭐️star支持，感谢！
@@ -86,7 +86,7 @@ EhViewer 是一个提供最新版本的 E-Hentai Viewer 的集合。
 **特别提醒： 请注意，下述版本可能导致数据不兼容，请务必备份您的数据。**
 
 * EhViewer Overhauled "MD3 风格 [1.8.8.3]
- * [存档]
+  * [存档]
 * Hippo Seven 版 [绿 E 原版，停更，最新 [1.7.8]
   * [存档]
 * NekoInverter 版 [白 E，已停更，最新 [1.7.26.4]
