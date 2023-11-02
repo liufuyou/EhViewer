@@ -16,25 +16,25 @@
 
 > > 万圣节快乐！！
 
-## 推荐版本
+# 推荐版本
 
 祝大家万圣节快乐！
 > 虽然这个祝福和更新来得有点晚，但仍然想在这个特殊的节日里向大家表达祝福。自从10月28日的最新更新以来，一些第三方版本出现了问题。但目前很多第三方版本已停止更新并处于归档状态，可能无法修复这些问题。因此，不得不将已封存的项目下调并特别标识，以便更方便地关注仍在持续更新的项目，以避免浪费更多时间和精力。
 祝大家度过一个愉快的万圣节！
-- **JHenTai  -  [适用于所有平台，活跃]**
-  - [发布链接](https://github.com/jiangtian616/JHenTai/releases)
-- **EhViewer NekoInverter  -  "白E [Android 9，活跃]**
+- **JHenTai - [适用于所有平台,当前状态-活跃]**
+  - [发布链接](https://github.com/jiangtian616/JHenTai/releases) 
+- **EhViewer NekoInverter "修白" -  [支持Android 9+,当前状态-活跃]**
   - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 
 <p>支持最低 Android 9，欢迎⭐️star支持，感谢！
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
-    <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub star"></p>
+    <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub star"></p> 
 
 > 请记住，无论何时何地，没有人有权力要求别人一直为爱发电。
 
 ## 如果遇到无法翻页、缩略图等问题，请确保您使用的是最新版本。
 
-#### 如有任何问题，请在本项目中提出。
+### 如有任何问题，请在本项目中提出。
 > 所有 APP 均为第三方应用程序，请尽量避免在评论区提及。
 这种行为已经污染了评论区环境，请将本项目提供给有需要的人。
 
@@ -43,7 +43,7 @@
 在提出问题之前，请确保您已适当地了解并遵循 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)。
 这份指南将为您提供一些有用的建议，帮助您更好地提出问题并获得高质量的回答。
 
-如果您需要有关该项目的解答，请提供更具体的信息，我将竭诚为您提供帮助。<br>
+如果您需要有关该项目的解答，请提供更具体的信息，将竭诚为您提供帮助。<br>
 
 ## 链接
 
@@ -81,7 +81,7 @@
 
 如果有任何问题，请在本项目中提出（重要的事情说三遍，虽然已经三遍了）
 
-## 存档项目
+### 存档项目
 
 **特别提醒： 请注意，下述版本可能导致数据不兼容，请务必备份您的数据。**
 
