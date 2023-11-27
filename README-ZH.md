@@ -14,7 +14,7 @@
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub Stars"></p>
 <p align="center">EhViewer 是一个提供最新版本的 E-Hentai Viewer 的集合。</p>
 
-> > 万圣节快乐！！
+> > 抱歉，最近因为生病住院，一直未能如期更新。
 
 # 推荐版本
 ## 如果遇到无法翻页或缩略图等问题，请确保正在使用推荐版本的最新更新。
@@ -26,12 +26,21 @@
 >之所以推荐使用推荐的版本，是因为在出现问题时，它们通常能够及时修复。这些版本也会定期的，持续的更新以应对问题，这正是推荐它们的原因。如果目前没有使用推荐版本，建议先采取措施将相关数据保存。迁移到推荐的版本上。以确保未来的最佳使用体验，并为您节省时间和精力，事半功倍。
 祝大家度过一个愉快的万圣节！玩得开心！
 
-- **JHenTai - [适用于所有平台,当前状态-活跃]**
+- **JHenTai - [适用于所有平台,活跃]**
   - [发布链接](https://github.com/jiangtian616/JHenTai/releases) 
-- **EhViewer NekoInverter "修白" -  [支持Android 9+,当前状态-活跃]**
+---
+- **EhViewer NekoInverter "修白" -  [活跃]**
   - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+---
+**EhViewer MD3:衍生项目:**
 
-<p>支持最低 Android 9，欢迎⭐️star支持，感谢！
+- EhViewer -FooIbar [活跃]
+-  - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+- EhViewer -UjuiUjuMandan [活跃]
+-  - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+
+#### Android 9+ 完全支持,Android 6.0-8.1 有限支持
+<p>欢迎⭐️star支持，感谢！
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub star"></p> 
 
@@ -57,14 +66,21 @@
 * NekoInverter 版（非 MD3 风格）[修白 E，推荐使用，活跃]：
 
   * [下载链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
-
+---
 * ~~Overhauled 版（MD3 风格）[彩 E]：存档~~
+**EhViewer (MD3 风格):衍生项目:**
 
-  ~~* [下载链接](https://github.com/Ehviewer-Overhauled/Ehviewer/releases)~~
-    
+- EhViewer  FooIbar [活跃]
+-  - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+- EhViewer  UjuiUjuMandan [活跃]
+-  - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+---    
 * Epix 版 [绿 E MOD，最接近原版]：
 
   * [下载链接](https://github.com/exzhawk/EhViewer/releases)
+- EhViewer - SXJ
+  - [发布链接](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases)
+---
 
 其他平台上的 E-Hentai Viewer 链接：
 
@@ -96,6 +112,7 @@
   * [存档]
 * NekoInverter 版 [白 E，已停更，最新 [1.7.26.4]
   * [存档]
+
 
 ##### 参考和感谢：
 
