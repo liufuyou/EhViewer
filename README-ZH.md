@@ -17,7 +17,7 @@
 > > 抱歉，最近因为生病住院，一直未能如期更新。
 
 >提前祝福大家，平安幸福,仍然向大家表达最美好的祝愿。
-
+[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fliufuyou%2FEhViewer%2Fblob%2Fmain%2FREADME-ZH.md&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
 # 推荐版本
 ## 如果遇到无法翻页或缩略图等等突然问题，请确保正在使用推荐版本的最新版。
 
