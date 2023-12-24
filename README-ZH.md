@@ -14,17 +14,18 @@
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub Stars"></p>
 <p align="center">EhViewer 是一个提供最新版本的 E-Hentai Viewer 的集合。</p>
 
-> > 抱歉，最近因为生病住院，一直未能如期更新。
+> > 抱歉，最近因为生病住院，一直未能如期更新。[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fliufuyou%2FEhViewer%2Fblob%2Fmain%2FREADME-ZH.md&count_bg=%2379C83D&title_bg=%23555555&icon=gitkraken.svg&icon_color=%23E7E7E7&title=EhViewer&edge_flat=false)](https://hits.seeyoufarm.com)
 
 >提前祝福大家，平安幸福,仍然向大家表达最美好的祝愿。
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fliufuyou%2FEhViewer%2Fblob%2Fmain%2FREADME-ZH.md&count_bg=%2379C83D&title_bg=%23555555&icon=&icon_color=%23E7E7E7&title=hits&edge_flat=false)](https://hits.seeyoufarm.com)
+[![Page Views Count](https://badges.toozhao.com/badges/01HJDV7JCT9572VEDJ091EK8SR/orange.svg)](https://badges.toozhao.com/stats/01HJDV7JCT9572VEDJ091EK8SR "Get your own page views count badge on badges.toozhao.com")
 # 推荐版本
+![](https://count.getloli.com/get/@EhViewer?theme=rule34)
 ## 如果遇到无法翻页或缩略图等等突然问题，请确保正在使用推荐版本的最新版。
 
 祝大家万圣节快乐！
 >虽然这个祝福和更新有点晚到，但在这个特殊的节日里，仍然向大家表达最美好的祝愿。从10月28日以来，一些第三方版本因为突然情况出现了一些问题。但目前许多第三方版本已停止更新并进入了归档状态，这些问题可能无法得到修复。因此，将已经归档的项目下调，并特别标识它们，以便更集中关注那些仍在持续更新的项目，以避免浪费时间和精力。
 
-#### 为什么推荐
+### 为什么推荐
 >之所以推荐使用推荐的版本，是因为在出现问题时，它们通常能够及时修复。这些版本也会定期的，持续的更新以应对问题，这正是推荐它们的原因。如果目前没有使用推荐版本，建议先采取措施将相关数据保存。迁移到推荐的版本上。以确保未来的最佳使用体验，并为您节省时间和精力，事半功倍。
 祝大家度过一个愉快的万圣节！玩得开心！
 ---
@@ -42,13 +43,11 @@
 <p>欢迎⭐️star支持，感谢！
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub star"></p> 
-
 ---
 JHenTai - [适用于全平台,活跃]
   - [发布链接](https://github.com/jiangtian616/JHenTai/releases) 
-
-> 请记住，无论何时何地，没有人有权力要求别人一直为爱发电。
-
+---
+> 请谨记，无论何时何地，都没有人有权力要求其他人不断为爱发电。
 ## 如果遇到无法翻页、缩略图等问题，请确保您使用的是最新版本。
 
 ### 如有任何问题，请在本项目中提出。
