@@ -29,24 +29,23 @@
 >之所以推荐使用推荐的版本，是因为在出现问题时，它们通常能够及时修复。这些版本也会定期的，持续的更新以应对问题，这正是推荐它们的原因。如果目前没有使用推荐版本，建议先采取措施将相关数据保存。迁移到推荐的版本上。以确保未来的最佳使用体验，并为您节省时间和精力，事半功倍。
 祝大家度过一个愉快的万圣节！玩得开心！
 ---
-- **EhViewer NekoInverter "修白" -  [活跃]**
+**EhViewer NekoInverter "修白" [活跃]**
   - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
----
-**EhViewer MD3【彩e】:衍生项目:**
 
+**JHenTai - 适用于全平台[活跃]**
+  - [发布链接](https://github.com/jiangtian616/JHenTai/releases) 
+---
+**EhViewer MD3【彩e】:衍生项目**
 - EhViewer -FooIbar [活跃]
 -  - [发布链接](https://github.com/FooIbar/EhViewer/releases)
 - EhViewer -UjuiUjuMandan [活跃]
 -  - [项目链接](https://github.com/UjuiUjuMandan/EhViewer?tab=readme-ov-file)
----可直连，提示可能会移动网络链接缓慢
-#### Android 9+ 完全支持,Android 6.0-8.1 有限支持
-<p>欢迎⭐️star支持，感谢！
+---可直连，提示:可能会移动网络链接缓慢.
+> Android 9+ 完全支持,Android 6.0-8.1 有限支持
+<p>⭐️star支持，感谢！
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub star"></p> 
----
-JHenTai - [适用于全平台,活跃]
-  - [发布链接](https://github.com/jiangtian616/JHenTai/releases) 
----
+
 > 请谨记，无论何时何地，都没有人有权力要求其他人不断为爱发电。
 ## 如果遇到无法翻页、缩略图等问题，请确保您使用的是最新版本。
 
@@ -69,7 +68,7 @@ JHenTai - [适用于全平台,活跃]
 
   * [下载链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 ---
-* ~~Overhauled 版（MD3 风格）[彩 E]：存档~~
+* ~~Overhauled 版（MD3 风格）[彩 E]：存档中~~
 **EhViewer (MD3 风格):衍生项目:**
 
 - EhViewer  FooIbar [活跃]
@@ -106,7 +105,7 @@ JHenTai - [适用于全平台,活跃]
 
 ### 存档项目
 
-**特别提醒： 请注意，下述版本可能导致数据不兼容，请务必备份您的数据。**
+**特别提醒： 请注意，某些版本可能导致数据不兼容，请务必先备份您的数据。**
 
 * EhViewer Overhauled "MD3 风格 [1.8.8.3]
   * [存档]
