@@ -14,9 +14,7 @@
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub Stars"></p>
 <p align="center">EhViewer 是一个提供最新版本的 E-Hentai Viewer 的集合。</p>
 
-> > 圣诞节快乐！🎄祝愿您在这个美好的节日里充满快乐、温馨的时刻。愿您度过一个充满爱和欢笑的圣诞节！🎅🎁
-> 平安夜快乐!!!
-> > 抱歉，最近因为生病住院，一直未能如期更新。
+> 新年快乐！元旦快乐！
       
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fliufuyou%2FEhViewer%2Fblob%2Fmain%2FREADME-ZH.md&count_bg=%2379C83D&title_bg=%23555555&icon=gitkraken.svg&icon_color=%23E7E7E7&title=EhViewer&edge_flat=false)](https://hits.seeyoufarm.com)
 
