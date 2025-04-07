@@ -12,23 +12,21 @@
 <p align="center">  ⭐️star支持，感谢！
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub Stars"></p>
-<p align="center">EhViewer 是一个提供最新版本的 E-Hentai Viewer 的集合。</p>
+<p align="center">EhViewer 是一个 E-Hentai 阅读器合集，提供最新可用版本。</p>
 
-> 先祝福大家，国庆节快乐！
       
 [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fliufuyou%2FEhViewer%2Fblob%2Fmain%2FREADME-ZH.md&count_bg=%2379C83D&title_bg=%23555555&icon=gitkraken.svg&icon_color=%23E7E7E7&title=EhViewer&edge_flat=false)](https://hits.seeyoufarm.com)
 
->祝福大家，平安幸福,仍然向大家表达最美好的祝愿。
+
 [![Page Views Count](https://badges.toozhao.com/badges/01HJDV7JCT9572VEDJ091EK8SR/orange.svg)](https://badges.toozhao.com/stats/01HJDV7JCT9572VEDJ091EK8SR "Get your own page views count badge on badges.toozhao.com")
-# 推荐版本
+## ⭐ 推荐版本
 ![](https://count.getloli.com/get/@EhViewer?theme=rule34)
 ## 如果遇到无法翻页或缩略图等等突然问题，请确保正在使用推荐版本的最新版。
 
->从10月28日以来，一些第三方版本因为突然情况出现了一些问题。但目前许多第三方版本已停止更新并进入了归档状态，这些问题可能无法得到修复。因此，将已经归档的项目下调，并特别标识它们，以便更集中关注那些仍在持续更新的项目，以避免浪费时间和精力。
+>目前许多第三方版本已停止更新并进入了归档状态，问题无法得到修复。因此，将已经归档的项目下调，并特别标识它们，以便更集中关注那些仍在持续更新的项目，以避免浪费时间和精力。
 
 ### 为什么推荐
->之所以推荐使用推荐的版本，是因为在出现问题时，它们通常能够及时修复。这些版本也会定期的，持续的更新以应对问题，这正是推荐它们的原因。如果目前没有使用推荐版本，建议先采取措施将相关数据保存。迁移到推荐的版本上。以确保未来的最佳使用体验，并为您节省时间和精力，事半功倍。
-祝大家度过一个愉快的万圣节！玩得开心！
+>推荐版本，在出现问题时，它们通常能够及时修复。这些版本也会定期的，持续的更新以应对问题，这正是推荐它们的原因。如果目前没有使用推荐版本，建议先采取措施将相关数据保存。迁移到推荐的版本上。以确保未来的最佳使用体验，并为您节省时间和精力，事半功倍。
 ---
 **EhViewer NekoInverter "修白" [活跃]**
   - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
@@ -48,20 +46,20 @@
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub star"></p> 
 
 > 请谨记，无论何时何地，都没有人有权力要求其他人不断为爱发电。
-## 如果遇到无法翻页、缩略图等问题，请确保您使用的是最新版本。
 
-### 如有任何问题，请在本项目中提出。
+## 重要提示
+### 如有任何问题，请在本项目中提出。使用前请确保您已更新至最新版本。
+
 > 所有 APP 均为第三方应用程序，请尽量避免在评论区提及。
 这种行为已经污染了评论区环境，请将本项目提供给有需要的人。
 
 在评论区，请尽量避免提及任何第三方应用程序，以免对评论区环境造成不可逆的污染。您可以将本项目链接提供给有需要的人。
 
-在提出问题之前，请确保您已适当地了解并遵循 [《提问的智慧》](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/main/README-zh_CN.md)。
-这份指南将为您提供一些有用的建议，帮助您更好地提出问题并获得高质量的回答。
+在提问前，请确保您已正确理解并遵循[《提问的智慧》](http://www.catb.org/~esr/faqs/smart-questions.html)。
 
 如果您需要有关该项目的解答，请提供更具体的信息，将竭诚为您提供帮助。<br>
 
-## 链接
+## 其他版本链接
 
 下方链接按照项目排列：
 
@@ -106,7 +104,7 @@
 
 ### 存档项目
 
-**特别提醒： 请注意，某些版本可能导致数据不兼容，请务必先备份您的数据。**
+**请注意，以下版本可能会导致数据不兼容。确保备份您的数据。**
 
 * EhViewer Overhauled "MD3 风格 [1.8.8.3]
   * [存档]
@@ -116,12 +114,9 @@
   * [存档]
 
 
-##### 参考和感谢：
+#### 参考与致谢
 
-* [参考](https://github.com/liufuyou/EhViewer/tree/References)
+* [参考资料](https://github.com/liufuyou/EhViewer/tree/References)
 
-**E-Hentai 官方网站**
-
-* [https://e-hentai.org](https://e-hentai.org)
-
-> 免责声明：该项目仅供个人学习、交流，请勿用于非法用途
+* [E-Hentai官网](https://e-hentai.org)
+* 感谢Cloudflare对本项目的帮助
