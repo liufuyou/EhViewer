@@ -1,122 +1,102 @@
-<h1 align="center">
-<img src="https://meowing-dirt-plantain.glitch.me/3/632c0c786e8a94c76f3e4c2b203c3aef.png" width="200">
-    
-<br>EhViewer<br>
-</h1>
+<h1 align="center">EhViewer</h1>
+
 <p align="center">
   <a href="https://github.com/liufuyou/EhViewer/blob/main/README-ZH.md">[简体中文]</a>
   <span>|</span>
   <a href="https://github.com/liufuyou/EhViewer">[English]</a>
 </p>
 
-<p align="center">  ⭐️star支持，感谢！
+<p align="center">⭐️ Seeking your support
   <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub Stars"></p>
-<p align="center">EhViewer 是一个 E-Hentai 阅读器合集，提供最新可用版本。</p>
+<p align="center">EhViewer is a collection of E-Hentai viewers that provides the latest available versions.</p>
+    
+>> May Day labor, everyone have a good rest
 
-      
-[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fliufuyou%2FEhViewer%2Fblob%2Fmain%2FREADME-ZH.md&count_bg=%2379C83D&title_bg=%23555555&icon=gitkraken.svg&icon_color=%23E7E7E7&title=EhViewer&edge_flat=false)](https://hits.seeyoufarm.com)
 
+> After the latest update on October 28th, we have noticed several issues across multiple versions. However, given that many of these versions have already ceased updates and are now in an archived state, we are compelled to consider compiling a list of these archived projects. This decision is aimed at preventing further allocation of time and resources to these archived projects and, instead, focusing our efforts on those that are still actively maintained and updated.
+## Recommended Versions
 
-[![Page Views Count](https://badges.toozhao.com/badges/01HJDV7JCT9572VEDJ091EK8SR/orange.svg)](https://badges.toozhao.com/stats/01HJDV7JCT9572VEDJ091EK8SR "Get your own page views count badge on badges.toozhao.com")
-## ⭐ 推荐版本
-![](https://count.getloli.com/get/@EhViewer?theme=rule34)
-## 如果遇到无法翻页或缩略图等等突然问题，请确保正在使用推荐版本的最新版。
+Happy Halloween! Although this may seem like a belated greeting and update.[![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https%3A%2F%2Fgithub.com%2Fliufuyou%2FEhViewer&count_bg=%2379C83D&title_bg=%23555555&icon=gitkraken.svg&icon_color=%23E7E7E7&title=EhViewer&edge_flat=false)](https://hits.seeyoufarm.com)
 
->目前许多第三方版本已停止更新并进入了归档状态，问题无法得到修复。因此，将已经归档的项目下调，并特别标识它们，以便更集中关注那些仍在持续更新的项目，以避免浪费时间和精力。
+[![Page Views Count](https://badges.toozhao.com/badges/01HJDVSEDSDGX55GVDRZ34F8TK/blue.svg)](https://badges.toozhao.com/stats/01HJDVSEDSDGX55GVDRZ34F8TK "Get your own page views count badge on badges.toozhao.com")
+* **JHenTai Available on all platforms[active]:** 
+  * [Link to releases](https://github.com/jiangtian616/JHenTai/releases)
+* **EhViewer NekoInverter "White E" Android 9[active]:** 
+  * [Link to releases](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
 
-### 为什么推荐
->推荐版本，在出现问题时，它们通常能够及时修复。这些版本也会定期的，持续的更新以应对问题，这正是推荐它们的原因。如果目前没有使用推荐版本，建议先采取措施将相关数据保存。迁移到推荐的版本上。以确保未来的最佳使用体验，并为您节省时间和精力，事半功倍。
----
-**EhViewer NekoInverter "修白" [活跃]**
-  - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
+**EhViewer MD3【Colored E】: Derivative Projects:**
 
-**JHenTai - 适用于全平台[活跃]**
-  - [发布链接](https://github.com/jiangtian616/JHenTai/releases) 
----
-**EhViewer MD3【彩e】:衍生项目**
-- EhViewer -FooIbar [活跃]
--  - [发布链接](https://github.com/FooIbar/EhViewer/releases)
-- EhViewer -UjuiUjuMandan [活跃]
--  - [项目链接](https://github.com/UjuiUjuMandan/EhViewer?tab=readme-ov-file)
----可直连，提示:可能会移动网络链接缓慢.
-> Android 9+ 完全支持,Android 6.0-8.1 有限支持
-<p>⭐️star支持，感谢！
-  <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
+- EhViewer - FooIbar [Active]
+  - [Release Link](https://github.com/FooIbar/EhViewer/releases)
+- EhViewer - UjuiUjuMandan [Active]
+  - [Project Link](https://github.com/UjuiUjuMandan/EhViewer?tab=readme-ov-file)
+> Fully supported on Android 9+, limited support for Android 6.0-8.1.
+
+<p>Please   ⭐️ star for support. Thank you! <a target="_blank" href='https://github.com/login?return_to=%2Fliufuyou%2FEhViewer'>
     <img src="https://img.shields.io/github/stars/liufuyou/EhViewer.svg?style=flat&logo=GitHub" alt="GitHub star"></p> 
 
-> 请谨记，无论何时何地，都没有人有权力要求其他人不断为爱发电。
 
-## 重要提示
-### 如有任何问题，请在本项目中提出。使用前请确保您已更新至最新版本。
+> Please remember that no one has the right to demand selfless contributions from others indefinitely, regardless of time or place.
 
-> 所有 APP 均为第三方应用程序，请尽量避免在评论区提及。
-这种行为已经污染了评论区环境，请将本项目提供给有需要的人。
+## If you encounter issues with pagination or thumbnails, please ensure that you are using the latest version.
 
-在评论区，请尽量避免提及任何第三方应用程序，以免对评论区环境造成不可逆的污染。您可以将本项目链接提供给有需要的人。
+If you have any questions, please raise them in this project. All apps are third-party. Try to avoid mentioning them in the comments. This behavior has polluted the comment section, so please provide this project to those who need it.
 
-在提问前，请确保您已正确理解并遵循[《提问的智慧》](http://www.catb.org/~esr/faqs/smart-questions.html)。
+In the comment section, please try to avoid mentioning any third-party applications to prevent irreversible pollution to the comment environment. You can provide the link to this project to those who need it.
 
-如果您需要有关该项目的解答，请提供更具体的信息，将竭诚为您提供帮助。<br>
+Before asking a question, make sure you have properly understood and followed [《How To Ask Questions The Smart Way》](http://www.catb.org/~esr/faqs/smart-questions.html). This guide will provide you with some useful advice to help you ask better questions and get high-quality answers.
 
-## 其他版本链接
+If you need assistance with this project, please provide more specific information, and I will be glad to help you.
 
-下方链接按照项目排列：
+## Links
 
-* NekoInverter 版（非 MD3 风格）[活跃]：
+Below are the links, arranged by project:
 
-  * [下载链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
----
-* ~~Overhauled 版（MD3 风格）[彩 E]：存档中~~
-**EhViewer (MD3 风格):衍生项目:**
+* **NekoInverter Version (Non-MD3 Style) [Whitened E, recommended and active]:**
+  * [Download releases](https://github.com/EhViewer-NekoInverter/EhViewer/releases) 
+* **Epix Version [Green E MOD, closest to the original]:**
+  * [Download releases](https://github.com/exzhawk/EhViewer/releases) 
+* **SXJ Version [New Green E version, semi-discontinued, latest [1.9.4.4]]**
+  * [Download releases](insert_link_here)
 
-- EhViewer  FooIbar [活跃]
--  - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
-- EhViewer  UjuiUjuMandan [活跃]
--  - [发布链接](https://github.com/EhViewer-NekoInverter/EhViewer/releases)
----    
-* Epix 版 [绿 E MOD，最接近原版]：
+Links to other platforms' E-Hentai viewers:
 
-  * [下载链接](https://github.com/exzhawk/EhViewer/releases)
-- EhViewer - SXJ
-  - [发布链接](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases)
----
+* **JHenTai [Available on all platforms, active]:**
+  * [Download Link](https://github.com/jiangtian616/JHenTai/releases)
+* **FEhViewer [Available on all platforms, active]:**
+  * [Download Link](https://github.com/honjow/FEhViewer/releases)
+* **EhPanda [iOS, active]:**
+  * [Download Link](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.md)
 
-## 其他平台上的 E-Hentai Viewer 链接：
+## Which version should I choose?
 
-* JHenTai [全平台，活跃]：
+Feel free to choose any version or try them one by one.
 
-  * [下载链接](https://github.com/jiangtian616/JHenTai/releases)
-* FEhViewer [全平台，活跃]：
+It's like choosing an XP system; everyone has their own preferences.
 
-  * [下载链接](https://github.com/honjow/FEhViewer/releases)
-* EhPanda [iOS，活跃]：
+If you have any questions, please raise them in this project (important things should be repeated three times, even though it has already been done three times).
 
-  * [下载链接](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md)
+## Archived Projects
 
-## 我应该选择哪个版本？
+**Special Reminder: Please be aware that the following versions may result in data incompatibility. Make sure to back up your data.**
+* **EhViewer Overhauled "MD3 Style": [1.8.8.3]**
+  * [Archive](insert_link_here)
+* **Hippo Seven Version [Original Green E, semi-discontinued, latest [1.7.8]]**
+  * [Archive](insert_link_here)
+* **NekoInverter Version [Whitened E, discontinued, latest [1.7.26.4]]**
+  * [Archive](insert_link_here)
 
-请随意选择，或者逐个尝试。
+##### References and Thanks:
 
-就像选择 XP 系统一样，每个人都有自己的喜好。
+* [References](https://github.com/liufuyou/EhViewer/tree/References)
 
-如果有任何问题，请在本项目中提出（重要的事情说三遍，虽然已经三遍了）
+**E-Hentai Official Website**
 
-### 存档项目
+* [https://e-hentai.org](https://e-hentai.org)
 
-**请注意，以下版本可能会导致数据不兼容。确保备份您的数据。**
+> [cloudflare.com](www.cloudflare.com/),Thanks to Cloudflare for their help with this project.
 
-* EhViewer Overhauled "MD3 风格 [1.8.8.3]
-  * [存档]
-* Hippo Seven 版 [绿 E 原版，停更，最新 [1.7.8]
-  * [存档]
-* NekoInverter 版 [白 E，已停更，最新 [1.7.26.4]
-  * [存档]
+> Disclaimer: This project is for personal learning and communication purposes only. Do not use it for illegal activities.
 
-
-#### 参考与致谢
-
-* [参考资料](https://github.com/liufuyou/EhViewer/tree/References)
-
-* [E-Hentai官网](https://e-hentai.org)
-* 感谢Cloudflare对本项目的帮助
+the end, thank you OpenAI.
