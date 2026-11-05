@@ -1,0 +1,172 @@
+# ============================================================
+# EhViewer 版本清单 —— 全仓库唯一数据源
+# 改这里，然后运行 `python scripts/render.py` 重新生成中英文 README。
+# 不要直接改 README.md / README.en.md，它们会被覆盖。
+# ============================================================
+#
+# status 取值（只写这四种之一）：
+#   active      活跃，正常维护
+#   stale       仍在，但很久没发版（脚本也会按 stale_after_days 自动判断）
+#   taken_down  已下架 / 仓库不可访问（DMCA、删除、私有化）
+#   archived    官方或社区已归档，仅存档
+#
+# 注意：不要写 status，脚本也会自动判断——
+#   距今超过 stale_after_days 天没发版，自动降级为 stale。
+
+meta:
+  last_checked: 2026-11-05      # 上次人工核对日期，务必和实际核对时间一致
+  stale_after_days: 180         # 超过这个天数没发版，自动标记为"滞后"
+
+# 分组顺序即 README 中的展示顺序
+groups:
+  - id: recommended
+    zh: 推荐版本
+    en: Recommended
+    zh_intro: 优先用这些。出问题时它们通常能及时修复，并且在持续更新。
+    en_intro: Start here. These are fixed quickly when something breaks, and keep shipping updates.
+
+  - id: md3
+    zh: MD3 衍生版
+    en: MD3 derivatives
+    zh_intro: 彩 E 风格，界面更接近 Material Design 3。
+    en_intro: Colored-E styling, closer to Material Design 3.
+
+  - id: other_platform
+    zh: 其他平台
+    en: Other platforms
+    zh_intro: 非 Android 平台的选择。
+    en_intro: Options for non-Android platforms.
+
+  - id: archived
+    zh: 已归档 / 已下架
+    en: Archived / taken down
+    zh_intro: 不要再用这些。部分版本还会导致数据不兼容，迁移前务必备份。
+    en_intro: Do not use these. Some may cause data incompatibility — back up before migrating.
+
+variants:
+  # ---------- 推荐 ----------
+  - id: nekoinverter
+    group: recommended
+    name: EhViewer NekoInverter
+    nickname_zh: 修白 E
+    nickname_en: White E
+    platform: Android 9+
+    status: active
+    version: v1.8.14
+    released: 2026-10-22
+    url: https://github.com/EhViewer-NekoInverter/EhViewer/releases
+    zh_note: 非 MD3 风格，改动克制，最接近传统体验
+    en_note: Non-MD3, restrained changes, closest to the classic experience
+
+  - id: jhetai
+    group: recommended
+    name: JHenTai
+    platform: 全平台 / All platforms
+    status: active
+    version: v8.0.18
+    released: 2026-10-23
+    url: https://github.com/jiangtian616/JHenTai/releases
+    zh_note: Flutter 实现，Android / iOS / 桌面端通用
+    en_note: Flutter-based, works on Android, iOS and desktop
+
+  - id: sxj
+    group: recommended
+    name: EhViewer SXJ
+    nickname_zh: 新绿 E
+    nickname_en: New Green E
+    platform: Android
+    status: active
+    version: 2.0.2.7
+    released: 2026-11-02
+    url: https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases
+    zh_note: 中文优化，更新频繁
+    en_note: Chinese-oriented fork, ships often
+
+  # ---------- MD3 ----------
+  - id: ujuiujumandan
+    group: md3
+    name: EhViewer UjuiUjuMandan
+    platform: Android 9+
+    status: active
+    version: 1.14.6
+    released: 2025-12-17
+    url: https://github.com/UjuiUjuMandan/EhViewer
+    zh_note: 距上次发版已超过半年，使用前先确认兼容性
+    en_note: No release in over six months — verify compatibility first
+
+  - id: exzhawk
+    group: md3
+    name: EhViewer Epix
+    nickname_zh: 绿 E MOD
+    nickname_en: Green E mod
+    platform: Android
+    status: active
+    version: 1.7.26
+    released: 2026-08-08
+    url: https://github.com/exzhawk/EhViewer/releases
+    zh_note: 最接近原版绿 E 的改动
+    en_note: Closest to the original Green E
+
+  # ---------- 其他平台 ----------
+  - id: ehpanda
+    group: other_platform
+    name: EhPanda
+    platform: iOS
+    status: active
+    version: v2.8.1
+    released: 2026-07-20
+    url: https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md
+    zh_note: iOS 端唯一推荐
+    en_note: The go-to option on iOS
+
+  # ---------- 归档 / 下架 ----------
+  - id: fooibar
+    group: archived
+    name: EhViewer FooIbar
+    nickname_zh: 彩 E
+    nickname_en: Colored E
+    platform: Android 9+
+    status: taken_down
+    url: https://github.com/FooIbar/EhViewer
+    zh_note: 2026 年核实：仓库因 DMCA 下架，链接已不可访问
+    en_note: Verified 2026 — repository taken down via DMCA
+
+  - id: fehviewer
+    group: archived
+    name: FEhViewer
+    platform: 全平台 / All platforms
+    status: taken_down
+    url: https://github.com/honjow/FEhViewer
+    zh_note: 2026 年核实：仓库因 DMCA 下架，链接已不可访问
+    en_note: Verified 2026 — repository taken down via DMCA
+
+  - id: overhauled
+    group: archived
+    name: EhViewer Overhauled
+    nickname_zh: MD3 风格
+    platform: Android
+    status: archived
+    version: 1.8.8.3
+    zh_note: 已归档，与新版数据格式不兼容
+    en_note: Archived, incompatible data format with current versions
+
+  - id: hippo
+    group: archived
+    name: EhViewer Hippo Seven
+    nickname_zh: 原版绿 E
+    nickname_en: Original Green E
+    platform: Android
+    status: archived
+    version: 1.7.8
+    zh_note: 上游早已停更
+    en_note: Upstream abandoned long ago
+
+  - id: nekoinverter_legacy
+    group: archived
+    name: EhViewer NekoInverter 旧版
+    name_en: EhViewer NekoInverter (legacy)
+    platform: Android
+    status: archived
+    version: 1.7.26.4
+    zh_note: 旧版本线，已由 v1.8.x 取代
+    en_note: Legacy line, superseded by v1.8.x
