@@ -30,7 +30,7 @@ If pagination or thumbnails break, **confirm you are on the latest build listed 
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| EhViewer UjuiUjuMandan<br><sub>No release in over six months — verify compatibility first</sub> | Android 9+ | Stale | 1.14.6 | 2025-12-17 | [Project](https://github.com/UjuiUjuMandan/EhViewer) |
+| EhViewer UjuiUjuMandan<br><sub>No release for nearly a year (repo still receiving commits) — verify compatibility first</sub> | Android 9+ | Stale | 1.14.6 | 2025-12-17 | [Project](https://github.com/UjuiUjuMandan/EhViewer) |
 | EhViewer Epix (Green E mod)<br><sub>Closest to the original Green E</sub> | Android | Active | 1.7.26 | 2026-08-08 | [Download](https://github.com/exzhawk/EhViewer/releases) |
 
 ## Other platforms
@@ -39,7 +39,7 @@ If pagination or thumbnails break, **confirm you are on the latest build listed 
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| EhPanda<br><sub>The go-to option on iOS</sub> | iOS | Active | v2.8.1 | 2026-07-20 | [Project](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md) |
+| EhPanda<br><sub>Stable is v2.8.1; 3.0.0 is a pre-release, not for daily use</sub> | iOS | Active | v2.8.1<br><sub>pre-release 3.0.0</sub> | 2026-07-20 | [Project](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md) |
 
 ## Archived / taken down
 

@@ -91,8 +91,8 @@ variants:
     version: 1.14.6
     released: 2025-12-17
     url: https://github.com/UjuiUjuMandan/EhViewer
-    zh_note: 距上次发版已超过半年，使用前先确认兼容性
-    en_note: No release in over six months — verify compatibility first
+    zh_note: 近一年未发版（仓库仍在提交代码），使用前先确认兼容性
+    en_note: No release for nearly a year (repo still receiving commits) — verify compatibility first
 
   - id: exzhawk
     group: md3
@@ -115,9 +115,13 @@ variants:
     status: active
     version: v2.8.1
     released: 2026-07-20
+    # 预发布单独记录，不计入"最新版本"，供想尝鲜的人参考
+    prerelease:
+      version: 3.0.0
+      released: 2026-08-20
     url: https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md
-    zh_note: iOS 端唯一推荐
-    en_note: The go-to option on iOS
+    zh_note: 稳定版 v2.8.1；3.0.0 为预发布，不建议日常使用
+    en_note: Stable is v2.8.1; 3.0.0 is a pre-release, not for daily use
 
   # ---------- 归档 / 下架 ----------
   - id: fooibar

@@ -30,7 +30,7 @@
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| EhViewer UjuiUjuMandan<br><sub>距上次发版已超过半年，使用前先确认兼容性</sub> | Android 9+ | 滞后 | 1.14.6 | 2025-12-17 | [项目](https://github.com/UjuiUjuMandan/EhViewer) |
+| EhViewer UjuiUjuMandan<br><sub>近一年未发版（仓库仍在提交代码），使用前先确认兼容性</sub> | Android 9+ | 滞后 | 1.14.6 | 2025-12-17 | [项目](https://github.com/UjuiUjuMandan/EhViewer) |
 | EhViewer Epix（绿 E MOD）<br><sub>最接近原版绿 E 的改动</sub> | Android | 活跃 | 1.7.26 | 2026-08-08 | [下载](https://github.com/exzhawk/EhViewer/releases) |
 
 ## 其他平台
@@ -39,7 +39,7 @@
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| EhPanda<br><sub>iOS 端唯一推荐</sub> | iOS | 活跃 | v2.8.1 | 2026-07-20 | [项目](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md) |
+| EhPanda<br><sub>稳定版 v2.8.1；3.0.0 为预发布，不建议日常使用</sub> | iOS | 活跃 | v2.8.1<br><sub>预发布 3.0.0</sub> | 2026-07-20 | [项目](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md) |
 
 ## 已归档 / 已下架
 

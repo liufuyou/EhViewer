@@ -77,6 +77,39 @@ CI 每天会自动巡检，真有链接挂了会开 issue 通知你——所以�
 
 ---
 
+## 预发布版本（可选字段）
+
+如果某个项目有 beta / rc 之类的预发布，用 `prerelease` 单独记录，**不要**把它写进 `version`：
+
+```yaml
+  - id: ehpanda
+    version: v2.8.1          # 稳定版，这条进"最新版本"列
+    released: 2026-07-20
+    prerelease:              # 可选；写了会在版本号下面加一行小字
+      version: 3.0.0
+      released: 2026-08-20
+```
+
+这样做的好处是：稳定版仍然参与"是否滞后"的计算，预发布只作为参考信息展示，不会让一个长期只发 beta 的项目看起来"很活跃"。
+
+`prerelease` 必须同时给出 `version` 和 `released`，否则生成时会直接报错。
+
+---
+
+## 数据出错时会发生什么
+
+`render.py` 会在生成前做校验，以下情况直接报错退出，不会产出半成品 README：
+
+- 必填字段缺失（`id` / `group` / `name` / `platform`）
+- `id` 重复（每条清单项必须唯一，否则增删时容易改错行）
+- `group` 未在 `groups` 中定义
+- `status` 取值非法
+- 在架条目缺少 `url`
+- `released` 晚于 `meta.last_checked`（发布日期不可能晚于核对日期）
+- `prerelease` 字段不全
+
+---
+
 ## 关于日期的设计（重要）
 
 判断"是否滞后"用的是 `meta.last_checked`，**不是当天日期**。

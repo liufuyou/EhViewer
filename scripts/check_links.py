@@ -19,6 +19,7 @@ import argparse
 import json
 import ssl
 import sys
+import time
 import urllib.error
 import urllib.request
 from concurrent.futures import ThreadPoolExecutor
@@ -37,7 +38,7 @@ UA = "Mozilla/5.0 (compatible; EhViewer-link-check/1.0)"
 DEAD_CODES = {400, 404, 410, 451}
 
 
-def check(url: str) -> tuple[str, int | str, str]:
+def check_once(url: str) -> tuple[str, int | str, str]:
     """返回 (级别, 状态码或错误名, 说明)。"""
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "*/*"})
     ctx = ssl.create_default_context()
@@ -55,6 +56,23 @@ def check(url: str) -> tuple[str, int | str, str]:
     except (urllib.error.URLError, TimeoutError, ssl.SSLError, OSError) as exc:
         reason = getattr(exc, "reason", exc)
         return ("UNREACHABLE", "ERR", str(reason)[:80])
+
+
+def check(url: str) -> tuple[str, int | str, str]:
+    """带一次重试的检查。
+
+    只在"连不上"时重试——DNS 抖动、临时超时不该被当成死链报给维护者。
+    明确的 404 / 451 直接返回，不做无谓的等待。
+    """
+    result = check_once(url)
+    if result[0] != "UNREACHABLE":
+        return result
+    time.sleep(2)
+    retry = check_once(url)
+    # 重试仍失败时保留重试结果，但在说明里标注，便于区分"偶发"与"持续不可达"
+    if retry[0] == "UNREACHABLE":
+        return (retry[0], retry[1], f"{retry[2]}（已重试 1 次）")
+    return retry
 
 
 def main() -> int:

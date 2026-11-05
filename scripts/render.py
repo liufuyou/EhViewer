@@ -68,6 +68,17 @@ def cell(text: str | None) -> str:
     return str(text).replace("|", "\\|")
 
 
+def version_cell(variant: dict, lang: str) -> str:
+    """版本号单元格。若存在 prerelease，附一行小字说明，不计入"最新版本"。"""
+    base = cell(variant.get("version"))
+    pre = variant.get("prerelease") or {}
+    pre_version = pre.get("version")
+    if pre_version:
+        tag = "预发布" if lang == "zh" else "pre-release"
+        base = f"{base}<br><sub>{tag} {pre_version}</sub>"
+    return base
+
+
 def render_table(variants: list[dict], lang: str, anchor: date, stale_days: int) -> list[str]:
     if lang == "zh":
         head = "| 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |"
@@ -95,11 +106,11 @@ def render_table(variants: list[dict], lang: str, anchor: date, stale_days: int)
 
         if status == "taken_down":
             name = f"~~{name}~~"
-            version = cell(v.get("version"))
+            version = version_cell(v, lang)
             released = cell(v.get("released"))
             link = "—"
         else:
-            version = cell(v.get("version"))
+            version = version_cell(v, lang)
             released = cell(v.get("released"))
             url = v.get("url")
             if url:
@@ -319,7 +330,19 @@ def main() -> int:
         sys.exit(f"versions.yaml 缺少字段：{', '.join(sorted(missing))}")
 
     group_ids = {g["id"] for g in data["groups"]}
+    anchor = parse_date(data["meta"]["last_checked"])
+    required_fields = ("id", "group", "name", "platform")
+    seen_ids: set[str] = set()
+
     for v in data["variants"]:
+        for field in required_fields:
+            if not v.get(field):
+                sys.exit(f"变体 {v.get('id') or v} 缺少必填字段：{field}")
+
+        if v["id"] in seen_ids:
+            sys.exit(f"变体 id 重复：{v['id']}（每条清单项必须有唯一 id）")
+        seen_ids.add(v["id"])
+
         if v["group"] not in group_ids:
             sys.exit(f"变体 {v['id']} 的 group '{v['group']}' 未在 groups 中定义")
         if v.get("status") not in (None, "active", "stale", "taken_down", "archived"):
@@ -327,6 +350,21 @@ def main() -> int:
         # 已下架/已归档的条目允许没有链接（只剩版本号与说明）
         if v.get("status") not in ("taken_down", "archived") and not v.get("url"):
             sys.exit(f"变体 {v['id']} 缺少 url")
+
+        released = parse_date(v.get("released"))
+        if released and anchor and released > anchor:
+            sys.exit(
+                f"变体 {v['id']} 的 released（{released}）晚于 meta.last_checked（{anchor}）。"
+                "发布日期不可能晚于核对日期，请核对这两处。"
+            )
+
+        pre = v.get("prerelease")
+        if pre is not None:
+            if not isinstance(pre, dict) or not pre.get("version") or not pre.get("released"):
+                sys.exit(f"变体 {v['id']} 的 prerelease 必须同时提供 version 与 released")
+            pre_released = parse_date(pre["released"])
+            if pre_released and anchor and pre_released > anchor:
+                sys.exit(f"变体 {v['id']} 的 prerelease.released 晚于 meta.last_checked")
 
     for lang, filename in (("zh", "README.md"), ("en", "README.en.md")):
         path = ROOT / filename
