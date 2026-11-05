@@ -1,0 +1,11 @@
+# 统一换行符，避免 Windows 上提交 CRLF 导致脚本/工作流在 CI 里出问题
+* text=auto eol=lf
+
+*.py   text eol=lf
+*.yml  text eol=lf
+*.yaml text eol=lf
+*.md   text eol=lf
+*.sh   text eol=lf
+
+# 二进制/生成物不需要换行处理
+LICENSE text

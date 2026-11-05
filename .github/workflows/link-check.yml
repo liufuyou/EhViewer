@@ -1,0 +1,60 @@
+name: link-check
+
+on:
+  schedule:
+    # 每天 01:00 UTC = 北京时间 09:00
+    - cron: "0 1 * * *"
+  workflow_dispatch:
+  push:
+    paths:
+      - "data/versions.yaml"
+      - "scripts/check_links.py"
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: python -m pip install -q -r scripts/requirements.txt
+
+      - name: 巡检
+        id: check
+        run: |
+          set +e
+          body="$(python scripts/check_links.py --markdown)"
+          code=$?
+          set -e
+          echo "code=$code" >> "$GITHUB_OUTPUT"
+          {
+            echo 'body<<__BODY_EOF__'
+            echo "$body"
+            echo '__BODY_EOF__'
+          } >> "$GITHUB_OUTPUT"
+          echo "$body" >> "$GITHUB_STEP_SUMMARY"
+          exit 0
+
+      - name: 有硬失效则开 issue
+        if: steps.check.outputs.code != '0'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          BODY: ${{ steps.check.outputs.body }}
+        run: |
+          existing="$(gh issue list --state open --search '链接巡检 in:title' --json number --jq '.[0].number // empty')"
+          if [ -n "$existing" ]; then
+            echo "已有开启中的巡检 issue #$existing，追加评论。"
+            printf '%s\n' "$BODY" | gh issue comment "$existing" --body-file -
+          else
+            printf '%s\n' "$BODY" | gh issue create \
+              --title "链接巡检：发现失效链接（$(date -u +%Y-%m-%d)）" \
+              --body-file -
+          fi

@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.pyc
+
+# 脚本生成的临时产物
+sync-report.md
+
+# 凭据与密钥：这些文件绝不应进入仓库
+.pat_tmp
+.pat
+*.pat
+.env
+.env.*
+!.env.example
+token.txt
+*.token
+credentials.json
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa*
+id_ed25519*
+id_ecdsa*
+*.kdbx
+
+# 离线备份包（体积大且含完整历史）
+*.bundle
