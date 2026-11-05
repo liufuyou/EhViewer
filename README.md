@@ -98,3 +98,5 @@
 - 感谢所有仍在维护这些客户端的作者
 
 > 无论何时何地，都没有人有权力要求其他人不断为爱发电。
+
+<a href="https://star-history.com/#liufuyou/EhViewer&Date"><img src="https://api.star-history.com/svg?repos=liufuyou/EhViewer&type=Date&legend=top-left" alt="star history" width="620"></a>

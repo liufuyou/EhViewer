@@ -369,6 +369,11 @@ def build(lang: str, data: dict) -> str:
         out.append("> Nobody is entitled to demand unpaid work from others, ever.")
 
     out.append("")
+    out.append(
+        f'<a href="https://star-history.com/#{REPO}&Date">'
+        f'<img src="https://api.star-history.com/svg?repos={REPO}&type=Date&legend=top-left" '
+        f'alt="star history" width="620"></a>'
+    )
     return "\n".join(out)
 
 
