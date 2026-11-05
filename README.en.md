@@ -75,6 +75,12 @@ Every app listed here is third-party. Please avoid naming other apps in comment 
 
 This project is a link index only. It does not host, modify, or redistribute any application. All apps belong to their respective authors; use at your own risk and follow your local laws.
 
+## License
+
+The content of this repository is licensed under [CC BY-NC-SA 4.0](./LICENSE): you may copy, redistribute and adapt it, provided you **give appropriate credit, do not use it for commercial purposes, and license your adaptation under the same terms**.
+
+Commits up to `5c584b9` remain published under GPL-3.0, which cannot be revoked. See [NOTICE.md](./NOTICE.md) for scope and history.
+
 ## Credits
 
 - [E-Hentai](https://e-hentai.org) (a working network setup may be required in some regions)

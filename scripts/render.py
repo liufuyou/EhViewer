@@ -278,6 +278,18 @@ def build(lang: str, data: dict) -> str:
             "所有 App 的版权归各自作者所有，使用风险自负，请遵守所在地法律法规。"
         )
         out.append("")
+        out.append("## 许可")
+        out.append("")
+        out.append(
+            "本仓库内容按 [CC BY-NC-SA 4.0](./LICENSE) 授权：可以复制、分发、修改，"
+            "但**必须署名、不得用于商业目的、修改版须使用相同许可证**。"
+        )
+        out.append("")
+        out.append(
+            "`5c584b9` 及之前的提交仍按 GPL-3.0 发布，该授权不可撤销。"
+            "授权范围与历史说明见 [NOTICE.md](./NOTICE.md)。"
+        )
+        out.append("")
         out.append("## 参考与致谢")
         out.append("")
         out.append("- [E-Hentai](https://e-hentai.org)（部分地区需要自备网络环境）")
@@ -297,6 +309,19 @@ def build(lang: str, data: dict) -> str:
         out.append(
             "This project is a link index only. It does not host, modify, or redistribute any application. "
             "All apps belong to their respective authors; use at your own risk and follow your local laws."
+        )
+        out.append("")
+        out.append("## License")
+        out.append("")
+        out.append(
+            "The content of this repository is licensed under [CC BY-NC-SA 4.0](./LICENSE): "
+            "you may copy, redistribute and adapt it, provided you **give appropriate credit, "
+            "do not use it for commercial purposes, and license your adaptation under the same terms**."
+        )
+        out.append("")
+        out.append(
+            "Commits up to `5c584b9` remain published under GPL-3.0, which cannot be revoked. "
+            "See [NOTICE.md](./NOTICE.md) for scope and history."
         )
         out.append("")
         out.append("## Credits")
