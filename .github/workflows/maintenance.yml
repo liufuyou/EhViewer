@@ -1,0 +1,57 @@
+name: maintenance
+
+# GitHub 会在仓库 60 天没有推送后停用定时任务，所以同时挂 push 兜底
+
+on:
+  schedule:
+    - cron: "17 3 * * *"
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pull-requests: write
+
+concurrency:
+  group: maintenance
+  cancel-in-progress: false
+
+jobs:
+  expire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: 安装依赖
+        run: python -m pip install -q -r scripts/requirements.txt
+
+      - name: 清理到期字段
+        run: python scripts/expire.py
+
+      - name: 有改动则开 PR
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if git diff --quiet; then
+            echo "没有到期项，结束。"
+            exit 0
+          fi
+          git diff --stat
+          BR="chore/expire-$(date -u +%Y%m%d)"
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git checkout -b "$BR"
+          git add -A
+          git commit -m "chore: 清理已到期的 README 字段"
+          git push origin "$BR"
+          gh pr create \
+            --title "chore: 清理已到期的 README 字段" \
+            --body "到期的字段已从 \`data/versions.yaml\` 移除，README 重新生成。合并后生效。" \
+            --base main \
+            --head "$BR"

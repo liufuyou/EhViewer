@@ -24,7 +24,10 @@ python scripts/render.py
 # 3. 验证链接
 python scripts/check_links.py
 
-# 4. 提交（README 的改动请一并提交）
+# 4. 确认生成物与清单一致（CI 也会跑）
+python scripts/render.py --check
+
+# 5. 提交（README 的改动请一并提交）
 git add -A && git commit -m "data: 更新 XX 版本至 x.y.z"
 ```
 
@@ -35,8 +38,12 @@ git add -A && git commit -m "data: 更新 XX 版本至 x.y.z"
 | 某个版本发了新版 | 该条目的 `version` 与 `released` |
 | 链接换了地址 | 该条目的 `url` |
 | 版本彻底没了 | `status: taken_down`，并在 `zh_note`/`en_note` 写明核实时间 |
-| 作者停更但仓库还在 | `status: archived` |
-| 新增一个分支版本 | 在对应 group 下新增条目，四个字段必填：`id`、`group`、`name`、`url`+`platform` |
+| 作者停更、仓库还在 | 把条目移到 `dormant` 分组即可，状态由日期自动算成「停更」 |
+| 仓库被作者归档 / 长期只读 | `status: archived` |
+| 距上次发版超过 60 天 | 不用改，状态自动变「更新较少」；超过 180 天变「停更」 |
+| 新增一个分支版本 | 在对应 group 下新增条目，必填 `id`、`group`、`name`、`platform`、`url`，以及在架条目的 `released` |
+
+> `status` 只接受 `taken_down` / `archived`。写 `active` / `stale` 会被生成脚本直接拒绝——活跃程度是按 `released` 算的，写死就会和日期打架。
 
 ## 提 PR 时请说明
 

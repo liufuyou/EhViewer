@@ -16,11 +16,15 @@ python scripts/render.py
 # 3. 检查链接
 python scripts/check_links.py
 
-# 4. 提交
+# 4. 确认生成物与清单一致（CI 也会跑这一步）
+python scripts/render.py --check
+
+# 5. 提交
 git add -A && git commit -m "chore: 核对至 2026-11"
 ```
 
-就这四步。不要直接编辑 `README.md` 或 `README.en.md`——它们下次运行脚本就会被覆盖。
+就这五步。不要直接编辑 `README.md` 或 `README.en.md`——它们下次运行脚本就会被覆盖，
+`render-check` 工作流也会因为「生成物与清单不一致」直接失败。
 
 ---
 
@@ -30,7 +34,10 @@ git add -A && git commit -m "chore: 核对至 2026-11"
 data/versions.yaml          唯一数据源。所有版本信息都在这里
 scripts/render.py           从 yaml 生成两份 README
 scripts/check_links.py      检查所有链接是否还活着
+scripts/expire.py           按日期清理到期字段
 .github/workflows/link-check.yml   每天自动巡检
+.github/workflows/maintenance.yml  每天处理到期字段（云端跑，不靠本地）
+.github/workflows/render-check.yml 校验 README 与清单一致
 README.md                   中文版（自动生成）
 README.en.md                英文版（自动生成）
 ```
@@ -66,14 +73,23 @@ CI 每天会自动巡检，真有链接挂了会开 issue 通知你——所以�
 
 ## 状态字段的含义
 
+**活跃程度不用手写**，脚本按 `released` 与 `meta.last_checked` 的差值自动分三档：
+
+| 距上次发版 | 显示 | 归哪一组 |
+| --- | --- | --- |
+| ≤ `active_within_days`（默认 60 天） | 活跃 | 推荐版本 / 其他平台 |
+| 60 ~ `dormant_after_days`（默认 180 天） | 更新较少 | 其他 Android 分支 |
+| > `dormant_after_days` | 停更 | 已停更 |
+
+只有下面两种状态必须手写，因为无法从日期推断：
+
 | status | 什么时候用 | 页面上的显示 |
 | --- | --- | --- |
-| `active` | 正常维护，最近有发版 | 活跃 |
-| `stale` | 还在，但很久没更新 | 滞后 |
-| `archived` | 已归档，仅供查证 | 已归档 |
-| `taken_down` | 仓库打不开了 | 已下架（并加删除线） |
+| `taken_down` | 仓库打不开了（DMCA / 删除 / 私有化） | 已下架，标题加删除线，链接置为 — |
+| `archived` | 官方或社区已归档，仅供查证 | 已归档 |
 
-`stale` 可以不用手写：脚本会对比 `released` 和 `meta.last_checked`，超过 `stale_after_days`（默认 180 天）自动标成滞后。
+> `status: active` / `low` / `dormant` 会被校验直接拒绝——状态是算出来的，写死了就会和日期打架。
+> 分组（`group`）仍然是手写的，所以条目停更之后要记得把它移到 `dormant` 组；放错时脚本会打印提示（不报错）。
 
 ---
 
@@ -90,7 +106,7 @@ CI 每天会自动巡检，真有链接挂了会开 issue 通知你——所以�
       released: 2026-08-20
 ```
 
-这样做的好处是：稳定版仍然参与"是否滞后"的计算，预发布只作为参考信息展示，不会让一个长期只发 beta 的项目看起来"很活跃"。
+这样做的好处是：稳定版仍然参与"活跃 / 更新较少 / 停更"的计算，预发布只作为参考信息展示，不会让一个长期只发 beta 的项目看起来"很活跃"。
 
 `prerelease` 必须同时给出 `version` 和 `released`，否则生成时会直接报错。
 
@@ -107,8 +123,6 @@ python scripts/sync_releases.py --only sxj   # 只查一个条目（调试用）
 ```
 
 `.github/workflows/sync-releases.yml` 每 6 小时自动跑一次，有新版本就**开一个 PR**，不会直接推 `main`。这样做是因为版本号是自动写入的，让人过一眼再合并，比让机器人直接改主干安全。
-
-关于「实时」：GitHub 的 `schedule` 最短间隔是 5 分钟，但高峰期会延迟、甚至丢弃某次触发，没有 SLA。所以这里定位是**准实时**（发版后几小时内同步）。要秒级只能上 webhook + 自己的服务端，见文末「已知待决定的事」。
 
 脚本只改已存在的条目，**不会新增或删除条目**——新出现的分支仍需你手动加进清单。
 
@@ -131,9 +145,48 @@ python scripts/sync_releases.py --only sxj   # 只查一个条目（调试用）
 
 所以 `suspected` 的正确用法是「提醒你去看一眼」，确认无关后把 `security_level` 和两个 `security_note` 删掉即可，README 里的警告随之消失。
 
-> 关键词扫描有误报，这是已知设计取舍：宁可多报一次让你花 30 秒确认，也不要漏掉一次真实的安全问题。
+`latest_summary` 取发布说明的第一行有效内容，不调用模型，所以可能有误报，`suspected` 需要自己看一遍。
 
-`latest_summary` 是**抽取式**的——取发布说明第一行有效内容，不调用任何模型。好处是零成本、可离线、结果稳定；代价是遇到「一堆琐碎修复」时概括性不够。想要真正的归纳，需要接一个模型 API，见「已知待决定的事」。
+---
+
+## 下载安全与常见问题（写在 YAML 里）
+
+README 的「下载安全」和「常见问题」不是硬编码在 Python 里的，而是 `data/versions.yaml` 末尾的两个列表：
+
+```yaml
+safety:
+  - zh: 一句话
+    en: one sentence
+
+faq:
+  - zh_q: 问题？
+    en_q: Question?
+    zh_a: 答案
+    en_a: Answer
+```
+
+加一条就多一行，改文案不用碰 `scripts/render.py`。四个字段缺一个会直接报错——宁可生成失败，也不要中英两版缺一段。
+
+> 英文文案里不要出现半角冒号加空格，YAML 会把它当键值分隔符。
+
+---
+
+## 带期限的字段（自动过期）
+
+有些内容只想挂一段时间，比如 README 顶部的「最后核对」行——它的作用是让访客一眼看出仓库最近动过，但挂太久反而显得像是很久没更新。
+
+这类东西不写死在代码里，而是在 `meta` 里给一个到期日：
+
+```yaml
+meta:
+  checked_line_until: 2027-02-05   # 到期后这行自动消失
+```
+
+`scripts/expire.py` 每天跑一次（由 `maintenance.yml` 触发）：当天超过这个日期，就把该字段从 `versions.yaml` 里删掉，再重新生成 README，然后开一个 PR。**不需要记日期，也不依赖本地机器。**
+
+要加同类字段，照着 `checked_line_until` 在 `expire.py` 里补一段判断；`render.py` 靠「字段在不在」决定要不要输出。
+
+> 注意：GitHub 会在仓库连续 60 天没有任何推送后停掉定时任务。所以这个 workflow 同时挂在 `push` 上——推迟到下次真实更新时补做，不会漏。
 
 ---
 
@@ -146,18 +199,14 @@ python scripts/sync_releases.py --only sxj   # 只查一个条目（调试用）
 - `group` 未在 `groups` 中定义
 - `status` 取值非法
 - 在架条目缺少 `url`
+- 在架条目缺少 `released`（没有日期就算不出状态）
 - `released` 晚于 `meta.last_checked`（发布日期不可能晚于核对日期）
 - `prerelease` 字段不全
+- `meta.active_within_days` ≥ `dormant_after_days`（「更新较少」这一档会被吞掉）
+- `safety` / `faq` 的某一条缺中文或缺英文
 
 ---
 
-## 关于日期的设计（重要）
-
-判断"是否滞后"用的是 `meta.last_checked`，**不是当天日期**。
-
-这意味着：同一份数据，无论哪天运行脚本，产出都完全一样，不会产生无意义的 diff。想刷新状态，就更新 `last_checked` 再跑。
-
----
 
 ## 断更很久之后怎么重启
 
@@ -166,8 +215,6 @@ python scripts/sync_releases.py --only sxj   # 只查一个条目（调试用）
 3. 改完 `last_checked`，跑生成脚本，提交
 4. 一次只做这一件事，不要顺手改文案或配色
 
-重建节奏靠"小步、可验证"，不靠意志力。
-
 ---
 
 ## 已知待决定的事
@@ -175,8 +222,9 @@ python scripts/sync_releases.py --only sxj   # 只查一个条目（调试用）
 - [x] **许可证**：2026-11-05 已从 GPL-3.0 改为 **CC BY-NC-SA 4.0**。`LICENSE` 存放官方原文（未改动任何一字，保证 GitHub 能识别），授权范围、历史版本与商业授权说明写在 `NOTICE.md`。
   - 变更不追溯：`5c584b9` 及之前的提交仍是 GPL-3.0
   - 注意：GitHub 公开仓库的服务条款本身允许他人查看与 fork，许可证管不住这一层
-- [ ] **`References` 分支**：目前是 3 个文件的旧状态副本，与 README 里的"参考资料存档"链接对应。要么保留并在里面放真正有价值的资料，要么删除分支并去掉链接。
-- [ ] **是否做 GitHub Pages**：把清单渲染成可搜索的单页，比 README 更好用，但需要额外的模板和部署流程。
-- [ ] **要不要「真·实时」**：现在是 6 小时轮询（准实时）。要秒级必须用 GitHub webhook，它需要一个能被公网访问的接收端——这是新增的基础设施，不是改配置能解决的。
-- [ ] **摘要要不要接模型**：现在是抽取式（取发布说明第一行）。接模型能真正归纳，但需要 API key、每次发版产生费用，且模型可能改写原意。建议只有在条目多到人工看不过来时才考虑。
-- [ ] **是否托管 APK**：目前结论是**不托管**，只放官方链接。若要改，先读 `NOTICE.md` 里「不覆盖的范围」一节——托管安装包会把免责声明里的「不托管、不再分发」直接推翻。
+- [x] **`References` 分支**：2026-11-05 已删除（连同 `E-Hentai-Viewer`、`feat/release-sync` 一并清理），README 里的"参考资料存档"链接同步移除。删除前打了完整镜像与 bundle 备份；需要旧快照就 `git bundle` 还原，或从备份里 `git push origin <sha>:refs/heads/archive-2022`。
+- [x] **删掉 README 顶部的「最后核对」行**：改由 `maintenance.yml` + `scripts/expire.py` 在 2027-02-05 之后自动完成（见「带期限的字段」一节），不再需要人工记日期。
+- [ ] **GitHub Pages**：把清单渲染成可搜索的单页，需要额外模板和部署流程。
+- [ ] **真·实时**：现在 6 小时轮询，要秒级得上 webhook + 公网接收端。
+- [ ] **摘要接模型**：现在取发布说明第一行，接模型能真正归纳，但要 key 和费用。
+- [ ] **托管 APK**：结论是不托管。真要改，先读 `NOTICE.md` 的「不覆盖的范围」。

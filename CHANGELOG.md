@@ -2,6 +2,18 @@
 
 面向维护者，记录"哪天核对过、改了什么"。README 的正文不在这里，因为它是自动生成的。
 
+## 2026-11-05 · 第二轮：正文补全与状态口径
+
+- 去掉 README 里面向维护者的提示（「本页由清单自动生成」、页脚、单独成节的「提问前」），改由 `render-check` 工作流兜底
+- 补「下载安全」3 条与「常见问题」4 问；文案放在 `data/versions.yaml` 的 `safety` / `faq` 里
+- 补录 HarmonyOS-EhViewer（`MinamiJogen/HarmonyOS-EhViewer`，v1.1.0 / 2026-10-08，ArkTS 原生）
+- 彩 E（UjuiUjuMandan）移入新增的「已停更」分组，最后版本 1.14.6（2025-12-17）
+- 移除指向 `tree/References` 的「参考资料存档」链接（该分支已删除）
+- 顶部徽章换成 `github/last-commit` 动态徽章（显示「最近更新 · 今天 / 3 天前」），由 shields.io 实时取数，不用人工维护
+- 新增 `scripts/expire.py` 与 `maintenance.yml`：带到期日的字段（目前是 README 顶部的「最后核对」行）到期后由云端定时任务自动摘掉并开 PR
+- 状态改为三档自动判定：≤60 天活跃、60–180 天更新较少、>180 天停更；`status` 只允许手写 `taken_down` / `archived`
+- `render.py` 新增 `--check`，并加 `render-check` 工作流校验生成物一致性
+
 ## 2026-11-05 · 恢复维护
 
 停滞 8.7 个月后的第一次全面核对。

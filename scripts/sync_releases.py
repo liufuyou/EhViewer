@@ -1,22 +1,12 @@
 #!/usr/bin/env python3
-"""同步上游 GitHub Release 到 data/versions.yaml。
+"""把上游最新 Release 同步到 data/versions.yaml，只改已有条目，不增删。
 
-设计取舍：
-- 只改 data/versions.yaml 里已经存在的、可跟踪的条目，不新增、不删除条目。
-- 采用「按行手术式修改」而不是 yaml.safe_dump 回写，因为清单里带大量注释，
-  一旦整体序列化，注释和字段顺序会全部丢失。
-- 默认 dry-run，只打印将要发生的变化；加 --apply 才落盘。
+    python scripts/sync_releases.py              只看不改
+    python scripts/sync_releases.py --apply      写回清单
+    python scripts/sync_releases.py --json       机器可读
 
-用法：
-    python scripts/sync_releases.py                 # 只看不改
-    python scripts/sync_releases.py --apply          # 写入 versions.yaml
-    python scripts/sync_releases.py --apply --report sync-report.md
-    python scripts/sync_releases.py --json           # 机器可读输出
-
-退出码：
-    0  正常（有无更新都算正常）
-    2  发现已确认的安全公告（供 workflow 决定是否高亮）
-    1  运行错误（网络/数据格式）
+按行改写而不是 yaml.safe_dump 回写，否则清单里的注释和字段顺序会丢。
+退出码 2 表示发现已确认的安全公告，workflow 据此高亮。
 """
 
 from __future__ import annotations
@@ -41,8 +31,7 @@ TIMEOUT = 25
 
 GH_URL_RE = re.compile(r"https?://github\.com/([^/\s]+)/([^/#?\s]+)")
 
-# 发布说明里出现这些词，判为「疑似涉及安全」，需人工确认。
-# 这里刻意保守：宁可多报一次让人看一眼，也不要漏掉。
+# 命中这些词判为「疑似涉及安全」，需要人工确认
 SECURITY_TERMS = (
     "cve-",
     "security",
@@ -63,8 +52,7 @@ CVE_RE = re.compile(r"CVE-\d{4}-\d{4,}", re.I)
 
 SKIP_STATUS = {"taken_down", "archived"}
 
-# 字段的规范顺序。插入新字段时按这个顺序找位置，避免每次写入都挤在 released 后面、
-# 顺序取决于写入先后，读起来忽上忽下。
+# 字段顺序，插入新字段时按这个顺序找位置
 FIELD_ORDER = (
     "group",
     "name",
@@ -87,8 +75,6 @@ FIELD_ORDER = (
     "en_note",
 )
 
-
-# ---------------------------------------------------------------- GitHub API
 def api_get(path: str, token: str | None) -> tuple[object | None, str | None]:
     """返回 (数据, 错误)。错误不抛异常，交给调用方决定怎么处理。"""
     req = urllib.request.Request(
@@ -118,7 +104,6 @@ def repo_of(variant: dict) -> str | None:
     return f"{m.group(1)}/{m.group(2)}" if m else None
 
 
-# ---------------------------------------------------------------- 版本与摘要
 def version_key(tag: str) -> tuple[int, ...]:
     nums = re.findall(r"\d+", tag or "")
     return tuple(int(n) for n in nums) if nums else (0,)
@@ -176,7 +161,6 @@ def parse_date(value: str | None) -> date | None:
         return None
 
 
-# ---------------------------------------------------------------- 行内编辑
 def _scalar(value: str) -> str:
     """把字符串安全地写进 YAML 单行。需要引号的统一用双引号。"""
     if not value:
@@ -224,7 +208,6 @@ def set_field(lines: list[str], variant_id: str, key: str, value: str) -> bool:
     return True
 
 
-# ---------------------------------------------------------------- 主流程
 def main() -> int:
     ap = argparse.ArgumentParser(description="同步上游 release 到 versions.yaml")
     ap.add_argument("--data", type=Path, default=DEFAULT_DATA, help="清单路径")

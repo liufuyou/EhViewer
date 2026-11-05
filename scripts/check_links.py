@@ -1,16 +1,11 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""链接巡检：检查 data/versions.yaml 里所有链接的可用性。
+"""检查 data/versions.yaml 里的链接是否还能打开。
 
-用法:
-    python scripts/check_links.py              # 输出报告，有硬失效时退出码 1
-    python scripts/check_links.py --json       # 机器可读输出，供 CI 使用
+    python scripts/check_links.py          输出报告，有硬失效时退出码 1
+    python scripts/check_links.py --json   机器可读，供 CI 用
 
-判定分级:
-    OK          2xx / 3xx
-    DEAD        404 / 410 / 400，链接确实没了
-    TAKEN_DOWN  451，通常是被 DMCA 下架
-    UNREACHABLE 连接失败 / 超时。可能是本地网络问题，不算硬失效，只告警。
+结果分四级：OK / DEAD(404,410,400) / TAKEN_DOWN(451) / UNREACHABLE(连不上，只告警)。
 """
 
 from __future__ import annotations

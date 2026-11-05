@@ -1,9 +1,5 @@
 name: sync releases
 
-# 为什么要 6 小时而不是「实时」：GitHub 的 schedule 最短间隔是 5 分钟，但实际上
-# 高峰期会延迟十几分钟甚至丢弃某次触发，且没有官方 SLA。所以这里的定位是「准实时」，
-# 对「发版后几小时内同步」这个需求完全够用；若要真正的秒级，得用 webhook + 自己的服务端。
-
 on:
   schedule:
     - cron: "23 */6 * * *"
@@ -38,7 +34,7 @@ jobs:
       - name: 同步上游 release
         id: sync
         env:
-          # 用内置 token 而不是 PAT：额度 5000 次/小时，够 30 个条目轮询，且不需要额外保管密钥
+          # 用内置 token，额度够用，也不必另外保管密钥
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           set +e
