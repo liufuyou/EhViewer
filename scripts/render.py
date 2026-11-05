@@ -330,7 +330,8 @@ def main() -> int:
 
     for lang, filename in (("zh", "README.md"), ("en", "README.en.md")):
         path = ROOT / filename
-        path.write_text(build(lang, data), encoding="utf-8")
+        # 显式指定 newline="\n"，否则 Windows 上会被转成 CRLF，导致每次生成都产生无意义的 diff
+        path.write_text(build(lang, data), encoding="utf-8", newline="\n")
         print(f"已生成 {filename}")
 
     return 0
