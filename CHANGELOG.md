@@ -49,5 +49,5 @@
 
 **待决定**
 
-- 许可证是否从 GPL-3.0 改为 CC0-1.0 / MIT（详见 `MAINTAINING.md`）
+- 许可证是否从 GPL-3.0 改为 CC0-1.0 / MIT（详见 `MAINTAINING.md`）—— 同日已决定：改为 **CC BY-NC-SA 4.0**，见上一条记录
 - `References` 分支去留
