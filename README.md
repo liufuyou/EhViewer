@@ -6,7 +6,7 @@
 
 <p align="center">⭐️star 支持，感谢！</p>
 
-<p align="center">EhViewer 是一个 E-Hentai 阅读器合集，提供目前仍然可用的版本。</p>
+<p align="center">EhViewer 是一个 E-Hentai 阅读器合集，提供目前仍然可用的版本，覆盖 Android、iOS、鸿蒙，以及 Windows / macOS / Linux 桌面端。</p>
 
 > 最后核对 `2026-11-05` · 可用 6 个 · 已停更或下架 6 个
 
@@ -15,7 +15,7 @@
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer SXJ（新绿 E）<br><sub>中文优化，更新最勤</sub> | Android | 活跃 | 2.0.2.7 | 2026-11-02 | [下载](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
-| EhViewer NekoInverter（修白 E）<br><sub>非 MD3 风格，改动克制，最接近传统体验</sub> | Android 9+ | 活跃 | v1.8.14 | 2026-10-22 | [下载](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
+| EhViewer NekoInverter（修白 E）<br><sub>非 MD3 风格，改动克制，最接近传统体验</sub> | Android 9+ | 活跃 | 1.8.14 | 2026-10-22 | [下载](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
 
 <details>
 <summary>其他 Android 分支（1 个）</summary>
@@ -30,20 +30,19 @@
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| JHenTai<br><sub>Flutter 实现，Android、iOS、Windows、macOS、Linux 通用</sub> | 全平台 | 活跃 | v8.0.18 | 2026-10-23 | [下载](https://github.com/jiangtian616/JHenTai/releases) |
-
+| JHenTai<br><sub>Flutter 实现，Android、iOS、Windows、macOS、Linux 通用</sub> | 全平台 | 活跃 | 8.0.18 | 2026-10-23 | [下载](https://github.com/jiangtian616/JHenTai/releases) |
 
 ## iOS
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| EhPanda<br><sub>稳定版 3 个多月未更新，3.0.0 在测试中</sub> | iOS | 更新较少 | v2.8.1<br><sub>预发布 3.0.0</sub> | 2026-07-20 | [项目](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md) |
+| EhPanda<br><sub>稳定版 3 个多月未更新，3.0.0 在测试中；ipa 需用 AltStore 等工具侧载</sub> | iOS 26.0+ | 更新较少 | 2.8.1<br><sub>预发布 3.0.0</sub> | 2026-07-20 | [下载](https://github.com/EhPanda-Team/EhPanda/releases) |
 
 ## 鸿蒙
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| HarmonyOS EhViewer<br><sub>鸿蒙原生（ArkTS），目前唯一的鸿蒙客户端</sub> | HarmonyOS 6.1+ | 活跃 | v1.1.0 | 2026-10-08 | [下载](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
+| HarmonyOS EhViewer<br><sub>鸿蒙原生（ArkTS），目前唯一的鸿蒙客户端；仅提供 hap，需自行侧载安装</sub> | HarmonyOS 7+ | 活跃 | 1.1.0 | 2026-10-08 | [下载](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
 
 ## 已停更
 
@@ -51,7 +50,8 @@
 | --- | --- | --- | --- | --- | --- |
 | EhViewer UjuiUjuMandan（彩 E 直连版）<br><sub>自 FooIbar 分支分出，保留了直连；最后版本停在 2025-12</sub> | Android 9+ | 停更 | 1.14.6 | 2025-12-17 | [下载](https://github.com/UjuiUjuMandan/EhViewer/releases) |
 
-## 已下架 / 已归档
+<details>
+<summary>已下架 / 已归档（5 个）</summary>
 
 > 不要再用这些。部分版本还会导致数据不兼容，迁移前务必备份。
 
@@ -62,6 +62,8 @@
 | EhViewer Overhauled（MD3 风格）<br><sub>已归档，与新版数据格式不兼容</sub> | Android | 已归档 | 1.8.8.3 | — | — |
 | EhViewer Hippo Seven（原版绿 E）<br><sub>上游早已停更</sub> | Android | 已归档 | 1.7.8 | — | — |
 | EhViewer NekoInverter 旧版<br><sub>旧版本线，已由 v1.8.x 取代</sub> | Android | 已归档 | 1.7.26.4 | — | — |
+
+</details>
 
 ## 该选哪个
 
@@ -112,6 +114,7 @@
 - [E-Hentai](https://e-hentai.org)（部分地区需要自备网络环境）
 - 感谢 Cloudflare 对本项目的帮助
 - 感谢所有仍在维护这些客户端的作者
+- 维护与变更：[贡献说明](./CONTRIBUTING.md) · [变更记录](./CHANGELOG.md)
 
 > 无论何时何地，都没有人有权力要求其他人不断为爱发电。
 

@@ -15,14 +15,14 @@ groups:
     zh: 推荐版本
     en: Recommended
 
-  - id: cross_platform
-    zh: 全平台
-    en: All platforms
-
   - id: android_alt
     zh: 其他 Android 分支
     en: Other Android builds
     collapsed: true
+
+  - id: cross_platform
+    zh: 全平台/桌面端
+    en: All platforms / Desktop
 
   - id: ios
     zh: iOS
@@ -41,8 +41,7 @@ groups:
     en: Taken down / archived
     zh_intro: 不要再用这些。部分版本还会导致数据不兼容，迁移前务必备份。
     en_intro: Do not use these. Some may cause data incompatibility — back up before migrating.
-    # 到此日期后本组改为折叠显示。不写则一直展开。
-    # collapse_after: 2027-02-05
+    collapsed: true
 
 variants:
   # ---------- 推荐 / 全平台 ----------
@@ -97,26 +96,26 @@ variants:
   - id: ehpanda
     group: ios
     name: EhPanda
-    platform: iOS
+    platform: iOS 26.0+
     version: v2.8.1
     released: 2026-07-20
     # 预发布单独记，不进「最新版本」列
     prerelease:
       version: 3.0.0
       released: 2026-08-20
-    url: https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md
-    zh_note: 稳定版 3 个多月未更新，3.0.0 在测试中
-    en_note: No stable release for 3+ months; 3.0.0 is in testing
+    url: https://github.com/EhPanda-Team/EhPanda/releases
+    zh_note: 稳定版 3 个多月未更新，3.0.0 在测试中；ipa 需用 AltStore 等工具侧载
+    en_note: No stable release for 3+ months; 3.0.0 is in testing. ipa requires sideloading (e.g. AltStore)
 
   - id: harmony
     group: harmonyos
     name: HarmonyOS EhViewer
-    platform: HarmonyOS 6.1+
+    platform: HarmonyOS 7+
     version: v1.1.0
     released: 2026-10-08
     url: https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases
-    zh_note: 鸿蒙原生（ArkTS），目前唯一的鸿蒙客户端
-    en_note: Native HarmonyOS client (ArkTS), the only one so far
+    zh_note: 鸿蒙原生（ArkTS），目前唯一的鸿蒙客户端；仅提供 hap，需自行侧载安装
+    en_note: Native HarmonyOS client (ArkTS), the only one so far; ships as .hap only, sideload it yourself
 
   # ---------- 已停更 ----------
   - id: ujuiujumandan

@@ -6,7 +6,7 @@
 
 <p align="center">⭐️ star for support, thank you!</p>
 
-<p align="center">A curated index of E-Hentai viewers that are still available.</p>
+<p align="center">A curated index of E-Hentai viewers that are still available, covering Android, iOS, HarmonyOS, and Windows / macOS / Linux desktops.</p>
 
 > Last checked `2026-11-05` · 6 available · 6 dormant / archived
 
@@ -15,13 +15,7 @@
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer SXJ (New Green E)<br><sub>Chinese-oriented fork, ships most often</sub> | Android | Active | 2.0.2.7 | 2026-11-02 | [Download](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
-| EhViewer NekoInverter (White E)<br><sub>Non-MD3, restrained changes, closest to the classic experience</sub> | Android 9+ | Active | v1.8.14 | 2026-10-22 | [Download](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
-
-## All platforms
-
-| Variant | Platform | Status | Latest | Released | Get |
-| --- | --- | --- | --- | --- | --- |
-| JHenTai<br><sub>Flutter-based; runs on Android, iOS, Windows, macOS and Linux</sub> | All platforms | Active | v8.0.18 | 2026-10-23 | [Download](https://github.com/jiangtian616/JHenTai/releases) |
+| EhViewer NekoInverter (White E)<br><sub>Non-MD3, restrained changes, closest to the classic experience</sub> | Android 9+ | Active | 1.8.14 | 2026-10-22 | [Download](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
 
 <details>
 <summary>Other Android builds (1)</summary>
@@ -32,17 +26,23 @@
 
 </details>
 
+## All platforms / Desktop
+
+| Variant | Platform | Status | Latest | Released | Get |
+| --- | --- | --- | --- | --- | --- |
+| JHenTai<br><sub>Flutter-based; runs on Android, iOS, Windows, macOS and Linux</sub> | All platforms | Active | 8.0.18 | 2026-10-23 | [Download](https://github.com/jiangtian616/JHenTai/releases) |
+
 ## iOS
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| EhPanda<br><sub>No stable release for 3+ months; 3.0.0 is in testing</sub> | iOS | Less active | v2.8.1<br><sub>pre-release 3.0.0</sub> | 2026-07-20 | [Project](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md) |
+| EhPanda<br><sub>No stable release for 3+ months; 3.0.0 is in testing. ipa requires sideloading (e.g. AltStore)</sub> | iOS 26.0+ | Less active | 2.8.1<br><sub>pre-release 3.0.0</sub> | 2026-07-20 | [Download](https://github.com/EhPanda-Team/EhPanda/releases) |
 
 ## HarmonyOS
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| HarmonyOS EhViewer<br><sub>Native HarmonyOS client (ArkTS), the only one so far</sub> | HarmonyOS 6.1+ | Active | v1.1.0 | 2026-10-08 | [Download](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
+| HarmonyOS EhViewer<br><sub>Native HarmonyOS client (ArkTS), the only one so far; ships as .hap only, sideload it yourself</sub> | HarmonyOS 7+ | Active | 1.1.0 | 2026-10-08 | [Download](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
 
 ## Dormant
 
@@ -50,7 +50,8 @@
 | --- | --- | --- | --- | --- | --- |
 | EhViewer UjuiUjuMandan (Colored E with direct connect)<br><sub>Forked from FooIbar with direct connect restored; last build 2025-12</sub> | Android 9+ | Dormant | 1.14.6 | 2025-12-17 | [Download](https://github.com/UjuiUjuMandan/EhViewer/releases) |
 
-## Taken down / archived
+<details>
+<summary>Taken down / archived (5)</summary>
 
 > Do not use these. Some may cause data incompatibility — back up before migrating.
 
@@ -62,6 +63,8 @@
 | EhViewer Hippo Seven (Original Green E)<br><sub>Upstream abandoned long ago</sub> | Android | Archived | 1.7.8 | — | — |
 | EhViewer NekoInverter (legacy)<br><sub>Legacy line, superseded by v1.8.x</sub> | Android | Archived | 1.7.26.4 | — | — |
 
+</details>
+
 ## Which one
 
 - **All platforms**: JHenTai, covering Android, iOS, Windows, macOS and Linux
@@ -70,7 +73,7 @@
 - **iOS / iPadOS**: EhPanda
 - **HarmonyOS**: HarmonyOS EhViewer
 
-Back up favorites and history before switching — data formats differ between forks.
+**Back up favorites and history before switching — data formats differ between forks.**
 
 ## Download safety
 
@@ -111,6 +114,7 @@ Commits up to `5c584b9` remain published under GPL-3.0, which cannot be revoked.
 - [E-Hentai](https://e-hentai.org) (a working network setup may be required in some regions)
 - Thanks to Cloudflare for supporting this project
 - Thanks to everyone still maintaining these clients
+- Maintenance: [Contributing](./CONTRIBUTING.md) · [Changelog](./CHANGELOG.md)
 
 > Nobody is entitled to demand unpaid work from others, ever.
 

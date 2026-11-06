@@ -9,6 +9,7 @@
 
 from __future__ import annotations
 
+import re
 import sys
 from datetime import date
 from pathlib import Path
@@ -68,6 +69,13 @@ def cell(text: str | None) -> str:
     return str(text).replace("|", "\\|")
 
 
+def fmt_version(value) -> str:
+    """统一版本号写法：去掉 tag 里的前导 v，清单里照抄原文即可。"""
+    if value is None or value == "":
+        return "—"
+    return re.sub(r"^[vV](?=\d)", "", str(value).strip())
+
+
 def display_name(variant: dict, lang: str) -> str:
     name = (variant.get("name_en") or variant["name"]) if lang == "en" else variant["name"]
     nickname = variant.get("nickname_zh") if lang == "zh" else variant.get("nickname_en")
@@ -77,14 +85,14 @@ def display_name(variant: dict, lang: str) -> str:
 
 
 def version_cell(variant: dict, lang: str) -> str:
-    base = cell(variant.get("version"))
+    base = cell(fmt_version(variant.get("version")))
     if variant.get("security_level"):
         base = f"⚠️ {base}"
     pre = variant.get("prerelease") or {}
     pre_version = pre.get("version")
     if pre_version:
         tag = "预发布" if lang == "zh" else "pre-release"
-        base = f"{base}<br><sub>{tag} {pre_version}</sub>"
+        base = f"{base}<br><sub>{tag} {fmt_version(pre_version)}</sub>"
     return base
 
 
@@ -113,10 +121,10 @@ def render_security(variants: list[dict], lang: str) -> list[str]:
             else ("confirmed" if v["security_level"] == "confirmed" else "suspected")
         if lang == "en":
             note = v.get("security_note_en") or v.get("security_note") or ""
-            out.append(f"- **{display_name(v, lang)} {v.get('version')}** ({tag}) — {note}")
+            out.append(f"- **{display_name(v, lang)} {fmt_version(v.get('version'))}** ({tag}) — {note}")
         else:
             note = v.get("security_note") or v.get("security_note_en") or ""
-            out.append(f"- **{display_name(v, lang)} {v.get('version')}**（{tag}）— {note}")
+            out.append(f"- **{display_name(v, lang)} {fmt_version(v.get('version'))}**（{tag}）— {note}")
     out.append("")
     if confirmed and lang == "zh":
         out.append("> 带「已确认」的条目已由上游发布 GHSA 公告，建议优先升级或在说明中标注风险。")
@@ -135,7 +143,7 @@ def render_updates(variants: list[dict], lang: str) -> list[str]:
     for v in items:
         released = v.get("released") or "—"
         out.append(
-            f"- **{display_name(v, lang)} {v.get('version')}**（{released}）— {v['latest_summary']}"
+            f"- **{display_name(v, lang)} {fmt_version(v.get('version'))}**（{released}）— {v['latest_summary']}"
         )
     out.append("")
     return out
@@ -263,9 +271,15 @@ def build(lang: str, data: dict) -> str:
     out.append("")
 
     if lang == "zh":
-        out.append("<p align=\"center\">EhViewer 是一个 E-Hentai 阅读器合集，提供目前仍然可用的版本。</p>")
+        out.append(
+            "<p align=\"center\">EhViewer 是一个 E-Hentai 阅读器合集，提供目前仍然可用的版本，"
+            "覆盖 Android、iOS、鸿蒙，以及 Windows / macOS / Linux 桌面端。</p>"
+        )
     else:
-        out.append("<p align=\"center\">A curated index of E-Hentai viewers that are still available.</p>")
+        out.append(
+            "<p align=\"center\">A curated index of E-Hentai viewers that are still available, "
+            "covering Android, iOS, HarmonyOS, and Windows / macOS / Linux desktops.</p>"
+        )
     out.append("")
 
     # 到期后 maintenance 会删掉该字段
@@ -325,7 +339,7 @@ def build(lang: str, data: dict) -> str:
         out.append("- **iOS / iPadOS**：EhPanda")
         out.append("- **鸿蒙**：HarmonyOS EhViewer")
         out.append("")
-        out.append("换版本前先备份收藏和阅读记录，不同分支的数据不通用。")
+        out.append("**换版本前先备份收藏和阅读记录，不同分支的数据不通用。**")
     else:
         out.append("## Which one")
         out.append("")
@@ -335,7 +349,7 @@ def build(lang: str, data: dict) -> str:
         out.append("- **iOS / iPadOS**: EhPanda")
         out.append("- **HarmonyOS**: HarmonyOS EhViewer")
         out.append("")
-        out.append("Back up favorites and history before switching — data formats differ between forks.")
+        out.append("**Back up favorites and history before switching — data formats differ between forks.**")
     out.append("")
 
     out.extend(render_bullets(data.get("safety") or [], lang,
@@ -368,6 +382,7 @@ def build(lang: str, data: dict) -> str:
         out.append("- [E-Hentai](https://e-hentai.org)（部分地区需要自备网络环境）")
         out.append("- 感谢 Cloudflare 对本项目的帮助")
         out.append("- 感谢所有仍在维护这些客户端的作者")
+        out.append("- 维护与变更：[贡献说明](./CONTRIBUTING.md) · [变更记录](./CHANGELOG.md)")
         out.append("")
         out.append("> 无论何时何地，都没有人有权力要求其他人不断为爱发电。")
     else:
@@ -396,6 +411,7 @@ def build(lang: str, data: dict) -> str:
         out.append("- [E-Hentai](https://e-hentai.org) (a working network setup may be required in some regions)")
         out.append("- Thanks to Cloudflare for supporting this project")
         out.append("- Thanks to everyone still maintaining these clients")
+        out.append("- Maintenance: [Contributing](./CONTRIBUTING.md) · [Changelog](./CHANGELOG.md)")
         out.append("")
         out.append("> Nobody is entitled to demand unpaid work from others, ever.")
 
@@ -522,6 +538,8 @@ def main(argv: list[str]) -> int:
     for lang, filename in (("zh", "README.md"), ("en", "README.en.md")):
         path = ROOT / filename
         content = build(lang, data)
+        if not content.endswith("\n"):
+            content += "\n"
         if check_only:
             current = path.read_text(encoding="utf-8").replace("\r\n", "\n") if path.exists() else ""
             if current != content:
