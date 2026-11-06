@@ -2,7 +2,9 @@
 
 <p align="center"><b>简体中文</b> · <a href="./README.en.md">English</a></p>
 
-<p align="center"><img alt="stars" src="https://img.shields.io/github/stars/liufuyou/EhViewer?style=flat&logo=github"> <img alt="last commit" src="https://img.shields.io/github/last-commit/liufuyou/EhViewer?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0"> <img alt="available" src="https://img.shields.io/badge/available-6-brightgreen"></p>
+<p align="center"><a target="_blank" href="https://github.com/login?return_to=%2Fliufuyou%2FEhViewer"><img alt="stars" src="https://img.shields.io/github/stars/liufuyou/EhViewer?style=flat&logo=github"></a> <img alt="last commit" src="https://img.shields.io/github/last-commit/liufuyou/EhViewer?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0"> <img alt="available" src="https://img.shields.io/badge/available-6-brightgreen"></p>
+
+<p align="center">⭐️star 支持，感谢！</p>
 
 <p align="center">EhViewer 是一个 E-Hentai 阅读器合集，提供目前仍然可用的版本。</p>
 
@@ -14,19 +16,32 @@
 | --- | --- | --- | --- | --- | --- |
 | EhViewer SXJ（新绿 E）<br><sub>中文优化，更新最勤</sub> | Android | 活跃 | 2.0.2.7 | 2026-11-02 | [下载](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
 | EhViewer NekoInverter（修白 E）<br><sub>非 MD3 风格，改动克制，最接近传统体验</sub> | Android 9+ | 活跃 | v1.8.14 | 2026-10-22 | [下载](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
-| JHenTai<br><sub>Flutter 实现，Android / iOS / 桌面端通用</sub> | 全平台 | 活跃 | v8.0.18 | 2026-10-23 | [下载](https://github.com/jiangtian616/JHenTai/releases) |
 
-## 其他 Android 分支
+## 全平台
+
+| 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
+| --- | --- | --- | --- | --- | --- |
+| JHenTai<br><sub>Flutter 实现，Android、iOS、Windows、macOS、Linux 通用</sub> | 全平台 | 活跃 | v8.0.18 | 2026-10-23 | [下载](https://github.com/jiangtian616/JHenTai/releases) |
+
+<details>
+<summary>其他 Android 分支（1 个）</summary>
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer Epix（绿 E MOD）<br><sub>最接近原版绿 E 的改动，节奏较慢</sub> | Android | 更新较少 | 1.7.26 | 2026-08-08 | [下载](https://github.com/exzhawk/EhViewer/releases) |
 
-## 其他平台
+</details>
+
+## iOS
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
 | EhPanda<br><sub>稳定版 3 个多月未更新，3.0.0 在测试中</sub> | iOS | 更新较少 | v2.8.1<br><sub>预发布 3.0.0</sub> | 2026-07-20 | [项目](https://github.com/EhPanda-Team/EhPanda/blob/main/READMEs/README.chs.md) |
+
+## 鸿蒙
+
+| 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
+| --- | --- | --- | --- | --- | --- |
 | HarmonyOS EhViewer<br><sub>鸿蒙原生（ArkTS），目前唯一的鸿蒙客户端</sub> | HarmonyOS 6.1+ | 活跃 | v1.1.0 | 2026-10-08 | [下载](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
 
 ## 已停更
@@ -49,11 +64,11 @@
 
 ## 该选哪个
 
+- **全平台**：JHenTai，覆盖 Android、iOS、Windows、macOS、Linux
 - **Android**：SXJ（中文优化、更新最勤）或 NekoInverter（改动最少）
 - **Android，旧版绿 E 界面**：Epix，更新较慢
 - **iOS / iPadOS**：EhPanda
 - **鸿蒙**：HarmonyOS EhViewer
-- **桌面**：JHenTai
 
 换版本前先备份收藏和阅读记录，不同分支的数据不通用。
 

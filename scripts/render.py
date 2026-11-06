@@ -243,14 +243,22 @@ def build(lang: str, data: dict) -> str:
         out.append('<p align="center"><a href="./README.md">简体中文</a> · <b>English</b></p>')
     out.append("")
 
-    # 「最近更新」由 shields.io 实时取数
+    # 「最近更新」由 shields.io 实时取数；星标徽标兼作求星入口
     label = quote("最近更新" if lang == "zh" else "updated")
+    star_url = "https://github.com/login?return_to=%2F" + REPO.replace("/", "%2F")
     out.append(
         f'<p align="center">'
-        f'<img alt="stars" src="https://img.shields.io/github/stars/{REPO}?style=flat&logo=github"> '
+        f'<a target="_blank" href="{star_url}">'
+        f'<img alt="stars" src="https://img.shields.io/github/stars/{REPO}?style=flat&logo=github"></a> '
         f'<img alt="last commit" src="https://img.shields.io/github/last-commit/{REPO}?label={label}"> '
         f'<img alt="available" src="https://img.shields.io/badge/available-{available}-brightgreen">'
         f"</p>"
+    )
+    out.append("")
+    out.append(
+        '<p align="center">⭐️star 支持，感谢！</p>'
+        if lang == "zh"
+        else '<p align="center">⭐️ star for support, thank you!</p>'
     )
     out.append("")
 
@@ -277,6 +285,29 @@ def build(lang: str, data: dict) -> str:
             continue
         title = group["zh"] if lang == "zh" else group["en"]
         intro = group.get("zh_intro") if lang == "zh" else group.get("en_intro")
+
+        # collapsed 直接收起；collapse_after 到期后收起。两者都没写就一直展开。
+        # 折叠时不出 ## 标题，否则目录里会留一条点了也展不开的锚点。
+        raw_col = group.get("collapse_after")
+        collapsed = group.get("collapsed") is True or (
+            bool(raw_col)
+            and date.today()
+            > (raw_col if isinstance(raw_col, date) else date.fromisoformat(str(raw_col)))
+        )
+        if collapsed:
+            head = f"{title}（{len(items)} 个）" if lang == "zh" else f"{title} ({len(items)})"
+            out.append("<details>")
+            out.append(f"<summary>{head}</summary>")
+            out.append("")
+            if intro:
+                out.append(f"> {intro}")
+                out.append("")
+            out.extend(render_table(items, lang, anchor, active_days, dormant_days))
+            out.append("")
+            out.append("</details>")
+            out.append("")
+            continue
+
         out.append(f"## {title}")
         out.append("")
         if intro:
@@ -288,21 +319,21 @@ def build(lang: str, data: dict) -> str:
     if lang == "zh":
         out.append("## 该选哪个")
         out.append("")
+        out.append("- **全平台**：JHenTai，覆盖 Android、iOS、Windows、macOS、Linux")
         out.append("- **Android**：SXJ（中文优化、更新最勤）或 NekoInverter（改动最少）")
         out.append("- **Android，旧版绿 E 界面**：Epix，更新较慢")
         out.append("- **iOS / iPadOS**：EhPanda")
         out.append("- **鸿蒙**：HarmonyOS EhViewer")
-        out.append("- **桌面**：JHenTai")
         out.append("")
         out.append("换版本前先备份收藏和阅读记录，不同分支的数据不通用。")
     else:
         out.append("## Which one")
         out.append("")
+        out.append("- **All platforms**: JHenTai, covering Android, iOS, Windows, macOS and Linux")
         out.append("- **Android**: SXJ (Chinese-oriented, ships often) or NekoInverter (most conservative)")
         out.append("- **Android, classic Green E look**: Epix, slower cadence")
         out.append("- **iOS / iPadOS**: EhPanda")
         out.append("- **HarmonyOS**: HarmonyOS EhViewer")
-        out.append("- **Desktop**: JHenTai")
         out.append("")
         out.append("Back up favorites and history before switching — data formats differ between forks.")
     out.append("")
