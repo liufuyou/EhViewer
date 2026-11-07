@@ -1,0 +1,584 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EhViewer · 版本索引</title>
+<meta name="description" content="EhViewer 各分支的版本索引：平台、状态、最新版本与官方下载入口。">
+<style>
+:root{
+  --bg:#ffffff;--fg:#18181b;--muted:#71717a;--line:#e4e4e7;--card:#fafafa;
+  --accent:#2563eb;--ok:#047857;--warn:#b45309;--dim:#a1a1aa;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0b0b0c;--fg:#e8e8ea;--muted:#a1a1aa;--line:#27272a;--card:#141416;
+        --accent:#60a5fa;--ok:#34d399;--warn:#fbbf24;--dim:#52525b;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header{padding:34px 0 22px;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+h1{font-size:20px;margin:0;letter-spacing:-.01em;font-weight:650}
+h1 .thin{color:var(--muted);font-weight:400;margin-left:6px;font-size:17px}
+.ghost{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);
+  background:transparent;color:var(--muted);cursor:pointer}
+.ghost:hover{color:var(--fg);border-color:var(--muted)}
+.lede{margin:12px 0 0;color:var(--muted);font-size:14px;max-width:56ch}
+.meta{margin:8px 0 0;color:var(--dim);font-size:12.5px;font-variant-numeric:tabular-nums}
+.controls{padding:18px 0 4px}
+input[type=search]{width:100%;padding:10px 13px;border-radius:10px;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);font:inherit;font-size:14px}
+input[type=search]::placeholder{color:var(--dim)}
+input[type=search]:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.chip{font:inherit;font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);
+  background:transparent;color:var(--muted);cursor:pointer;line-height:1.5}
+.chip:hover{color:var(--fg)}
+.chip[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+section h2{font-size:12px;letter-spacing:.08em;color:var(--muted);margin:26px 0 10px;
+  font-weight:600;text-transform:uppercase}
+.intro{color:var(--dim);font-size:12.5px;margin:-4px 0 10px}
+.card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.name{font-weight:600;font-size:15px;line-height:1.45}
+.gone .name{color:var(--muted);text-decoration:line-through}
+.sub{color:var(--muted);font-size:12.5px;margin-top:5px;font-variant-numeric:tabular-nums;
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.note{margin:9px 0 0;font-size:13.5px;color:var(--fg);opacity:.92}
+.foot{display:flex;align-items:center;gap:10px;margin-top:11px;flex-wrap:wrap}
+.btn{font-size:12.5px;padding:4px 12px;border-radius:8px;border:1px solid var(--line);
+  color:var(--fg);text-decoration:none;background:var(--bg)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.pre{font-size:12px;color:var(--dim)}
+.warn{font-size:12px;color:var(--warn)}
+.pill{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid currentColor;
+  white-space:nowrap;flex:none;line-height:1.6}
+.pill.active{color:var(--ok)}
+.pill.low{color:var(--warn)}
+.pill.dormant{color:var(--dim)}
+.pill.taken_down,.pill.archived{color:var(--muted)}
+.empty{color:var(--muted);text-align:center;padding:48px 0;font-size:14px}
+footer{margin-top:30px;border-top:1px solid var(--line);padding:18px 0 44px;
+  color:var(--dim);font-size:12.5px}
+footer p{margin:0 0 6px}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+footer a:hover{color:var(--fg)}
+@media (max-width:520px){
+  header{padding-top:26px}
+  .card{padding:12px 14px}
+  .controls{padding-top:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="bar">
+      <h1>EhViewer<span class="thin" data-t="sub">版本索引</span></h1>
+      <button id="lang" class="ghost" type="button"></button>
+    </div>
+    <p class="lede" data-t="lede"></p>
+    <p class="meta" id="meta"></p>
+  </header>
+
+  <div class="controls">
+    <input id="q" type="search" autocomplete="off" spellcheck="false">
+    <div class="chips" id="pf"></div>
+    <div class="chips" id="sf"></div>
+  </div>
+
+  <main id="list"></main>
+  <p id="empty" class="empty" hidden></p>
+
+  <footer>
+    <p data-t="disclaimer"></p>
+    <p><a id="repo" href="" target="_blank" rel="noopener">GitHub</a> · <span data-t="generated"></span></p>
+  </footer>
+</div>
+
+<script>const DATA = {
+ "repo": "https://github.com/liufuyou/EhViewer",
+ "groups": [
+  {
+   "id": "recommended",
+   "zh": "推荐版本",
+   "en": "Recommended",
+   "zhIntro": "",
+   "enIntro": ""
+  },
+  {
+   "id": "android_alt",
+   "zh": "其他 Android 分支",
+   "en": "Other Android builds",
+   "zhIntro": "",
+   "enIntro": ""
+  },
+  {
+   "id": "cross_platform",
+   "zh": "全平台/桌面端",
+   "en": "All platforms / Desktop",
+   "zhIntro": "",
+   "enIntro": ""
+  },
+  {
+   "id": "ios",
+   "zh": "iOS",
+   "en": "iOS",
+   "zhIntro": "",
+   "enIntro": ""
+  },
+  {
+   "id": "harmonyos",
+   "zh": "鸿蒙",
+   "en": "HarmonyOS",
+   "zhIntro": "",
+   "enIntro": ""
+  },
+  {
+   "id": "dormant",
+   "zh": "已停更",
+   "en": "Dormant",
+   "zhIntro": "",
+   "enIntro": ""
+  },
+  {
+   "id": "archived",
+   "zh": "已下架 / 已归档",
+   "en": "Taken down / archived",
+   "zhIntro": "不要再用这些。部分版本还会导致数据不兼容，迁移前务必备份。",
+   "enIntro": "Do not use these. Some may cause data incompatibility — back up before migrating."
+  }
+ ],
+ "variants": [
+  {
+   "id": "sxj",
+   "group": "recommended",
+   "name": "EhViewer SXJ（新绿 E）",
+   "nameEn": "EhViewer SXJ (New Green E)",
+   "status": "active",
+   "platform": "Android",
+   "platformZh": "Android",
+   "platformEn": "Android",
+   "platforms": [
+    "android"
+   ],
+   "version": "2.0.2.7",
+   "released": "2026-11-02",
+   "url": "https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases",
+   "kind": "download",
+   "note": "中文优化，更新最勤",
+   "noteEn": "Chinese-oriented fork, ships most often",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "nekoinverter",
+   "group": "recommended",
+   "name": "EhViewer NekoInverter（修白 E）",
+   "nameEn": "EhViewer NekoInverter (White E)",
+   "status": "active",
+   "platform": "Android 9+",
+   "platformZh": "Android 9+",
+   "platformEn": "Android 9+",
+   "platforms": [
+    "android"
+   ],
+   "version": "1.8.14",
+   "released": "2026-10-22",
+   "url": "https://github.com/EhViewer-NekoInverter/EhViewer/releases",
+   "kind": "download",
+   "note": "非 MD3 风格，改动克制，最接近传统体验",
+   "noteEn": "Non-MD3, restrained changes, closest to the classic experience",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "jhetai",
+   "group": "cross_platform",
+   "name": "JHenTai",
+   "nameEn": "JHenTai",
+   "status": "active",
+   "platform": "全平台 / All platforms",
+   "platformZh": "全平台",
+   "platformEn": "All platforms",
+   "platforms": [
+    "android",
+    "ios",
+    "desktop"
+   ],
+   "version": "8.0.18",
+   "released": "2026-10-23",
+   "url": "https://github.com/jiangtian616/JHenTai/releases",
+   "kind": "download",
+   "note": "Flutter 实现，Android、iOS、Windows、macOS、Linux 通用",
+   "noteEn": "Flutter-based; runs on Android, iOS, Windows, macOS and Linux",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "exzhawk",
+   "group": "android_alt",
+   "name": "EhViewer Epix（绿 E MOD）",
+   "nameEn": "EhViewer Epix (Green E mod)",
+   "status": "low",
+   "platform": "Android",
+   "platformZh": "Android",
+   "platformEn": "Android",
+   "platforms": [
+    "android"
+   ],
+   "version": "1.7.26",
+   "released": "2026-08-08",
+   "url": "https://github.com/exzhawk/EhViewer/releases",
+   "kind": "download",
+   "note": "最接近原版绿 E 的改动，节奏较慢",
+   "noteEn": "Closest to the original Green E, slower cadence",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "ehpanda",
+   "group": "ios",
+   "name": "EhPanda",
+   "nameEn": "EhPanda",
+   "status": "low",
+   "platform": "iOS 26.0+",
+   "platformZh": "iOS 26.0+",
+   "platformEn": "iOS 26.0+",
+   "platforms": [
+    "ios"
+   ],
+   "version": "2.8.1",
+   "released": "2026-07-20",
+   "url": "https://github.com/EhPanda-Team/EhPanda/releases",
+   "kind": "download",
+   "note": "稳定版 3 个多月未更新，3.0.0 在测试中；ipa 需用 AltStore 等工具侧载",
+   "noteEn": "No stable release for 3+ months; 3.0.0 is in testing. ipa requires sideloading (e.g. AltStore)",
+   "pre": "3.0.0",
+   "security": ""
+  },
+  {
+   "id": "harmony",
+   "group": "harmonyos",
+   "name": "HarmonyOS EhViewer",
+   "nameEn": "HarmonyOS EhViewer",
+   "status": "active",
+   "platform": "HarmonyOS 7+",
+   "platformZh": "HarmonyOS 7+",
+   "platformEn": "HarmonyOS 7+",
+   "platforms": [
+    "harmony"
+   ],
+   "version": "1.1.0",
+   "released": "2026-10-08",
+   "url": "https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases",
+   "kind": "download",
+   "note": "鸿蒙原生（ArkTS），目前唯一的鸿蒙客户端；仅提供 hap，需自行侧载安装",
+   "noteEn": "Native HarmonyOS client (ArkTS), the only one so far; ships as .hap only, sideload it yourself",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "ujuiujumandan",
+   "group": "dormant",
+   "name": "EhViewer UjuiUjuMandan（彩 E 直连版）",
+   "nameEn": "EhViewer UjuiUjuMandan (Colored E with direct connect)",
+   "status": "dormant",
+   "platform": "Android 9+",
+   "platformZh": "Android 9+",
+   "platformEn": "Android 9+",
+   "platforms": [
+    "android"
+   ],
+   "version": "1.14.6",
+   "released": "2025-12-17",
+   "url": "https://github.com/UjuiUjuMandan/EhViewer/releases",
+   "kind": "download",
+   "note": "自 FooIbar 分支分出，保留了直连；最后版本停在 2025-12",
+   "noteEn": "Forked from FooIbar with direct connect restored; last build 2025-12",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "fooibar",
+   "group": "archived",
+   "name": "EhViewer FooIbar（彩 E 主线）",
+   "nameEn": "EhViewer FooIbar (Colored E mainline)",
+   "status": "taken_down",
+   "platform": "Android 9+",
+   "platformZh": "Android 9+",
+   "platformEn": "Android 9+",
+   "platforms": [
+    "android"
+   ],
+   "version": "—",
+   "released": "",
+   "url": "https://github.com/FooIbar/EhViewer",
+   "kind": "project",
+   "note": "2026 年核实：仓库因 DMCA 下架，链接已不可访问",
+   "noteEn": "Verified 2026 — repository taken down via DMCA",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "fehviewer",
+   "group": "archived",
+   "name": "FEhViewer",
+   "nameEn": "FEhViewer",
+   "status": "taken_down",
+   "platform": "全平台 / All platforms",
+   "platformZh": "全平台",
+   "platformEn": "All platforms",
+   "platforms": [
+    "android",
+    "ios",
+    "desktop"
+   ],
+   "version": "—",
+   "released": "",
+   "url": "https://github.com/honjow/FEhViewer",
+   "kind": "project",
+   "note": "2026 年核实：仓库因 DMCA 下架，链接已不可访问",
+   "noteEn": "Verified 2026 — repository taken down via DMCA",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "overhauled",
+   "group": "archived",
+   "name": "EhViewer Overhauled（MD3 风格）",
+   "nameEn": "EhViewer Overhauled",
+   "status": "archived",
+   "platform": "Android",
+   "platformZh": "Android",
+   "platformEn": "Android",
+   "platforms": [
+    "android"
+   ],
+   "version": "1.8.8.3",
+   "released": "",
+   "url": "",
+   "kind": "project",
+   "note": "已归档，与新版数据格式不兼容",
+   "noteEn": "Archived, incompatible data format with current versions",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "hippo",
+   "group": "archived",
+   "name": "EhViewer Hippo Seven（原版绿 E）",
+   "nameEn": "EhViewer Hippo Seven (Original Green E)",
+   "status": "archived",
+   "platform": "Android",
+   "platformZh": "Android",
+   "platformEn": "Android",
+   "platforms": [
+    "android"
+   ],
+   "version": "1.7.8",
+   "released": "",
+   "url": "",
+   "kind": "project",
+   "note": "上游早已停更",
+   "noteEn": "Upstream abandoned long ago",
+   "pre": "",
+   "security": ""
+  },
+  {
+   "id": "nekoinverter_legacy",
+   "group": "archived",
+   "name": "EhViewer NekoInverter 旧版",
+   "nameEn": "EhViewer NekoInverter (legacy)",
+   "status": "archived",
+   "platform": "Android",
+   "platformZh": "Android",
+   "platformEn": "Android",
+   "platforms": [
+    "android"
+   ],
+   "version": "1.7.26.4",
+   "released": "",
+   "url": "",
+   "kind": "project",
+   "note": "旧版本线，已由 v1.8.x 取代",
+   "noteEn": "Legacy line, superseded by v1.8.x",
+   "pre": "",
+   "security": ""
+  }
+ ],
+ "i18n": {
+  "zh": {
+   "toggle": "English",
+   "sub": "版本索引",
+   "lede": "仍在维护的 EhViewer 各分支。按平台和状态筛，点「下载」去官方发布页。",
+   "search": "搜名称、备注或平台",
+   "all": "全部",
+   "allStatus": "全部状态",
+   "avail": "还能用",
+   "empty": "没有匹配的条目，换个条件试试",
+   "download": "下载",
+   "project": "项目",
+   "pre": "预发布",
+   "security": "安全提示",
+   "generated": "本页由 data/versions.yaml 生成，请勿手改",
+   "disclaimer": "本站仅做链接索引，不托管、不分发任何安装包。使用风险自负，请遵守所在地法律法规。",
+   "checked": "最后核对 2026-11-05 · 可用 6 个 · 已停更或下架 6 个",
+   "status": {
+    "active": "活跃",
+    "low": "更新较少",
+    "dormant": "停更",
+    "taken_down": "已下架",
+    "archived": "已归档"
+   }
+  },
+  "en": {
+   "toggle": "简体中文",
+   "sub": "builds",
+   "lede": "EhViewer forks that are still maintained. Filter by platform and status; “Download” goes to the official release page.",
+   "search": "Search name, note or platform",
+   "all": "All",
+   "allStatus": "Any status",
+   "avail": "Usable",
+   "empty": "Nothing matches. Try another filter.",
+   "download": "Download",
+   "project": "Project",
+   "pre": "pre-release",
+   "security": "security notice",
+   "generated": "Generated from data/versions.yaml — do not edit by hand",
+   "disclaimer": "This site is a link index only. No package is hosted or redistributed here. Use at your own risk and follow your local laws.",
+   "checked": "Last checked 2026-11-05 · 6 available · 6 dormant / archived",
+   "status": {
+    "active": "Active",
+    "low": "Less active",
+    "dormant": "Dormant",
+    "taken_down": "Taken down",
+    "archived": "Archived"
+   }
+  }
+ }
+};</script>
+<script>
+const T = DATA.i18n;
+let lang = 'zh', q = '', pf = 'all', sf = 'all';
+const $ = s => document.querySelector(s);
+
+function esc(s){
+  return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+function t(k){ return T[lang][k]; }
+
+function matches(v){
+  if (pf !== 'all' && v.platforms.indexOf(pf) < 0) return false;
+  if (sf === 'avail'){
+    if (v.status !== 'active' && v.status !== 'low') return false;
+  } else if (sf !== 'all' && v.status !== sf){
+    return false;
+  }
+  if (!q) return true;
+  const hay = [v.name, v.nameEn, v.note, v.noteEn, v.platform].join(' ').toLowerCase();
+  return hay.indexOf(q) >= 0;
+}
+
+function card(v){
+  const gone = v.status === 'taken_down';
+  const name = lang === 'zh' ? v.name : v.nameEn;
+  const note = lang === 'zh' ? v.note : v.noteEn;
+  const plat = lang === 'zh' ? v.platformZh : v.platformEn;
+  const bits = [plat, v.version, v.released].filter(x => x && x !== '—').map(esc).join(' · ');
+  const sec = v.security ? ' <span class="warn">⚠️ ' + esc(t('security')) + '</span>' : '';
+  const pre = v.pre ? '<span class="pre">' + esc(t('pre')) + ' ' + esc(v.pre) + '</span>' : '';
+  const link = v.url && !gone
+    ? '<a class="btn" href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(t(v.kind)) + '</a>'
+    : '';
+  return '<article class="card' + (gone ? ' gone' : '') + '">'
+    + '<div class="top"><div class="name">' + esc(name) + '</div>'
+    + '<span class="pill ' + v.status + '">' + esc(t('status')[v.status] || v.status) + '</span></div>'
+    + '<div class="sub">' + bits + sec + '</div>'
+    + (note ? '<p class="note">' + esc(note) + '</p>' : '')
+    + (pre || link ? '<div class="foot">' + pre + link + '</div>' : '')
+    + '</article>';
+}
+
+function renderList(){
+  const out = [];
+  let total = 0;
+  DATA.groups.forEach(function(g){
+    const items = DATA.variants.filter(v => v.group === g.id && matches(v));
+    if (!items.length) return;
+    total += items.length;
+    out.push('<section><h2>' + esc(lang === 'zh' ? g.zh : g.en) + '</h2>');
+    const intro = lang === 'zh' ? g.zhIntro : g.enIntro;
+    if (intro) out.push('<p class="intro">' + esc(intro) + '</p>');
+    items.forEach(v => out.push(card(v)));
+    out.push('</section>');
+  });
+  $('#list').innerHTML = out.join('');
+  $('#empty').hidden = total > 0;
+}
+
+function chips(host, items, cur, pick){
+  host.innerHTML = items.map(function(it){
+    return '<button type="button" class="chip" data-k="' + it[0] + '" aria-pressed="'
+      + (it[0] === cur) + '">' + esc(it[1]) + '</button>';
+  }).join('');
+  host.onclick = function(e){
+    const b = e.target.closest('.chip');
+    if (!b) return;
+    pick(b.dataset.k);
+  };
+}
+
+function paintChips(){
+  chips($('#pf'), [
+    ['all', t('all')],
+    ['android', 'Android'],
+    ['ios', 'iOS'],
+    ['harmony', lang === 'zh' ? '鸿蒙' : 'HarmonyOS'],
+    ['desktop', lang === 'zh' ? '桌面端' : 'Desktop']
+  ], pf, function(k){ pf = k; paintChips(); renderList(); });
+
+  chips($('#sf'), [
+    ['all', t('allStatus')],
+    ['avail', t('avail')],
+    ['active', t('status').active],
+    ['low', t('status').low],
+    ['dormant', t('status').dormant],
+    ['archived', t('status').archived],
+    ['taken_down', t('status').taken_down]
+  ], sf, function(k){ sf = k; paintChips(); renderList(); });
+}
+
+function paintTexts(){
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.title = lang === 'zh' ? 'EhViewer · 版本索引' : 'EhViewer · builds';
+  document.querySelectorAll('[data-t]').forEach(function(n){ n.textContent = t(n.dataset.t); });
+  $('#lang').textContent = t('toggle');
+  $('#meta').textContent = t('checked');
+  $('#q').placeholder = t('search');
+  $('#empty').textContent = t('empty');
+  $('#repo').href = DATA.repo;
+}
+
+function rerender(){
+  paintTexts();
+  paintChips();
+  renderList();
+}
+
+$('#q').addEventListener('input', function(e){
+  q = e.target.value.trim().toLowerCase();
+  renderList();
+});
+$('#lang').addEventListener('click', function(){
+  lang = lang === 'zh' ? 'en' : 'zh';
+  rerender();
+});
+
+rerender();
+</script>
+</body>
+</html>

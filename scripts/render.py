@@ -1,14 +1,14 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""从 data/versions.yaml 生成 README.md 与 README.en.md。
+"""从 data/versions.yaml 生成 README.md、README.en.md 与 docs/index.html。
 
-改版本只动 data/versions.yaml。README 是产物，手改会在下次生成时被覆盖。
+改版本只动 data/versions.yaml。这三份都是产物，手改会在下次生成时被覆盖。
 
 用法:
     python scripts/render.py           生成
     python scripts/render.py --check   只校验是否与清单一致
 
-改完把两份 README 一起提交。只交 yaml 不交 README，CI 会判为不一致。
+改完把生成物一起提交。只交 yaml 不交生成物，CI 会判为不一致。
 
 约定:
     - version 照抄 Release 标签，不要自己改格式，渲染时才统一去掉前导 v
@@ -22,6 +22,7 @@
 
 from __future__ import annotations
 
+import json
 import re
 import sys
 from datetime import date
@@ -437,6 +438,363 @@ def build(lang: str, data: dict) -> str:
     return "\n".join(out)
 
 
+# ---------------- 单页（GitHub Pages）----------------
+# 与 README 同源、同一次生成。手改 docs/index.html 会被 --check 拦下。
+
+PAGE = ROOT / "docs" / "index.html"
+
+# 筛选用的平台归类。platform 是给人看的字符串（"Android 9+"、"全平台 / All platforms"），
+# 这里按关键词归桶，以后改清单写法也不用动筛选逻辑。
+PLATFORM_KEYS = (
+    ("android", ("android",)),
+    ("ios", ("ios", "ipados")),
+    ("harmony", ("harmony",)),
+    ("desktop", ("windows", "macos", "linux", "all platforms")),
+)
+
+
+def split_platform(raw: str) -> tuple[str, str]:
+    """platform 可能是「中文 / English」，取对应一侧。"""
+    if " / " in raw:
+        zh, en = raw.split(" / ", 1)
+        return zh, en
+    return raw, raw
+
+
+def page_payload(data: dict) -> dict:
+    meta = data["meta"]
+    anchor = parse_date(meta["last_checked"])
+    active_days = int(meta.get("active_within_days", 60))
+    dormant_days = int(meta.get("dormant_after_days", 180))
+
+    variants = []
+    for v in data["variants"]:
+        raw = str(v.get("platform") or "")
+        zh_platform, en_platform = split_platform(raw)
+        low = raw.lower()
+        url = v.get("url") or ""
+        pre = (v.get("prerelease") or {}).get("version")
+        variants.append(
+            {
+                "id": v["id"],
+                "group": v["group"],
+                "name": display_name(v, "zh"),
+                "nameEn": display_name(v, "en"),
+                "status": effective_status(v, anchor, active_days, dormant_days),
+                "platform": raw,
+                "platformZh": zh_platform.strip(),
+                "platformEn": en_platform.strip(),
+                "platforms": (
+                    ["android", "ios", "desktop"] if "all platforms" in low
+                    else [k for k, words in PLATFORM_KEYS if any(w in low for w in words)]
+                ),
+                "version": fmt_version(v.get("version")),
+                "released": str(v.get("released") or ""),
+                "url": url,
+                "kind": "download" if "/releases" in url else "project",
+                "note": v.get("zh_note") or "",
+                "noteEn": v.get("en_note") or "",
+                "pre": fmt_version(pre) if pre else "",
+                "security": v.get("security_level") or "",
+            }
+        )
+
+    available = sum(1 for x in variants if x["status"] in ("active", "low"))
+    gone = len(variants) - available
+    checked = anchor.isoformat()
+
+    status_zh = {key: STATUS_LABEL[key][0] for key in STATUS_LABEL}
+    status_en = {key: STATUS_LABEL[key][1] for key in STATUS_LABEL}
+
+    return {
+        "repo": f"https://github.com/{REPO}",
+        "groups": [
+            {
+                "id": g["id"],
+                "zh": g["zh"],
+                "en": g["en"],
+                "zhIntro": g.get("zh_intro") or "",
+                "enIntro": g.get("en_intro") or "",
+            }
+            for g in data["groups"]
+        ],
+        "variants": variants,
+        "i18n": {
+            "zh": {
+                "toggle": "English",
+                "sub": "版本索引",
+                "lede": "仍在维护的 EhViewer 各分支。按平台和状态筛，点「下载」去官方发布页。",
+                "search": "搜名称、备注或平台",
+                "all": "全部",
+                "allStatus": "全部状态",
+                "avail": "还能用",
+                "empty": "没有匹配的条目，换个条件试试",
+                "download": "下载",
+                "project": "项目",
+                "pre": "预发布",
+                "security": "安全提示",
+                "generated": "本页由 data/versions.yaml 生成，请勿手改",
+                "disclaimer": "本站仅做链接索引，不托管、不分发任何安装包。使用风险自负，请遵守所在地法律法规。",
+                "checked": f"最后核对 {checked} · 可用 {available} 个 · 已停更或下架 {gone} 个",
+                "status": status_zh,
+            },
+            "en": {
+                "toggle": "简体中文",
+                "sub": "builds",
+                "lede": "EhViewer forks that are still maintained. Filter by platform and status; "
+                        "“Download” goes to the official release page.",
+                "search": "Search name, note or platform",
+                "all": "All",
+                "allStatus": "Any status",
+                "avail": "Usable",
+                "empty": "Nothing matches. Try another filter.",
+                "download": "Download",
+                "project": "Project",
+                "pre": "pre-release",
+                "security": "security notice",
+                "generated": "Generated from data/versions.yaml — do not edit by hand",
+                "disclaimer": "This site is a link index only. No package is hosted or redistributed here. "
+                              "Use at your own risk and follow your local laws.",
+                "checked": f"Last checked {checked} · {available} available · {gone} dormant / archived",
+                "status": status_en,
+            },
+        },
+    }
+
+
+def build_page(data: dict) -> str:
+    blob = json.dumps(page_payload(data), ensure_ascii=False, indent=1)
+    # 备注里若出现 </script> 会提前闭合，转义掉
+    blob = blob.replace("</", "<\\/")
+    return PAGE_TEMPLATE.replace("__DATA__", blob)
+
+
+PAGE_TEMPLATE = r"""<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>EhViewer · 版本索引</title>
+<meta name="description" content="EhViewer 各分支的版本索引：平台、状态、最新版本与官方下载入口。">
+<style>
+:root{
+  --bg:#ffffff;--fg:#18181b;--muted:#71717a;--line:#e4e4e7;--card:#fafafa;
+  --accent:#2563eb;--ok:#047857;--warn:#b45309;--dim:#a1a1aa;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0b0b0c;--fg:#e8e8ea;--muted:#a1a1aa;--line:#27272a;--card:#141416;
+        --accent:#60a5fa;--ok:#34d399;--warn:#fbbf24;--dim:#52525b;}
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);
+  font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+header{padding:34px 0 22px;border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
+h1{font-size:20px;margin:0;letter-spacing:-.01em;font-weight:650}
+h1 .thin{color:var(--muted);font-weight:400;margin-left:6px;font-size:17px}
+.ghost{font:inherit;font-size:13px;padding:5px 12px;border-radius:999px;border:1px solid var(--line);
+  background:transparent;color:var(--muted);cursor:pointer}
+.ghost:hover{color:var(--fg);border-color:var(--muted)}
+.lede{margin:12px 0 0;color:var(--muted);font-size:14px;max-width:56ch}
+.meta{margin:8px 0 0;color:var(--dim);font-size:12.5px;font-variant-numeric:tabular-nums}
+.controls{padding:18px 0 4px}
+input[type=search]{width:100%;padding:10px 13px;border-radius:10px;border:1px solid var(--line);
+  background:var(--card);color:var(--fg);font:inherit;font-size:14px}
+input[type=search]::placeholder{color:var(--dim)}
+input[type=search]:focus{outline:2px solid var(--accent);outline-offset:1px;border-color:transparent}
+.chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:10px}
+.chip{font:inherit;font-size:12.5px;padding:4px 11px;border-radius:999px;border:1px solid var(--line);
+  background:transparent;color:var(--muted);cursor:pointer;line-height:1.5}
+.chip:hover{color:var(--fg)}
+.chip[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+section h2{font-size:12px;letter-spacing:.08em;color:var(--muted);margin:26px 0 10px;
+  font-weight:600;text-transform:uppercase}
+.intro{color:var(--dim);font-size:12.5px;margin:-4px 0 10px}
+.card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.name{font-weight:600;font-size:15px;line-height:1.45}
+.gone .name{color:var(--muted);text-decoration:line-through}
+.sub{color:var(--muted);font-size:12.5px;margin-top:5px;font-variant-numeric:tabular-nums;
+  display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.note{margin:9px 0 0;font-size:13.5px;color:var(--fg);opacity:.92}
+.foot{display:flex;align-items:center;gap:10px;margin-top:11px;flex-wrap:wrap}
+.btn{font-size:12.5px;padding:4px 12px;border-radius:8px;border:1px solid var(--line);
+  color:var(--fg);text-decoration:none;background:var(--bg)}
+.btn:hover{border-color:var(--accent);color:var(--accent)}
+.pre{font-size:12px;color:var(--dim)}
+.warn{font-size:12px;color:var(--warn)}
+.pill{font-size:12px;padding:2px 9px;border-radius:999px;border:1px solid currentColor;
+  white-space:nowrap;flex:none;line-height:1.6}
+.pill.active{color:var(--ok)}
+.pill.low{color:var(--warn)}
+.pill.dormant{color:var(--dim)}
+.pill.taken_down,.pill.archived{color:var(--muted)}
+.empty{color:var(--muted);text-align:center;padding:48px 0;font-size:14px}
+footer{margin-top:30px;border-top:1px solid var(--line);padding:18px 0 44px;
+  color:var(--dim);font-size:12.5px}
+footer p{margin:0 0 6px}
+footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
+footer a:hover{color:var(--fg)}
+@media (max-width:520px){
+  header{padding-top:26px}
+  .card{padding:12px 14px}
+  .controls{padding-top:14px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="bar">
+      <h1>EhViewer<span class="thin" data-t="sub">版本索引</span></h1>
+      <button id="lang" class="ghost" type="button"></button>
+    </div>
+    <p class="lede" data-t="lede"></p>
+    <p class="meta" id="meta"></p>
+  </header>
+
+  <div class="controls">
+    <input id="q" type="search" autocomplete="off" spellcheck="false">
+    <div class="chips" id="pf"></div>
+    <div class="chips" id="sf"></div>
+  </div>
+
+  <main id="list"></main>
+  <p id="empty" class="empty" hidden></p>
+
+  <footer>
+    <p data-t="disclaimer"></p>
+    <p><a id="repo" href="" target="_blank" rel="noopener">GitHub</a> · <span data-t="generated"></span></p>
+  </footer>
+</div>
+
+<script>const DATA = __DATA__;</script>
+<script>
+const T = DATA.i18n;
+let lang = 'zh', q = '', pf = 'all', sf = 'all';
+const $ = s => document.querySelector(s);
+
+function esc(s){
+  return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+}
+function t(k){ return T[lang][k]; }
+
+function matches(v){
+  if (pf !== 'all' && v.platforms.indexOf(pf) < 0) return false;
+  if (sf === 'avail'){
+    if (v.status !== 'active' && v.status !== 'low') return false;
+  } else if (sf !== 'all' && v.status !== sf){
+    return false;
+  }
+  if (!q) return true;
+  const hay = [v.name, v.nameEn, v.note, v.noteEn, v.platform].join(' ').toLowerCase();
+  return hay.indexOf(q) >= 0;
+}
+
+function card(v){
+  const gone = v.status === 'taken_down';
+  const name = lang === 'zh' ? v.name : v.nameEn;
+  const note = lang === 'zh' ? v.note : v.noteEn;
+  const plat = lang === 'zh' ? v.platformZh : v.platformEn;
+  const bits = [plat, v.version, v.released].filter(x => x && x !== '—').map(esc).join(' · ');
+  const sec = v.security ? ' <span class="warn">⚠️ ' + esc(t('security')) + '</span>' : '';
+  const pre = v.pre ? '<span class="pre">' + esc(t('pre')) + ' ' + esc(v.pre) + '</span>' : '';
+  const link = v.url && !gone
+    ? '<a class="btn" href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(t(v.kind)) + '</a>'
+    : '';
+  return '<article class="card' + (gone ? ' gone' : '') + '">'
+    + '<div class="top"><div class="name">' + esc(name) + '</div>'
+    + '<span class="pill ' + v.status + '">' + esc(t('status')[v.status] || v.status) + '</span></div>'
+    + '<div class="sub">' + bits + sec + '</div>'
+    + (note ? '<p class="note">' + esc(note) + '</p>' : '')
+    + (pre || link ? '<div class="foot">' + pre + link + '</div>' : '')
+    + '</article>';
+}
+
+function renderList(){
+  const out = [];
+  let total = 0;
+  DATA.groups.forEach(function(g){
+    const items = DATA.variants.filter(v => v.group === g.id && matches(v));
+    if (!items.length) return;
+    total += items.length;
+    out.push('<section><h2>' + esc(lang === 'zh' ? g.zh : g.en) + '</h2>');
+    const intro = lang === 'zh' ? g.zhIntro : g.enIntro;
+    if (intro) out.push('<p class="intro">' + esc(intro) + '</p>');
+    items.forEach(v => out.push(card(v)));
+    out.push('</section>');
+  });
+  $('#list').innerHTML = out.join('');
+  $('#empty').hidden = total > 0;
+}
+
+function chips(host, items, cur, pick){
+  host.innerHTML = items.map(function(it){
+    return '<button type="button" class="chip" data-k="' + it[0] + '" aria-pressed="'
+      + (it[0] === cur) + '">' + esc(it[1]) + '</button>';
+  }).join('');
+  host.onclick = function(e){
+    const b = e.target.closest('.chip');
+    if (!b) return;
+    pick(b.dataset.k);
+  };
+}
+
+function paintChips(){
+  chips($('#pf'), [
+    ['all', t('all')],
+    ['android', 'Android'],
+    ['ios', 'iOS'],
+    ['harmony', lang === 'zh' ? '鸿蒙' : 'HarmonyOS'],
+    ['desktop', lang === 'zh' ? '桌面端' : 'Desktop']
+  ], pf, function(k){ pf = k; paintChips(); renderList(); });
+
+  chips($('#sf'), [
+    ['all', t('allStatus')],
+    ['avail', t('avail')],
+    ['active', t('status').active],
+    ['low', t('status').low],
+    ['dormant', t('status').dormant],
+    ['archived', t('status').archived],
+    ['taken_down', t('status').taken_down]
+  ], sf, function(k){ sf = k; paintChips(); renderList(); });
+}
+
+function paintTexts(){
+  document.documentElement.lang = lang === 'zh' ? 'zh-CN' : 'en';
+  document.title = lang === 'zh' ? 'EhViewer · 版本索引' : 'EhViewer · builds';
+  document.querySelectorAll('[data-t]').forEach(function(n){ n.textContent = t(n.dataset.t); });
+  $('#lang').textContent = t('toggle');
+  $('#meta').textContent = t('checked');
+  $('#q').placeholder = t('search');
+  $('#empty').textContent = t('empty');
+  $('#repo').href = DATA.repo;
+}
+
+function rerender(){
+  paintTexts();
+  paintChips();
+  renderList();
+}
+
+$('#q').addEventListener('input', function(e){
+  q = e.target.value.trim().toLowerCase();
+  renderList();
+});
+$('#lang').addEventListener('click', function(){
+  lang = lang === 'zh' ? 'en' : 'zh';
+  rerender();
+});
+
+rerender();
+</script>
+</body>
+</html>
+"""
+
+
 def validate(data: dict) -> None:
     required = {"meta", "groups", "variants"}
     missing = required - set(data)
@@ -548,25 +906,31 @@ def main(argv: list[str]) -> int:
     warn_group_drift(data)
 
     stale: list[str] = []
-    for lang, filename in (("zh", "README.md"), ("en", "README.en.md")):
-        path = ROOT / filename
-        content = build(lang, data)
+    targets = [
+        (ROOT / "README.md", build("zh", data)),
+        (ROOT / "README.en.md", build("en", data)),
+        (PAGE, build_page(data)),
+    ]
+
+    for path, content in targets:
+        name = path.relative_to(ROOT).as_posix()
         if not content.endswith("\n"):
             content += "\n"
         if check_only:
             current = path.read_text(encoding="utf-8").replace("\r\n", "\n") if path.exists() else ""
             if current != content:
-                stale.append(filename)
+                stale.append(name)
             continue
+        path.parent.mkdir(parents=True, exist_ok=True)
         # 不指定会在 Windows 上写出 CRLF
         path.write_text(content, encoding="utf-8", newline="\n")
-        print(f"已生成 {filename}")
+        print(f"已生成 {name}")
 
     if check_only:
         if stale:
             print(f"{'、'.join(stale)} 与 data/versions.yaml 不一致，请运行 python scripts/render.py 重新生成。")
             return 1
-        print("README 与清单一致。")
+        print("生成物与清单一致（README ×2 + 单页）。")
     return 0
 
 

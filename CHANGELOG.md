@@ -2,6 +2,10 @@
 
 记录使用者能感知的变化。README 正文不在这里，它是自动生成的。
 
+## 2026-11-07 · 单页
+
+- 新增 `docs/index.html`：可按平台和状态筛、能搜关键词、中英可切，与 README 同源生成
+
 ## 2026-11-07 · 文档收敛
 
 - `CONTRIBUTING.md` 只留提交规则，操作步骤移到 `scripts/render.py` 与 `data/versions.yaml` 的注释里
