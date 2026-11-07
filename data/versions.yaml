@@ -3,6 +3,10 @@
 #
 # status 只写 taken_down（下架）或 archived（归档），其他状态按 released 自动算：
 #   ≤60 天 活跃 / 60~180 天 更新较少 / >180 天 停更
+# 条目停更后记得把它移到 dormant 组，放错了脚本只提示不拦。
+#
+# 下面这几个字段由 sync_releases.py 自动写入，人不用手填：
+#   latest_summary / security_level / security_note / security_note_en / security_checked
 
 meta:
   last_checked: 2026-11-05      # 上次人工核对日期，务必和实际核对时间一致

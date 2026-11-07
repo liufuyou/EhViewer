@@ -1,49 +1,22 @@
 # 贡献说明
 
-本仓库是一个**链接索引**，不是客户端源码。所有内容都由 `data/versions.yaml` 生成。
+本仓库是链接索引，不是客户端源码。正文由 `data/versions.yaml` 生成，改清单就行。
 
 ## 最重要的一条
 
 **不要直接编辑 `README.md` 或 `README.en.md`。**
 
-它们是生成产物，任何手改都会在下一次运行脚本时被覆盖。历史上中英文版本就是因为手写两份而出现不同步，请改清单。
+它们是生成产物，手改会在下一次运行脚本时被覆盖。历史上中英文版本就是因为手写两份而出现不同步，请改清单。
 
-## 修改流程
+## 怎么提
 
-```bash
-git clone https://github.com/liufuyou/EhViewer.git
-cd EhViewer
-python -m pip install -r scripts/requirements.txt
+开 issue 最快，写清三件事：
 
-# 1. 编辑清单
-#    data/versions.yaml
+- 哪个条目（写名字）
+- 应该改成什么
+- 依据的链接（Release 页、仓库地址，或截图）
 
-# 2. 重新生成
-python scripts/render.py
-
-# 3. 验证链接
-python scripts/check_links.py
-
-# 4. 确认生成物与清单一致（CI 也会跑）
-python scripts/render.py --check
-
-# 5. 提交（README 的改动请一并提交）
-git add -A && git commit -m "data: 更新 XX 版本至 x.y.z"
-```
-
-## 常见提交类型
-
-| 想做的事 | 改哪里 |
-| --- | --- |
-| 某个版本发了新版 | 该条目的 `version` 与 `released` |
-| 链接换了地址 | 该条目的 `url` |
-| 版本彻底没了 | `status: taken_down`，并在 `zh_note`/`en_note` 写明核实时间 |
-| 作者停更、仓库还在 | 把条目移到 `dormant` 分组即可，状态由日期自动算成「停更」 |
-| 仓库被作者归档 / 长期只读 | `status: archived` |
-| 距上次发版超过 60 天 | 不用改，状态自动变「更新较少」；超过 180 天变「停更」 |
-| 新增一个分支版本 | 在对应 group 下新增条目，必填 `id`、`group`、`name`、`platform`、`url`，以及在架条目的 `released` |
-
-> `status` 只接受 `taken_down` / `archived`。写 `active` / `stale` 会被生成脚本直接拒绝——活跃程度是按 `released` 算的，写死就会和日期打架。
+想直接改也行：只动 `data/versions.yaml`，提交时把重新生成的 README 一起带上。字段怎么填、怎么生成，`data/versions.yaml` 开头的注释和 `scripts/render.py` 的说明里都写了。
 
 ## 提 PR 时请说明
 

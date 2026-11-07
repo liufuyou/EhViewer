@@ -1,5 +1,10 @@
 name: sync releases
 
+# 定时轮询上游 Release，有变化就开 PR，不直接推 main —— 版本号是机器写的，
+# 让人过一眼再合并，比让机器人直接改主干安全。
+# schedule 高峰期会延迟甚至丢掉一次触发，GitHub 没有 SLA，所以这里是「准实时」；
+# 真要秒级得上 webhook + 公网接收端，属于新增基础设施，暂不做。
+
 on:
   schedule:
     - cron: "23 */6 * * *"

@@ -2,9 +2,22 @@
 # -*- coding: utf-8 -*-
 """从 data/versions.yaml 生成 README.md 与 README.en.md。
 
+改版本只动 data/versions.yaml。README 是产物，手改会在下次生成时被覆盖。
+
 用法:
     python scripts/render.py           生成
     python scripts/render.py --check   只校验是否与清单一致
+
+改完把两份 README 一起提交。只交 yaml 不交 README，CI 会判为不一致。
+
+约定:
+    - version 照抄 Release 标签，不要自己改格式，渲染时才统一去掉前导 v
+    - released 填 Release 发布时间，不是仓库最后提交时间
+    - group 必须是 groups 里定义过的 id，章节顺序就是 groups 的顺序
+    - variants 的书写顺序就是表格行序，不自动排序
+    - 分组写 collapsed: true 立即收起；写 collapse_after: YYYY-MM-DD 则到期才收起
+    - meta.checked_line_until 到期后由 maintenance workflow 删掉，不必手动清
+    - 推上去之后 CI 会跑 --check，手改 README 会直接失败
 """
 
 from __future__ import annotations

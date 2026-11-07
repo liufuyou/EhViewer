@@ -4,6 +4,8 @@
     python scripts/sync_releases.py              只看不改
     python scripts/sync_releases.py --apply      写回清单
     python scripts/sync_releases.py --json       机器可读
+    python scripts/sync_releases.py --report r.md  另外写一份 Markdown 报告
+    python scripts/sync_releases.py --only sxj   只查指定 id，调试用
 
 按行改写而不是 yaml.safe_dump 回写，否则清单里的注释和字段顺序会丢。
 退出码 2 表示发现已确认的安全公告，workflow 据此高亮。
