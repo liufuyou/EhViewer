@@ -5,6 +5,7 @@
 ## 2026-11-07 · 单页
 
 - 新增 `docs/index.html`：可按平台和状态筛、能搜关键词、中英可切，与 README 同源生成
+- 上线 GitHub Pages：<https://liufuyou.github.io/EhViewer/>，README 顶部加了入口
 
 ## 2026-11-07 · 文档收敛
 

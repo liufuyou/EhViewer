@@ -40,6 +40,9 @@ except ImportError:  # pragma: no cover
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data" / "versions.yaml"
 REPO = "liufuyou/EhViewer"
+# Pages 用户站固定是 <owner>.github.io/<repo>/，只有域名部分小写
+PAGES_OWNER, PAGES_REPO = REPO.split("/")
+PAGES_URL = f"https://{PAGES_OWNER.lower()}.github.io/{PAGES_REPO}/"
 
 STATUS_LABEL = {
     "active": ("活跃", "Active"),
@@ -303,6 +306,16 @@ def build(lang: str, data: dict) -> str:
         else:
             out.append(f"> Last checked `{checked}` · {available} available · {gone} dormant / archived")
         out.append("")
+
+    # 单页与 README 同源，位置跟着 Pages 走
+    if lang == "zh":
+        out.append(f"> 手机上表格不好翻，用[单页版]({PAGES_URL})，能按平台和状态筛。")
+    else:
+        out.append(
+            f"> Tables are awkward on a phone — the [single page]({PAGES_URL}) "
+            "filters by platform and status."
+        )
+    out.append("")
 
     out.extend(render_security(variants, lang))
     out.extend(render_updates(variants, lang))

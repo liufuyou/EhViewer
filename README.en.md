@@ -10,6 +10,8 @@
 
 > Last checked `2026-11-05` · 6 available · 6 dormant / archived
 
+> Tables are awkward on a phone — the [single page](https://liufuyou.github.io/EhViewer/) filters by platform and status.
+
 ## Recommended
 
 | Variant | Platform | Status | Latest | Released | Get |
