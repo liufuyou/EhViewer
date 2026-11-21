@@ -17,15 +17,12 @@
 | EhViewer SXJ (New Green E)<br><sub>Chinese-oriented fork, ships most often</sub> | Android | Active | 2.0.2.7 | 2026-11-02 | [Download](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
 | EhViewer NekoInverter (White E)<br><sub>Non-MD3, restrained changes, closest to the classic experience</sub> | Android 9+ | Active | 1.8.14 | 2026-10-22 | [Download](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
 
-<details>
-<summary>Other Android builds (2)</summary>
+## Other Android builds
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer Epix (Green E mod)<br><sub>Closest to the original Green E, slower cadence</sub> | Android | Less active | 1.7.26 | 2026-08-08 | [Download](https://github.com/exzhawk/EhViewer/releases) |
 | EhViewer ZhanZiyuan (Colored E continuation)<br><sub>Continued from an archived snapshot after FooIbar moved; solo maintained, same package name</sub> | Android 9+ | Active | 1.15.13 | 2026-11-13 | [Download](https://github.com/ZhanZiyuan/EhViewer/releases) |
-
-</details>
 
 ## All platforms / Desktop
 

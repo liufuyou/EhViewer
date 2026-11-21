@@ -4,6 +4,7 @@
 # status 只写 taken_down（下架）或 archived（归档），其他状态按 released 自动算：
 #   ≤60 天 活跃 / 60~180 天 更新较少 / >180 天 停更
 # 条目停更后记得把它移到 dormant 组，放错了脚本只提示不拦。
+# 分组写 collapsed: true 会收成一行。组内不到 3 条别折，省下的位置不值一次点击。
 #
 # 下面这几个字段由 sync_releases.py 自动写入，人不用手填：
 #   latest_summary / security_level / security_note / security_note_en / security_checked
@@ -22,7 +23,6 @@ groups:
   - id: android_alt
     zh: 其他 Android 分支
     en: Other Android builds
-    collapsed: true
 
   - id: cross_platform
     zh: 全平台/桌面端

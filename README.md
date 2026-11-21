@@ -17,15 +17,12 @@
 | EhViewer SXJ（新绿 E）<br><sub>中文优化，更新最勤</sub> | Android | 活跃 | 2.0.2.7 | 2026-11-02 | [下载](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
 | EhViewer NekoInverter（修白 E）<br><sub>非 MD3 风格，改动克制，最接近传统体验</sub> | Android 9+ | 活跃 | 1.8.14 | 2026-10-22 | [下载](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
 
-<details>
-<summary>其他 Android 分支（2 个）</summary>
+## 其他 Android 分支
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer Epix（绿 E MOD）<br><sub>最接近原版绿 E 的改动，节奏较慢</sub> | Android | 更新较少 | 1.7.26 | 2026-08-08 | [下载](https://github.com/exzhawk/EhViewer/releases) |
 | EhViewer ZhanZiyuan（彩 E 延续版）<br><sub>FooIbar 迁走后，用历史快照恢复代码接着做；一人维护，与旧版同包名</sub> | Android 9+ | 活跃 | 1.15.13 | 2026-11-13 | [下载](https://github.com/ZhanZiyuan/EhViewer/releases) |
-
-</details>
 
 ## 全平台/桌面端
 
