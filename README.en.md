@@ -6,9 +6,9 @@
 
 <p align="center">A curated index of E-Hentai viewers that are still available, covering Android, iOS, HarmonyOS, and Windows / macOS / Linux desktops.</p>
 
-> Last checked `2026-11-21` · 7 available · 7 dormant / archived
+Last checked `2026-11-21` · 7 available · 7 dormant / archived
 
-> Tables are awkward on a phone — the [single page](https://liufuyou.github.io/EhViewer/) filters by platform and status.
+On a phone the tables scroll sideways. The [single page](https://liufuyou.github.io/EhViewer/) is one card per build with its download button, filterable by platform and status.
 
 ## Recommended
 

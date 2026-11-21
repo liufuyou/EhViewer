@@ -4,7 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>EhViewer · 版本索引</title>
-<meta name="description" content="EhViewer 各分支的版本索引：平台、状态、最新版本与官方下载入口。">
+<meta name="description" content="仍在维护的 EhViewer 各分支：Android、iOS、鸿蒙与桌面端，按平台和状态筛，点「下载」去官方发布页。">
+<link rel="canonical" href="https://liufuyou.github.io/EhViewer/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%232563eb'/%3E%3Ctext x='16' y='22.5' font-family='system-ui,sans-serif' font-size='17' font-weight='700' fill='%23fff' text-anchor='middle'%3EE%3C/text%3E%3C/svg%3E">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme:light)">
+<meta name="theme-color" content="#0b0b0c" media="(prefers-color-scheme:dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="EhViewer 版本索引">
+<meta property="og:title" content="EhViewer · 版本索引">
+<meta property="og:description" content="仍在维护的 EhViewer 各分支，按平台和状态筛，直接跳官方发布页。">
+<meta property="og:url" content="https://liufuyou.github.io/EhViewer/">
+<meta property="og:image" content="https://opengraph.githubassets.com/1/liufuyou/EhViewer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="EhViewer · 版本索引">
+<meta name="twitter:description" content="仍在维护的 EhViewer 各分支，按平台和状态筛，直接跳官方发布页。">
 <style>
 :root{
   --bg:#ffffff;--fg:#18181b;--muted:#71717a;--line:#e4e4e7;--card:#fafafa;
@@ -18,7 +31,7 @@
 body{margin:0;background:var(--bg);color:var(--fg);
   font:15px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
   -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
-.wrap{max-width:760px;margin:0 auto;padding:0 20px}
+.wrap{max-width:900px;margin:0 auto;padding:0 20px}
 header{padding:34px 0 22px;border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;gap:12px}
 h1{font-size:20px;margin:0;letter-spacing:-.01em;font-weight:650}
@@ -38,10 +51,16 @@ input[type=search]:focus{outline:2px solid var(--accent);outline-offset:1px;bord
   background:transparent;color:var(--muted);cursor:pointer;line-height:1.5}
 .chip:hover{color:var(--fg)}
 .chip[aria-pressed=true]{background:var(--fg);color:var(--bg);border-color:var(--fg)}
-section h2{font-size:12px;letter-spacing:.08em;color:var(--muted);margin:26px 0 10px;
-  font-weight:600;text-transform:uppercase}
+.results{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:16px 0 0;
+  font-size:12.5px;color:var(--dim);font-variant-numeric:tabular-nums}
+.results .ghost{font-size:12px;padding:3px 10px}
+section h2{font-size:13.5px;letter-spacing:.01em;color:var(--muted);margin:26px 0 10px;font-weight:650}
+html[lang="en"] section h2{font-size:12px;letter-spacing:.08em;text-transform:uppercase}
 .intro{color:var(--dim);font-size:12.5px;margin:-4px 0 10px}
-.card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.cards{display:grid;gap:10px;grid-template-columns:1fr}
+@media (min-width:760px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px}
+.card:target{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 .top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .name{font-weight:600;font-size:15px;line-height:1.45}
 .gone .name{color:var(--muted);text-decoration:line-through}
@@ -85,9 +104,13 @@ footer a:hover{color:var(--fg)}
   </header>
 
   <div class="controls">
-    <input id="q" type="search" autocomplete="off" spellcheck="false">
-    <div class="chips" id="pf"></div>
-    <div class="chips" id="sf"></div>
+    <input id="q" type="search" autocomplete="off" spellcheck="false" aria-label="搜名称、备注或平台">
+    <div class="chips" id="pf" role="group" aria-label="平台"></div>
+    <div class="chips" id="sf" role="group" aria-label="状态"></div>
+    <div class="results">
+      <span id="count" role="status" aria-live="polite"></span>
+      <button id="clear" class="ghost" type="button" hidden></button>
+    </div>
   </div>
 
   <main id="list"></main>
@@ -469,6 +492,11 @@ footer a:hover{color:var(--fg)}
    "generated": "本页由 data/versions.yaml 生成，请勿手改",
    "disclaimer": "本站仅做链接索引，不托管、不分发任何安装包。使用风险自负，请遵守所在地法律法规。",
    "checked": "最后核对 2026-11-21 · 可用 7 个 · 已停更或下架 7 个",
+   "platformLabel": "平台",
+   "statusLabel": "状态",
+   "clear": "清除筛选",
+   "count": "{n} / {all} 个",
+   "countAll": "{all} 个版本",
    "status": {
     "active": "活跃",
     "low": "更新较少",
@@ -493,6 +521,11 @@ footer a:hover{color:var(--fg)}
    "generated": "Generated from data/versions.yaml — do not edit by hand",
    "disclaimer": "This site is a link index only. No package is hosted or redistributed here. Use at your own risk and follow your local laws.",
    "checked": "Last checked 2026-11-21 · 7 available · 7 dormant / archived",
+   "platformLabel": "Platform",
+   "statusLabel": "Status",
+   "clear": "Clear filters",
+   "count": "{n} of {all}",
+   "countAll": "{all} builds",
    "status": {
     "active": "Active",
     "low": "Less active",
@@ -505,8 +538,16 @@ footer a:hover{color:var(--fg)}
 };</script>
 <script>
 const T = DATA.i18n;
-let lang = 'zh', q = '', pf = 'all', sf = 'all';
+const PLATFORMS = ['all', 'android', 'ios', 'harmony', 'desktop'];
+const STATUSES = ['all', 'avail', 'active', 'low', 'dormant', 'archived', 'taken_down'];
 const $ = s => document.querySelector(s);
+
+// 初始状态从地址栏读，筛完可以直接把链接发出去；非法值一律回落到 all
+const init = new URLSearchParams(location.search);
+let lang = 'zh';
+let q = (init.get('q') || '').trim().toLowerCase();
+let pf = PLATFORMS.indexOf(init.get('p')) >= 0 ? init.get('p') : 'all';
+let sf = STATUSES.indexOf(init.get('s')) >= 0 ? init.get('s') : 'all';
 
 function esc(s){
   return String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -536,7 +577,7 @@ function card(v){
   const link = v.url && !gone
     ? '<a class="btn" href="' + esc(v.url) + '" target="_blank" rel="noopener">' + esc(t(v.kind)) + '</a>'
     : '';
-  return '<article class="card' + (gone ? ' gone' : '') + '">'
+  return '<article class="card' + (gone ? ' gone' : '') + '" id="' + esc(v.id) + '">'
     + '<div class="top"><div class="name">' + esc(name) + '</div>'
     + '<span class="pill ' + v.status + '">' + esc(t('status')[v.status] || v.status) + '</span></div>'
     + '<div class="sub">' + bits + sec + '</div>'
@@ -547,19 +588,38 @@ function card(v){
 
 function renderList(){
   const out = [];
-  let total = 0;
+  let shown = 0;
   DATA.groups.forEach(function(g){
     const items = DATA.variants.filter(v => v.group === g.id && matches(v));
     if (!items.length) return;
-    total += items.length;
+    shown += items.length;
     out.push('<section><h2>' + esc(lang === 'zh' ? g.zh : g.en) + '</h2>');
     const intro = lang === 'zh' ? g.zhIntro : g.enIntro;
     if (intro) out.push('<p class="intro">' + esc(intro) + '</p>');
+    out.push('<div class="cards">');
     items.forEach(v => out.push(card(v)));
-    out.push('</section>');
+    out.push('</div></section>');
   });
   $('#list').innerHTML = out.join('');
-  $('#empty').hidden = total > 0;
+  $('#empty').hidden = shown > 0;
+
+  const all = DATA.variants.length;
+  $('#count').textContent = shown === all
+    ? t('countAll').replace('{all}', all)
+    : t('count').replace('{n}', shown).replace('{all}', all);
+  $('#clear').hidden = !(q || pf !== 'all' || sf !== 'all');
+  syncURL();
+}
+
+function syncURL(){
+  const p = new URLSearchParams();
+  if (pf !== 'all') p.set('p', pf);
+  if (sf !== 'all') p.set('s', sf);
+  if (q) p.set('q', q);
+  const qs = p.toString();
+  try {
+    history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+  } catch (e) { /* file:// 下部分浏览器不让改地址栏，忽略 */ }
 }
 
 function chips(host, items, cur, pick){
@@ -601,6 +661,10 @@ function paintTexts(){
   $('#lang').textContent = t('toggle');
   $('#meta').textContent = t('checked');
   $('#q').placeholder = t('search');
+  $('#q').setAttribute('aria-label', t('search'));
+  $('#pf').setAttribute('aria-label', t('platformLabel'));
+  $('#sf').setAttribute('aria-label', t('statusLabel'));
+  $('#clear').textContent = t('clear');
   $('#empty').textContent = t('empty');
   $('#repo').href = DATA.repo;
 }
@@ -619,7 +683,14 @@ $('#lang').addEventListener('click', function(){
   lang = lang === 'zh' ? 'en' : 'zh';
   rerender();
 });
+$('#clear').addEventListener('click', function(){
+  q = ''; pf = 'all'; sf = 'all';
+  $('#q').value = '';
+  rerender();
+  $('#q').focus();
+});
 
+$('#q').value = q;
 rerender();
 </script>
 </body>

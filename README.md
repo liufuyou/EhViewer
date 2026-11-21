@@ -6,9 +6,9 @@
 
 <p align="center">EhViewer 是一个 E-Hentai 阅读器合集，提供目前仍然可用的版本，覆盖 Android、iOS、鸿蒙，以及 Windows / macOS / Linux 桌面端。</p>
 
-> 最后核对 `2026-11-21` · 可用 7 个 · 已停更或下架 7 个
+最后核对 `2026-11-21` · 可用 7 个 · 已停更或下架 7 个
 
-> 手机上表格不好翻，用[单页版](https://liufuyou.github.io/EhViewer/)，能按平台和状态筛。
+手机上表格要左右滑。用[单页版](https://liufuyou.github.io/EhViewer/)：一个版本一张卡，下载按钮就在卡上，还能按平台和状态筛。
 
 ## 推荐版本
 

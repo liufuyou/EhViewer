@@ -37,3 +37,16 @@ jobs:
 
       - name: 校验生成物与清单一致
         run: python scripts/render.py --check
+
+      # --check 只比对字符串，页面里的 JS 写错了它照样通过，所以单独跑一次语法检查
+      - name: 校验页面脚本
+        run: |
+          python - <<'PY'
+          import pathlib
+          import re
+          html = pathlib.Path("docs/index.html").read_text(encoding="utf-8")
+          blocks = re.findall(r"<script>(.*?)</script>", html, re.S)
+          pathlib.Path("page.js").write_text(blocks[-1], encoding="utf-8")
+          print(f"提取 {len(blocks)} 段脚本，最后一段 {len(blocks[-1])} 字符")
+          PY
+          node --check page.js
