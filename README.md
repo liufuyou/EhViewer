@@ -2,13 +2,11 @@
 
 <p align="center"><b>简体中文</b> · <a href="./README.en.md">English</a></p>
 
-<p align="center"><a target="_blank" href="https://github.com/login?return_to=%2Fliufuyou%2FEhViewer"><img alt="stars" src="https://img.shields.io/github/stars/liufuyou/EhViewer?style=flat&logo=github"></a> <img alt="last commit" src="https://img.shields.io/github/last-commit/liufuyou/EhViewer?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0"> <img alt="available" src="https://img.shields.io/badge/available-6-brightgreen"></p>
-
-<p align="center">⭐️star 支持，感谢！</p>
+<p align="center"><a target="_blank" href="https://github.com/liufuyou/EhViewer"><img alt="stars" src="https://img.shields.io/github/stars/liufuyou/EhViewer?style=flat&logo=github"></a> <img alt="last commit" src="https://img.shields.io/github/last-commit/liufuyou/EhViewer?label=%E6%9C%80%E8%BF%91%E6%9B%B4%E6%96%B0"> <img alt="available" src="https://img.shields.io/badge/available-7-brightgreen"><br><a target="_blank" href="https://github.com/liufuyou/EhViewer">⭐️star 支持，感谢！</a></p>
 
 <p align="center">EhViewer 是一个 E-Hentai 阅读器合集，提供目前仍然可用的版本，覆盖 Android、iOS、鸿蒙，以及 Windows / macOS / Linux 桌面端。</p>
 
-> 最后核对 `2026-11-05` · 可用 6 个 · 已停更或下架 6 个
+> 最后核对 `2026-11-21` · 可用 7 个 · 已停更或下架 7 个
 
 > 手机上表格不好翻，用[单页版](https://liufuyou.github.io/EhViewer/)，能按平台和状态筛。
 
@@ -20,11 +18,12 @@
 | EhViewer NekoInverter（修白 E）<br><sub>非 MD3 风格，改动克制，最接近传统体验</sub> | Android 9+ | 活跃 | 1.8.14 | 2026-10-22 | [下载](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
 
 <details>
-<summary>其他 Android 分支（1 个）</summary>
+<summary>其他 Android 分支（2 个）</summary>
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer Epix（绿 E MOD）<br><sub>最接近原版绿 E 的改动，节奏较慢</sub> | Android | 更新较少 | 1.7.26 | 2026-08-08 | [下载](https://github.com/exzhawk/EhViewer/releases) |
+| EhViewer ZhanZiyuan（彩 E 延续版）<br><sub>FooIbar 迁走后，用历史快照恢复代码接着做；一人维护，与旧版同包名</sub> | Android 9+ | 活跃 | 1.15.13 | 2026-11-13 | [下载](https://github.com/ZhanZiyuan/EhViewer/releases) |
 
 </details>
 
@@ -51,6 +50,7 @@
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer UjuiUjuMandan（彩 E 直连版）<br><sub>自 FooIbar 分支分出，保留了直连；最后版本停在 2025-12</sub> | Android 9+ | 停更 | 1.14.6 | 2025-12-17 | [下载](https://github.com/UjuiUjuMandan/EhViewer/releases) |
+| EhViewer (Codeberg)（彩 E 原仓库新址）<br><sub>原项目迁到 Codeberg 后的正式仓库；代码仍在提交，但 2025-12 之后没再发版</sub> | Android 9+ | 停更 | 1.14.6 | 2025-12-17 | [下载](https://codeberg.org/EhViewer/EhViewer/releases) |
 
 <details>
 <summary>已下架 / 已归档（5 个）</summary>
@@ -59,7 +59,7 @@
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| ~~EhViewer FooIbar（彩 E 主线）~~<br><sub>2026 年核实：仓库因 DMCA 下架，链接已不可访问</sub> | Android 9+ | 已下架 | — | — | — |
+| ~~EhViewer FooIbar（彩 E 主线）~~<br><sub>2026 年核实：仓库因 DMCA 下架，项目已迁至 Codeberg，见下方「已停更」</sub> | Android 9+ | 已下架 | — | — | — |
 | ~~FEhViewer~~<br><sub>2026 年核实：仓库因 DMCA 下架，链接已不可访问</sub> | 全平台 | 已下架 | — | — | — |
 | EhViewer Overhauled（MD3 风格）<br><sub>已归档，与新版数据格式不兼容</sub> | Android | 已归档 | 1.8.8.3 | — | — |
 | EhViewer Hippo Seven（原版绿 E）<br><sub>上游早已停更</sub> | Android | 已归档 | 1.7.8 | — | — |

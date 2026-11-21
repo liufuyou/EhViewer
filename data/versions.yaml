@@ -9,7 +9,7 @@
 #   latest_summary / security_level / security_note / security_note_en / security_checked
 
 meta:
-  last_checked: 2026-11-05      # 上次人工核对日期，务必和实际核对时间一致
+  last_checked: 2026-11-21      # 上次人工核对日期，务必和实际核对时间一致
   active_within_days: 60        # 60 天内发过版 = 活跃
   dormant_after_days: 180       # 超过 180 天没发版 = 停更
   checked_line_until: 2027-02-05  # README 顶部「最后核对」行的保留期限；过期后由 maintenance workflow 删掉本字段
@@ -96,6 +96,18 @@ variants:
     zh_note: 最接近原版绿 E 的改动，节奏较慢
     en_note: Closest to the original Green E, slower cadence
 
+  - id: zhanziyuan
+    group: android_alt
+    name: EhViewer ZhanZiyuan
+    nickname_zh: 彩 E 延续版
+    nickname_en: Colored E continuation
+    platform: Android 9+
+    version: 1.15.13
+    released: 2026-11-13
+    url: https://github.com/ZhanZiyuan/EhViewer/releases
+    zh_note: FooIbar 迁走后，用历史快照恢复代码接着做；一人维护，与旧版同包名
+    en_note: Continued from an archived snapshot after FooIbar moved; solo maintained, same package name
+
   # ---------- iOS / 鸿蒙 ----------
   - id: ehpanda
     group: ios
@@ -134,6 +146,18 @@ variants:
     zh_note: 自 FooIbar 分支分出，保留了直连；最后版本停在 2025-12
     en_note: Forked from FooIbar with direct connect restored; last build 2025-12
 
+  - id: codeberg
+    group: dormant
+    name: EhViewer (Codeberg)
+    nickname_zh: 彩 E 原仓库新址
+    nickname_en: Colored E original, new home
+    platform: Android 9+
+    version: 1.14.6
+    released: 2025-12-17
+    url: https://codeberg.org/EhViewer/EhViewer/releases
+    zh_note: 原项目迁到 Codeberg 后的正式仓库；代码仍在提交，但 2025-12 之后没再发版
+    en_note: Official home after the move to Codeberg; commits continue, no release since 2025-12
+
   # ---------- 归档 / 下架 ----------
   - id: fooibar
     group: archived
@@ -143,8 +167,8 @@ variants:
     platform: Android 9+
     status: taken_down
     url: https://github.com/FooIbar/EhViewer
-    zh_note: 2026 年核实：仓库因 DMCA 下架，链接已不可访问
-    en_note: Verified 2026 — repository taken down via DMCA
+    zh_note: 2026 年核实：仓库因 DMCA 下架，项目已迁至 Codeberg，见下方「已停更」
+    en_note: Verified 2026 — taken down via DMCA; the project moved to Codeberg, listed under Dormant
 
   - id: fehviewer
     group: archived

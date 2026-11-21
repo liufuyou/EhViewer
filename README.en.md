@@ -2,13 +2,11 @@
 
 <p align="center"><a href="./README.md">简体中文</a> · <b>English</b></p>
 
-<p align="center"><a target="_blank" href="https://github.com/login?return_to=%2Fliufuyou%2FEhViewer"><img alt="stars" src="https://img.shields.io/github/stars/liufuyou/EhViewer?style=flat&logo=github"></a> <img alt="last commit" src="https://img.shields.io/github/last-commit/liufuyou/EhViewer?label=updated"> <img alt="available" src="https://img.shields.io/badge/available-6-brightgreen"></p>
-
-<p align="center">⭐️ star for support, thank you!</p>
+<p align="center"><a target="_blank" href="https://github.com/liufuyou/EhViewer"><img alt="stars" src="https://img.shields.io/github/stars/liufuyou/EhViewer?style=flat&logo=github"></a> <img alt="last commit" src="https://img.shields.io/github/last-commit/liufuyou/EhViewer?label=updated"> <img alt="available" src="https://img.shields.io/badge/available-7-brightgreen"><br><a target="_blank" href="https://github.com/liufuyou/EhViewer">⭐️ star for support, thank you!</a></p>
 
 <p align="center">A curated index of E-Hentai viewers that are still available, covering Android, iOS, HarmonyOS, and Windows / macOS / Linux desktops.</p>
 
-> Last checked `2026-11-05` · 6 available · 6 dormant / archived
+> Last checked `2026-11-21` · 7 available · 7 dormant / archived
 
 > Tables are awkward on a phone — the [single page](https://liufuyou.github.io/EhViewer/) filters by platform and status.
 
@@ -20,11 +18,12 @@
 | EhViewer NekoInverter (White E)<br><sub>Non-MD3, restrained changes, closest to the classic experience</sub> | Android 9+ | Active | 1.8.14 | 2026-10-22 | [Download](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
 
 <details>
-<summary>Other Android builds (1)</summary>
+<summary>Other Android builds (2)</summary>
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer Epix (Green E mod)<br><sub>Closest to the original Green E, slower cadence</sub> | Android | Less active | 1.7.26 | 2026-08-08 | [Download](https://github.com/exzhawk/EhViewer/releases) |
+| EhViewer ZhanZiyuan (Colored E continuation)<br><sub>Continued from an archived snapshot after FooIbar moved; solo maintained, same package name</sub> | Android 9+ | Active | 1.15.13 | 2026-11-13 | [Download](https://github.com/ZhanZiyuan/EhViewer/releases) |
 
 </details>
 
@@ -51,6 +50,7 @@
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
 | EhViewer UjuiUjuMandan (Colored E with direct connect)<br><sub>Forked from FooIbar with direct connect restored; last build 2025-12</sub> | Android 9+ | Dormant | 1.14.6 | 2025-12-17 | [Download](https://github.com/UjuiUjuMandan/EhViewer/releases) |
+| EhViewer (Codeberg) (Colored E original, new home)<br><sub>Official home after the move to Codeberg; commits continue, no release since 2025-12</sub> | Android 9+ | Dormant | 1.14.6 | 2025-12-17 | [Download](https://codeberg.org/EhViewer/EhViewer/releases) |
 
 <details>
 <summary>Taken down / archived (5)</summary>
@@ -59,7 +59,7 @@
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| ~~EhViewer FooIbar (Colored E mainline)~~<br><sub>Verified 2026 — repository taken down via DMCA</sub> | Android 9+ | Taken down | — | — | — |
+| ~~EhViewer FooIbar (Colored E mainline)~~<br><sub>Verified 2026 — taken down via DMCA; the project moved to Codeberg, listed under Dormant</sub> | Android 9+ | Taken down | — | — | — |
 | ~~FEhViewer~~<br><sub>Verified 2026 — repository taken down via DMCA</sub> | All platforms | Taken down | — | — | — |
 | EhViewer Overhauled<br><sub>Archived, incompatible data format with current versions</sub> | Android | Archived | 1.8.8.3 | — | — |
 | EhViewer Hippo Seven (Original Green E)<br><sub>Upstream abandoned long ago</sub> | Android | Archived | 1.7.8 | — | — |

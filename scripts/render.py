@@ -268,22 +268,20 @@ def build(lang: str, data: dict) -> str:
         out.append('<p align="center"><a href="./README.md">简体中文</a> · <b>English</b></p>')
     out.append("")
 
-    # 「最近更新」由 shields.io 实时取数；星标徽标兼作求星入口
+    # 「最近更新」由 shields.io 实时取数。
+    # 徽标和求星文案放同一个 <p> 里，靠 <br> 换行：分成两段会被 GitHub 的段间距拉开 ~16px。
+    # 文案本身也是链接——GitHub 没有能直接完成 star 的 GET 地址，能做的只是少让用户找。
     label = quote("最近更新" if lang == "zh" else "updated")
-    star_url = "https://github.com/login?return_to=%2F" + REPO.replace("/", "%2F")
+    repo_url = f"https://github.com/{REPO}"
+    cta = "⭐️star 支持，感谢！" if lang == "zh" else "⭐️ star for support, thank you!"
     out.append(
         f'<p align="center">'
-        f'<a target="_blank" href="{star_url}">'
+        f'<a target="_blank" href="{repo_url}">'
         f'<img alt="stars" src="https://img.shields.io/github/stars/{REPO}?style=flat&logo=github"></a> '
         f'<img alt="last commit" src="https://img.shields.io/github/last-commit/{REPO}?label={label}"> '
         f'<img alt="available" src="https://img.shields.io/badge/available-{available}-brightgreen">'
+        f'<br><a target="_blank" href="{repo_url}">{cta}</a>'
         f"</p>"
-    )
-    out.append("")
-    out.append(
-        '<p align="center">⭐️star 支持，感谢！</p>'
-        if lang == "zh"
-        else '<p align="center">⭐️ star for support, thank you!</p>'
     )
     out.append("")
 
