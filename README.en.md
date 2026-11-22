@@ -8,46 +8,49 @@
 
 Last checked `2026-11-21` · 7 available · 7 dormant / archived
 
-On a phone the tables scroll sideways. The [single page](https://liufuyou.github.io/EhViewer/) is one card per build with its download button, filterable by platform and status.
+> [!TIP]
+> **On a phone the tables scroll sideways.** Use the [single page](https://liufuyou.github.io/EhViewer/): one card per build, with its download button, filterable by platform and status.
 
 ## Recommended
 
+> Android only — other platforms are listed in their own sections below.
+
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| EhViewer SXJ (New Green E)<br><sub>Chinese-oriented fork, ships most often</sub> | Android | Active | 2.0.2.7 | 2026-11-02 | [Download](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
-| EhViewer NekoInverter (White E)<br><sub>Non-MD3, restrained changes, closest to the classic experience</sub> | Android 9+ | Active | 1.8.14 | 2026-10-22 | [Download](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
+| EhViewer SXJ (New Green E)<br><sub>Built on the original Green E; added features, frequent releases</sub> | Android | Active | 2.0.2.7 | 2026-11-02 | [Download](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
+| EhViewer NekoInverter (White E)<br><sub>Keeps the original UI, minimal changes</sub> | Android 9+ | Active | 1.8.14 | 2026-10-22 | [Download](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
+| EhViewer ZhanZiyuan (Colored E continuation)<br><sub>Continues from FooIbar's last release</sub> | Android 9+ | Active | 1.15.13 | 2026-11-13 | [Download](https://github.com/ZhanZiyuan/EhViewer/releases) |
 
 ## Other Android builds
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| EhViewer Epix (Green E mod)<br><sub>Closest to the original Green E, slower cadence</sub> | Android | Less active | 1.7.26 | 2026-08-08 | [Download](https://github.com/exzhawk/EhViewer/releases) |
-| EhViewer ZhanZiyuan (Colored E continuation)<br><sub>Continued from an archived snapshot after FooIbar moved; solo maintained, same package name</sub> | Android 9+ | Active | 1.15.13 | 2026-11-13 | [Download](https://github.com/ZhanZiyuan/EhViewer/releases) |
+| EhViewer Epix (Green E mod)<br><sub>Based on the original Green E, small changes</sub> | Android | Less active | 1.7.26 | 2026-08-08 | [Download](https://github.com/exzhawk/EhViewer/releases) |
 
 ## All platforms / Desktop
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| JHenTai<br><sub>Flutter-based; runs on Android, iOS, Windows, macOS and Linux</sub> | All platforms | Active | 8.0.18 | 2026-10-23 | [Download](https://github.com/jiangtian616/JHenTai/releases) |
+| JHenTai<br><sub>One client for phone and desktop</sub> | All platforms | Active | 8.0.18 | 2026-10-23 | [Download](https://github.com/jiangtian616/JHenTai/releases) |
 
 ## iOS
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| EhPanda<br><sub>No stable release for 3+ months; 3.0.0 is in testing. ipa requires sideloading (e.g. AltStore)</sub> | iOS 26.0+ | Less active | 2.8.1<br><sub>pre-release 3.0.0</sub> | 2026-07-20 | [Download](https://github.com/EhPanda-Team/EhPanda/releases) |
+| EhPanda<br><sub>ipa requires sideloading (AltStore / SideStore)</sub> | iOS 26.0+ | Active | 3.0.0 | 2026-11-12 | [Download](https://github.com/EhPanda-Team/EhPanda/releases) |
 
 ## HarmonyOS
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| HarmonyOS EhViewer<br><sub>Native HarmonyOS client (ArkTS), the only one so far; ships as .hap only, sideload it yourself</sub> | HarmonyOS 7+ | Active | 1.1.0 | 2026-10-08 | [Download](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
+| HarmonyOS EhViewer<br><sub>Native HarmonyOS client; hap needs sideloading</sub> | HarmonyOS 7+ | Active | 1.1.0 | 2026-10-08 | [Download](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
 
 ## Dormant
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| EhViewer UjuiUjuMandan (Colored E with direct connect)<br><sub>Forked from FooIbar with direct connect restored; last build 2025-12</sub> | Android 9+ | Dormant | 1.14.6 | 2025-12-17 | [Download](https://github.com/UjuiUjuMandan/EhViewer/releases) |
-| EhViewer (Codeberg) (Colored E original, new home)<br><sub>Official home after the move to Codeberg; commits continue, no release since 2025-12</sub> | Android 9+ | Dormant | 1.14.6 | 2025-12-17 | [Download](https://codeberg.org/EhViewer/EhViewer/releases) |
+| EhViewer UjuiUjuMandan (Colored E with direct connect)<br><sub>Forked from FooIbar, keeps direct connect</sub> | Android 9+ | Dormant | 1.14.6 | 2025-12-17 | [Download](https://github.com/UjuiUjuMandan/EhViewer/releases) |
+| EhViewer (Codeberg) (Colored E original, new home)<br><sub>Project's new home; code still moves, no releases since 2025-12</sub> | Android 9+ | Dormant | 1.14.6 | 2025-12-17 | [Download](https://codeberg.org/EhViewer/EhViewer/releases) |
 
 <details>
 <summary>Taken down / archived (5)</summary>
@@ -56,7 +59,7 @@ On a phone the tables scroll sideways. The [single page](https://liufuyou.github
 
 | Variant | Platform | Status | Latest | Released | Get |
 | --- | --- | --- | --- | --- | --- |
-| ~~EhViewer FooIbar (Colored E mainline)~~<br><sub>Verified 2026 — taken down via DMCA; the project moved to Codeberg, listed under Dormant</sub> | Android 9+ | Taken down | — | — | — |
+| ~~EhViewer FooIbar (Colored E mainline)~~<br><sub>Verified 2026 — taken down via DMCA; moved to Codeberg, listed under Dormant</sub> | Android 9+ | Taken down | — | — | — |
 | ~~FEhViewer~~<br><sub>Verified 2026 — repository taken down via DMCA</sub> | All platforms | Taken down | — | — | — |
 | EhViewer Overhauled<br><sub>Archived, incompatible data format with current versions</sub> | Android | Archived | 1.8.8.3 | — | — |
 | EhViewer Hippo Seven (Original Green E)<br><sub>Upstream abandoned long ago</sub> | Android | Archived | 1.7.8 | — | — |
@@ -66,11 +69,10 @@ On a phone the tables scroll sideways. The [single page](https://liufuyou.github
 
 ## Which one
 
-- **All platforms**: JHenTai, covering Android, iOS, Windows, macOS and Linux
-- **Android**: SXJ (Chinese-oriented, ships often) or NekoInverter (most conservative)
-- **Android, classic Green E look**: Epix, slower cadence
+- **Android**: the three in Recommended, plus "Other Android builds"
 - **iOS / iPadOS**: EhPanda
 - **HarmonyOS**: HarmonyOS EhViewer
+- **All platforms / desktop**: JHenTai
 
 **Back up favorites and history before switching — data formats differ between forks.**
 
@@ -84,7 +86,7 @@ On a phone the tables scroll sideways. The [single page](https://liufuyou.github
 
 **Pagination broken, thumbnails all blank, or endless loading?**
 
-Update first. Then check your network route, the host / DoH / SNI options in advanced settings, and clear the cache. Front-end changes on E-Hentai hit every third-party client; forks usually catch up within days.
+Update first. Then check your network route, the host / DoH / SNI options in advanced settings, and clear the cache. Front-end changes on E-Hentai hit every third-party client; forks fix it at different speeds.
 
 **Login fails, or ExHentai shows a blank page (Sad Panda)?**
 

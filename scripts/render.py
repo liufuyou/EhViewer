@@ -306,16 +306,19 @@ def build(lang: str, data: dict) -> str:
         out.append("")
 
     # 单页与 README 同源，位置跟着 Pages 走。
-    # 这段只讲清「表格在手机上要横滑」和「单页多给什么」，不加粗、不放大、不套引用。
+    # 这段只讲清「表格在手机上要横滑」和「单页多给什么」。
+    # 用 GitHub 的提示框让它脱离正文：普通段落和加粗都试过，手机读者还是会直接去横滑表格。
     if lang == "zh":
+        out.append("> [!TIP]")
         out.append(
-            f"手机上表格要左右滑。用[单页版]({PAGES_URL})："
+            f"> **手机上表格要左右滑。** 用[单页版]({PAGES_URL})："
             "一个版本一张卡，下载按钮就在卡上，还能按平台和状态筛。"
         )
     else:
+        out.append("> [!TIP]")
         out.append(
-            f"On a phone the tables scroll sideways. The [single page]({PAGES_URL}) "
-            "is one card per build with its download button, filterable by platform and status."
+            f"> **On a phone the tables scroll sideways.** Use the [single page]({PAGES_URL}): "
+            "one card per build, with its download button, filterable by platform and status."
         )
     out.append("")
 
@@ -362,21 +365,19 @@ def build(lang: str, data: dict) -> str:
     if lang == "zh":
         out.append("## 该选哪个")
         out.append("")
-        out.append("- **全平台**：JHenTai，覆盖 Android、iOS、Windows、macOS、Linux")
-        out.append("- **Android**：SXJ（中文优化、更新最勤）或 NekoInverter（改动最少）")
-        out.append("- **Android，旧版绿 E 界面**：Epix，更新较慢")
+        out.append("- **Android**：「推荐版本」三条，以及「其他 Android 分支」")
         out.append("- **iOS / iPadOS**：EhPanda")
         out.append("- **鸿蒙**：HarmonyOS EhViewer")
+        out.append("- **全平台 / 桌面端**：JHenTai")
         out.append("")
         out.append("**换版本前先备份收藏和阅读记录，不同分支的数据不通用。**")
     else:
         out.append("## Which one")
         out.append("")
-        out.append("- **All platforms**: JHenTai, covering Android, iOS, Windows, macOS and Linux")
-        out.append("- **Android**: SXJ (Chinese-oriented, ships often) or NekoInverter (most conservative)")
-        out.append("- **Android, classic Green E look**: Epix, slower cadence")
+        out.append("- **Android**: the three in Recommended, plus \"Other Android builds\"")
         out.append("- **iOS / iPadOS**: EhPanda")
         out.append("- **HarmonyOS**: HarmonyOS EhViewer")
+        out.append("- **All platforms / desktop**: JHenTai")
         out.append("")
         out.append("**Back up favorites and history before switching — data formats differ between forks.**")
     out.append("")
@@ -997,6 +998,46 @@ def warn_group_drift(data: dict) -> None:
             print(f"提示：{v['id']} 已超过 {dormant_days} 天没发版，考虑移入「已停更」分组。", file=sys.stderr)
 
 
+# note 写得像广告时提示一句。只提示不拦：这些词有合理用法，机器判不了。
+NOTE_RISK_PHRASES = ("最接近", "最好", "最强", "最全", "最勤", "唯一", "第一",
+                     "保证", "绝对", "一定会", "几天内", "必备", "神器", "强烈推荐")
+NOTE_MAX_ZH = 20
+NOTE_MAX_EN = 70
+
+
+def note_width(text: str) -> float:
+    """按显示宽度算长度：一个汉字算 1，半角字符算 0.5。"""
+    return sum(1 if ord(c) > 0x2E80 else 0.5 for c in text)
+
+
+def warn_note_style(data: dict) -> None:
+    """备注只该写差异。写得像广告、太长，或和状态对不上时各提示一句。"""
+    meta = data["meta"]
+    anchor = parse_date(meta["last_checked"])
+    active_days = int(meta.get("active_within_days", 60))
+    dormant_days = int(meta.get("dormant_after_days", 180))
+
+    for v in data["variants"]:
+        # 归档条目要解释为什么不能用，长一点正常，不参与长度检查
+        if v["group"] == "archived":
+            continue
+        zh = (v.get("zh_note") or "").strip()
+        en = (v.get("en_note") or "").strip()
+        width = note_width(zh)
+        if width > NOTE_MAX_ZH:
+            print(f"提示：{v['id']} 的 zh_note 宽约 {width:g} 字，超过 {NOTE_MAX_ZH}——多半在堆细节，砍到只留差异。", file=sys.stderr)
+        if len(en) > NOTE_MAX_EN:
+            print(f"提示：{v['id']} 的 en_note 有 {len(en)} 字符，超过 {NOTE_MAX_EN}。", file=sys.stderr)
+        hits = [p for p in NOTE_RISK_PHRASES if p in zh]
+        if hits:
+            print(f"提示：{v['id']} 的 zh_note 含「{'、'.join(hits)}」，确认不是在替用户下判断。", file=sys.stderr)
+        if re.search(r"\d+\.\d+", zh):
+            print(f"提示：{v['id']} 的 zh_note 写了版本号。版本号只该放在 version 字段，写两处早晚不同步。", file=sys.stderr)
+        if any(w in zh for w in ("更新快", "更新勤", "节奏快")):
+            if effective_status(v, anchor, active_days, dormant_days) != "active":
+                print(f"提示：{v['id']} 的 note 说更新快，但状态已经不是活跃，两边对不上。", file=sys.stderr)
+
+
 def main(argv: list[str]) -> int:
     if not DATA.exists():
         sys.exit(f"找不到数据文件：{DATA}")
@@ -1005,6 +1046,7 @@ def main(argv: list[str]) -> int:
     data = yaml.safe_load(DATA.read_text(encoding="utf-8"))
     validate(data)
     warn_group_drift(data)
+    warn_note_style(data)
 
     stale: list[str] = []
     targets = [

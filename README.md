@@ -8,46 +8,49 @@
 
 最后核对 `2026-11-21` · 可用 7 个 · 已停更或下架 7 个
 
-手机上表格要左右滑。用[单页版](https://liufuyou.github.io/EhViewer/)：一个版本一张卡，下载按钮就在卡上，还能按平台和状态筛。
+> [!TIP]
+> **手机上表格要左右滑。** 用[单页版](https://liufuyou.github.io/EhViewer/)：一个版本一张卡，下载按钮就在卡上，还能按平台和状态筛。
 
 ## 推荐版本
 
+> 这一组只收 Android，其他平台见下面对应分组。
+
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| EhViewer SXJ（新绿 E）<br><sub>中文优化，更新最勤</sub> | Android | 活跃 | 2.0.2.7 | 2026-11-02 | [下载](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
-| EhViewer NekoInverter（修白 E）<br><sub>非 MD3 风格，改动克制，最接近传统体验</sub> | Android 9+ | 活跃 | 1.8.14 | 2026-10-22 | [下载](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
+| EhViewer SXJ（新绿 E）<br><sub>基于原版绿 E，功能上有扩充，更新节奏快</sub> | Android | 活跃 | 2.0.2.7 | 2026-11-02 | [下载](https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases) |
+| EhViewer NekoInverter（修白 E）<br><sub>界面保留原样，改动少</sub> | Android 9+ | 活跃 | 1.8.14 | 2026-10-22 | [下载](https://github.com/EhViewer-NekoInverter/EhViewer/releases) |
+| EhViewer ZhanZiyuan（彩 E 延续版）<br><sub>基于 FooIbar 最后版本继续开发</sub> | Android 9+ | 活跃 | 1.15.13 | 2026-11-13 | [下载](https://github.com/ZhanZiyuan/EhViewer/releases) |
 
 ## 其他 Android 分支
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| EhViewer Epix（绿 E MOD）<br><sub>最接近原版绿 E 的改动，节奏较慢</sub> | Android | 更新较少 | 1.7.26 | 2026-08-08 | [下载](https://github.com/exzhawk/EhViewer/releases) |
-| EhViewer ZhanZiyuan（彩 E 延续版）<br><sub>FooIbar 迁走后，用历史快照恢复代码接着做；一人维护，与旧版同包名</sub> | Android 9+ | 活跃 | 1.15.13 | 2026-11-13 | [下载](https://github.com/ZhanZiyuan/EhViewer/releases) |
+| EhViewer Epix（绿 E MOD）<br><sub>基于原版绿 E，改动幅度小</sub> | Android | 更新较少 | 1.7.26 | 2026-08-08 | [下载](https://github.com/exzhawk/EhViewer/releases) |
 
 ## 全平台/桌面端
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| JHenTai<br><sub>Flutter 实现，Android、iOS、Windows、macOS、Linux 通用</sub> | 全平台 | 活跃 | 8.0.18 | 2026-10-23 | [下载](https://github.com/jiangtian616/JHenTai/releases) |
+| JHenTai<br><sub>同一客户端支持手机和桌面端</sub> | 全平台 | 活跃 | 8.0.18 | 2026-10-23 | [下载](https://github.com/jiangtian616/JHenTai/releases) |
 
 ## iOS
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| EhPanda<br><sub>稳定版 3 个多月未更新，3.0.0 在测试中；ipa 需用 AltStore 等工具侧载</sub> | iOS 26.0+ | 更新较少 | 2.8.1<br><sub>预发布 3.0.0</sub> | 2026-07-20 | [下载](https://github.com/EhPanda-Team/EhPanda/releases) |
+| EhPanda<br><sub>ipa 需侧载（AltStore / SideStore 等）</sub> | iOS 26.0+ | 活跃 | 3.0.0 | 2026-11-12 | [下载](https://github.com/EhPanda-Team/EhPanda/releases) |
 
 ## 鸿蒙
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| HarmonyOS EhViewer<br><sub>鸿蒙原生（ArkTS），目前唯一的鸿蒙客户端；仅提供 hap，需自行侧载安装</sub> | HarmonyOS 7+ | 活跃 | 1.1.0 | 2026-10-08 | [下载](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
+| HarmonyOS EhViewer<br><sub>鸿蒙原生客户端；hap 需侧载</sub> | HarmonyOS 7+ | 活跃 | 1.1.0 | 2026-10-08 | [下载](https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases) |
 
 ## 已停更
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| EhViewer UjuiUjuMandan（彩 E 直连版）<br><sub>自 FooIbar 分支分出，保留了直连；最后版本停在 2025-12</sub> | Android 9+ | 停更 | 1.14.6 | 2025-12-17 | [下载](https://github.com/UjuiUjuMandan/EhViewer/releases) |
-| EhViewer (Codeberg)（彩 E 原仓库新址）<br><sub>原项目迁到 Codeberg 后的正式仓库；代码仍在提交，但 2025-12 之后没再发版</sub> | Android 9+ | 停更 | 1.14.6 | 2025-12-17 | [下载](https://codeberg.org/EhViewer/EhViewer/releases) |
+| EhViewer UjuiUjuMandan（彩 E 直连版）<br><sub>从 FooIbar 分出来，保留直连</sub> | Android 9+ | 停更 | 1.14.6 | 2025-12-17 | [下载](https://github.com/UjuiUjuMandan/EhViewer/releases) |
+| EhViewer (Codeberg)（彩 E 原仓库新址）<br><sub>项目新仓库，代码仍在更新，不再发版</sub> | Android 9+ | 停更 | 1.14.6 | 2025-12-17 | [下载](https://codeberg.org/EhViewer/EhViewer/releases) |
 
 <details>
 <summary>已下架 / 已归档（5 个）</summary>
@@ -56,7 +59,7 @@
 
 | 版本 | 平台 | 状态 | 最新版本 | 发布日期 | 获取 |
 | --- | --- | --- | --- | --- | --- |
-| ~~EhViewer FooIbar（彩 E 主线）~~<br><sub>2026 年核实：仓库因 DMCA 下架，项目已迁至 Codeberg，见下方「已停更」</sub> | Android 9+ | 已下架 | — | — | — |
+| ~~EhViewer FooIbar（彩 E 主线）~~<br><sub>2026 年核实：仓库因 DMCA 下架，项目搬到 Codeberg，见「已停更」里的 Codeberg 条目</sub> | Android 9+ | 已下架 | — | — | — |
 | ~~FEhViewer~~<br><sub>2026 年核实：仓库因 DMCA 下架，链接已不可访问</sub> | 全平台 | 已下架 | — | — | — |
 | EhViewer Overhauled（MD3 风格）<br><sub>已归档，与新版数据格式不兼容</sub> | Android | 已归档 | 1.8.8.3 | — | — |
 | EhViewer Hippo Seven（原版绿 E）<br><sub>上游早已停更</sub> | Android | 已归档 | 1.7.8 | — | — |
@@ -66,11 +69,10 @@
 
 ## 该选哪个
 
-- **全平台**：JHenTai，覆盖 Android、iOS、Windows、macOS、Linux
-- **Android**：SXJ（中文优化、更新最勤）或 NekoInverter（改动最少）
-- **Android，旧版绿 E 界面**：Epix，更新较慢
+- **Android**：「推荐版本」三条，以及「其他 Android 分支」
 - **iOS / iPadOS**：EhPanda
 - **鸿蒙**：HarmonyOS EhViewer
+- **全平台 / 桌面端**：JHenTai
 
 **换版本前先备份收藏和阅读记录，不同分支的数据不通用。**
 
@@ -84,7 +86,7 @@
 
 **打开后无法翻页 / 缩略图全裂 / 一直转圈？**
 
-先升级到最新版。还不行就依次看网络线路、应用内「高级设置」里的 host / DoH / SNI，再清缓存。E 站前端一改，所有第三方客户端都会受影响，通常几天内各分支会跟进。
+先升级到最新版。还不行就依次看网络线路、应用内「高级设置」里的 host / DoH / SNI，再清缓存。E 站前端一改，所有第三方客户端都会受影响，各分支修复的时间不一样。
 
 **登录失败，或者里站是空白页（Sad Panda）？**
 

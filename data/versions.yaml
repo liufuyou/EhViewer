@@ -6,6 +6,9 @@
 # 条目停更后记得把它移到 dormant 组，放错了脚本只提示不拦。
 # 分组写 collapsed: true 会收成一行。组内不到 3 条别折，省下的位置不值一次点击。
 #
+# zh_note / en_note 只回答一件事：这个版本和别的版本有什么不同、适合谁。
+# 不写实现技术（Flutter、ArkTS、MD3），不写维护人数，不写「几个月没更新」这种会过期的相对时间。
+#
 # 下面这几个字段由 sync_releases.py 自动写入，人不用手填：
 #   latest_summary / security_level / security_note / security_note_en / security_checked
 
@@ -19,6 +22,9 @@ groups:
   - id: recommended
     zh: 推荐版本
     en: Recommended
+    # 三条都是 Android。只说「其他平台在下面」，不点数、不点名，免得把话说过头
+    zh_intro: 这一组只收 Android，其他平台见下面对应分组。
+    en_intro: Android only — other platforms are listed in their own sections below.
 
   - id: android_alt
     zh: 其他 Android 分支
@@ -58,8 +64,8 @@ variants:
     version: 2.0.2.7
     released: 2026-11-02
     url: https://github.com/xiaojieonly/Ehviewer_CN_SXJ/releases
-    zh_note: 中文优化，更新最勤
-    en_note: Chinese-oriented fork, ships most often
+    zh_note: 基于原版绿 E，功能上有扩充，更新节奏快
+    en_note: Built on the original Green E; added features, frequent releases
 
   - id: nekoinverter
     group: recommended
@@ -70,8 +76,20 @@ variants:
     version: v1.8.14
     released: 2026-10-22
     url: https://github.com/EhViewer-NekoInverter/EhViewer/releases
-    zh_note: 非 MD3 风格，改动克制，最接近传统体验
-    en_note: Non-MD3, restrained changes, closest to the classic experience
+    zh_note: 界面保留原样，改动少
+    en_note: Keeps the original UI, minimal changes
+
+  - id: zhanziyuan
+    group: recommended
+    name: EhViewer ZhanZiyuan
+    nickname_zh: 彩 E 延续版
+    nickname_en: Colored E continuation
+    platform: Android 9+
+    version: 1.15.13
+    released: 2026-11-13
+    url: https://github.com/ZhanZiyuan/EhViewer/releases
+    zh_note: 基于 FooIbar 最后版本继续开发
+    en_note: Continues from FooIbar's last release
 
   - id: jhetai
     group: cross_platform
@@ -80,8 +98,8 @@ variants:
     version: v8.0.18
     released: 2026-10-23
     url: https://github.com/jiangtian616/JHenTai/releases
-    zh_note: Flutter 实现，Android、iOS、Windows、macOS、Linux 通用
-    en_note: Flutter-based; runs on Android, iOS, Windows, macOS and Linux
+    zh_note: 同一客户端支持手机和桌面端
+    en_note: One client for phone and desktop
 
   # ---------- 其他 Android 分支 ----------
   - id: exzhawk
@@ -93,35 +111,19 @@ variants:
     version: 1.7.26
     released: 2026-08-08
     url: https://github.com/exzhawk/EhViewer/releases
-    zh_note: 最接近原版绿 E 的改动，节奏较慢
-    en_note: Closest to the original Green E, slower cadence
-
-  - id: zhanziyuan
-    group: android_alt
-    name: EhViewer ZhanZiyuan
-    nickname_zh: 彩 E 延续版
-    nickname_en: Colored E continuation
-    platform: Android 9+
-    version: 1.15.13
-    released: 2026-11-13
-    url: https://github.com/ZhanZiyuan/EhViewer/releases
-    zh_note: FooIbar 迁走后，用历史快照恢复代码接着做；一人维护，与旧版同包名
-    en_note: Continued from an archived snapshot after FooIbar moved; solo maintained, same package name
+    zh_note: 基于原版绿 E，改动幅度小
+    en_note: Based on the original Green E, small changes
 
   # ---------- iOS / 鸿蒙 ----------
   - id: ehpanda
     group: ios
     name: EhPanda
     platform: iOS 26.0+
-    version: v2.8.1
-    released: 2026-07-20
-    # 预发布单独记，不进「最新版本」列
-    prerelease:
-      version: 3.0.0
-      released: 2026-08-20
+    version: 3.0.0
+    released: 2026-11-12
     url: https://github.com/EhPanda-Team/EhPanda/releases
-    zh_note: 稳定版 3 个多月未更新，3.0.0 在测试中；ipa 需用 AltStore 等工具侧载
-    en_note: No stable release for 3+ months; 3.0.0 is in testing. ipa requires sideloading (e.g. AltStore)
+    zh_note: ipa 需侧载（AltStore / SideStore 等）
+    en_note: ipa requires sideloading (AltStore / SideStore)
 
   - id: harmony
     group: harmonyos
@@ -130,8 +132,8 @@ variants:
     version: v1.1.0
     released: 2026-10-08
     url: https://github.com/MinamiJogen/HarmonyOS-EhViewer/releases
-    zh_note: 鸿蒙原生（ArkTS），目前唯一的鸿蒙客户端；仅提供 hap，需自行侧载安装
-    en_note: Native HarmonyOS client (ArkTS), the only one so far; ships as .hap only, sideload it yourself
+    zh_note: 鸿蒙原生客户端；hap 需侧载
+    en_note: Native HarmonyOS client; hap needs sideloading
 
   # ---------- 已停更 ----------
   - id: ujuiujumandan
@@ -143,8 +145,8 @@ variants:
     version: 1.14.6
     released: 2025-12-17
     url: https://github.com/UjuiUjuMandan/EhViewer/releases
-    zh_note: 自 FooIbar 分支分出，保留了直连；最后版本停在 2025-12
-    en_note: Forked from FooIbar with direct connect restored; last build 2025-12
+    zh_note: 从 FooIbar 分出来，保留直连
+    en_note: Forked from FooIbar, keeps direct connect
 
   - id: codeberg
     group: dormant
@@ -155,8 +157,8 @@ variants:
     version: 1.14.6
     released: 2025-12-17
     url: https://codeberg.org/EhViewer/EhViewer/releases
-    zh_note: 原项目迁到 Codeberg 后的正式仓库；代码仍在提交，但 2025-12 之后没再发版
-    en_note: Official home after the move to Codeberg; commits continue, no release since 2025-12
+    zh_note: 项目新仓库，代码仍在更新，不再发版
+    en_note: Project's new home; code still moves, no releases since 2025-12
 
   # ---------- 归档 / 下架 ----------
   - id: fooibar
@@ -167,8 +169,8 @@ variants:
     platform: Android 9+
     status: taken_down
     url: https://github.com/FooIbar/EhViewer
-    zh_note: 2026 年核实：仓库因 DMCA 下架，项目已迁至 Codeberg，见下方「已停更」
-    en_note: Verified 2026 — taken down via DMCA; the project moved to Codeberg, listed under Dormant
+    zh_note: 2026 年核实：仓库因 DMCA 下架，项目搬到 Codeberg，见「已停更」里的 Codeberg 条目
+    en_note: Verified 2026 — taken down via DMCA; moved to Codeberg, listed under Dormant
 
   - id: fehviewer
     group: archived
@@ -223,8 +225,8 @@ safety:
 faq:
   - zh_q: 打开后无法翻页 / 缩略图全裂 / 一直转圈？
     en_q: Pagination broken, thumbnails all blank, or endless loading?
-    zh_a: 先升级到最新版。还不行就依次看网络线路、应用内「高级设置」里的 host / DoH / SNI，再清缓存。E 站前端一改，所有第三方客户端都会受影响，通常几天内各分支会跟进。
-    en_a: Update first. Then check your network route, the host / DoH / SNI options in advanced settings, and clear the cache. Front-end changes on E-Hentai hit every third-party client; forks usually catch up within days.
+    zh_a: 先升级到最新版。还不行就依次看网络线路、应用内「高级设置」里的 host / DoH / SNI，再清缓存。E 站前端一改，所有第三方客户端都会受影响，各分支修复的时间不一样。
+    en_a: Update first. Then check your network route, the host / DoH / SNI options in advanced settings, and clear the cache. Front-end changes on E-Hentai hit every third-party client; forks fix it at different speeds.
 
   - zh_q: 登录失败，或者里站是空白页（Sad Panda）？
     en_q: Login fails, or ExHentai shows a blank page (Sad Panda)?
