@@ -14,6 +14,10 @@ on:
         description: "只检查、不创建 PR"
         type: boolean
         default: false
+      force_test:
+        description: "【临时】制造一处改动，验证开 PR 链路"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -72,8 +76,14 @@ jobs:
         run: |
           echo "::warning::发现已确认的上游安全公告，请优先审查本次改动，并在合并前核实影响范围。"
 
+      - name: 【临时】制造一处改动
+        if: inputs.force_test
+        run: |
+          printf '\n<!-- smoke test %s -->\n' "$(date -u +%FT%TZ)" >> README.md
+          git diff --stat -- README.md
+
       - name: 提交分支并开 PR
-        if: steps.diff.outputs.changed == 'true' && inputs.dry_run != true
+        if: (steps.diff.outputs.changed == 'true' || inputs.force_test) && inputs.dry_run != true
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
