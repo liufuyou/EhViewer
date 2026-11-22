@@ -1,0 +1,29 @@
+name: policy-guard
+
+# 自动化安全的兜底检查。别人 fork 或提 PR 时，这几条是唯一能自动拦住的东西：
+# 危险触发器、明文凭据、缺省权限、可移动的 action 版本。
+# 规则实现见 scripts/check_workflow_policy.py。
+
+on:
+  push:
+    paths:
+      - ".github/**"
+      - "scripts/**"
+  pull_request:
+    paths:
+      - ".github/**"
+      - "scripts/**"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  guard:
+    runs-on: ubuntu-latest
+    steps:
+      # 固定到完整 SHA，防止上游把 tag 移到别的提交上
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4.4.0
+
+      - name: 检查工作流策略
+        run: python3 scripts/check_workflow_policy.py

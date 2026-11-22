@@ -120,3 +120,4 @@
 > 无论何时何地，都没有人有权力要求其他人不断为爱发电。
 
 <a href="https://star-history.com/#liufuyou/EhViewer&Date"><img src="https://api.star-history.com/svg?repos=liufuyou/EhViewer&type=Date&legend=top-left" alt="star history" width="620"></a>
+<!-- source: https://github.com/liufuyou/EhViewer | canonical: https://liufuyou.github.io/EhViewer/ | data-fingerprint: fbe03dd3d8429c75 -->

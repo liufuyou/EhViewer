@@ -120,3 +120,4 @@ Commits up to `5c584b9` remain published under GPL-3.0, which cannot be revoked.
 > Nobody is entitled to demand unpaid work from others, ever.
 
 <a href="https://star-history.com/#liufuyou/EhViewer&Date"><img src="https://api.star-history.com/svg?repos=liufuyou/EhViewer&type=Date&legend=top-left" alt="star history" width="620"></a>
+<!-- source: https://github.com/liufuyou/EhViewer | canonical: https://liufuyou.github.io/EhViewer/ | data-fingerprint: fbe03dd3d8429c75 -->

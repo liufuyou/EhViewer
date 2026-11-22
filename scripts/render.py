@@ -22,6 +22,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
 import re
 import sys
@@ -43,6 +44,21 @@ REPO = "liufuyou/EhViewer"
 # Pages 用户站固定是 <owner>.github.io/<repo>/，只有域名部分小写
 PAGES_OWNER, PAGES_REPO = REPO.split("/")
 PAGES_URL = f"https://{PAGES_OWNER.lower()}.github.io/{PAGES_REPO}/"
+
+# 生成物里的溯源水印。看不见，但整站被扒走改名后仍是原始出处的证据：
+# 数据指纹只取自 data/versions.yaml，不掺生成时间，否则每次提交都会变。
+SOURCE_URL = f"https://github.com/{REPO}"
+
+
+def data_fingerprint() -> str:
+    return hashlib.sha256(DATA.read_bytes()).hexdigest()[:16]
+
+
+def watermark() -> str:
+    return (
+        f"<!-- source: {SOURCE_URL} | canonical: {PAGES_URL} "
+        f"| data-fingerprint: {data_fingerprint()} -->"
+    )
 
 STATUS_LABEL = {
     "active": ("活跃", "Active"),
@@ -551,6 +567,7 @@ def page_payload(data: dict) -> dict:
                 "security": "安全提示",
                 "generated": "本页由 data/versions.yaml 生成，请勿手改",
                 "disclaimer": "本站仅做链接索引，不托管、不分发任何安装包。使用风险自负，请遵守所在地法律法规。",
+                "source": f"唯一发布地址是 {PAGES_URL.replace('https://', '')}，其他站点若内容与本站相同，均非本项目运营。",
                 "checked": f"最后核对 {checked} · 可用 {available} 个 · 已停更或下架 {gone} 个",
                 "platformLabel": "平台",
                 "statusLabel": "状态",
@@ -576,6 +593,8 @@ def page_payload(data: dict) -> dict:
                 "generated": "Generated from data/versions.yaml — do not edit by hand",
                 "disclaimer": "This site is a link index only. No package is hosted or redistributed here. "
                               "Use at your own risk and follow your local laws.",
+                "source": f"The canonical address is {PAGES_URL.replace('https://', '')}. "
+                          "Any other site with identical content is not operated by this project.",
                 "checked": f"Last checked {checked} · {available} available · {gone} dormant / archived",
                 "platformLabel": "Platform",
                 "statusLabel": "Status",
@@ -594,7 +613,9 @@ def build_page(data: dict) -> str:
     blob = blob.replace("</", "<\\/")
     # 先替换常量再塞数据，免得数据里恰好出现占位符被误伤
     html = PAGE_TEMPLATE.replace("__REPO__", REPO).replace("__PAGES_URL__", PAGES_URL)
-    return html.replace("__DATA__", blob)
+    html = html.replace("__DATA__", blob)
+    # 溯源水印放在 </body> 前，是注释，不影响任何渲染
+    return html.replace("</body>", f"{watermark()}\n</body>", 1)
 
 
 PAGE_TEMPLATE = r"""<!doctype html>
@@ -682,6 +703,8 @@ html[lang="en"] section h2{font-size:12px;letter-spacing:.08em;text-transform:up
 footer{margin-top:30px;border-top:1px solid var(--line);padding:18px 0 44px;
   color:var(--dim);font-size:12.5px}
 footer p{margin:0 0 6px}
+/* 溯源声明是正经信息，跟页脚正文同字号同色，别做成隐蔽的小字 */
+footer .src{margin-top:12px}
 footer a{color:var(--muted);text-decoration:none;border-bottom:1px solid var(--line)}
 footer a:hover{color:var(--fg)}
 @media (max-width:520px){
@@ -718,6 +741,7 @@ footer a:hover{color:var(--fg)}
   <footer>
     <p data-t="disclaimer"></p>
     <p><a id="repo" href="" target="_blank" rel="noopener">GitHub</a> · <span data-t="generated"></span></p>
+    <p class="src" data-t="source"></p>
   </footer>
 </div>
 
@@ -1050,8 +1074,9 @@ def main(argv: list[str]) -> int:
 
     stale: list[str] = []
     targets = [
-        (ROOT / "README.md", build("zh", data)),
-        (ROOT / "README.en.md", build("en", data)),
+        # 两份 README 末尾各贴一枚溯源水印；注释不可见，正文不受影响
+        (ROOT / "README.md", build("zh", data) + "\n" + watermark()),
+        (ROOT / "README.en.md", build("en", data) + "\n" + watermark()),
         (PAGE, build_page(data)),
     ]
 

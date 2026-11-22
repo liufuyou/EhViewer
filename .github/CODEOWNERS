@@ -1,0 +1,11 @@
+# 改动 CI 与生成器的人必须是你本人。
+# 配合分支保护里的 "Require review from Code Owners" 生效：
+# 别人提 PR 改工作流或脚本时，必须经你审批才能合。
+#
+# 注意：仓库只有你一个 code owner 时，你自己开的 PR 无法自审，
+# 需要以管理员身份合并（enforce_admins 保持 false 就是为了留这条退路）。
+
+/.github/       @liufuyou
+/scripts/       @liufuyou
+LICENSE         @liufuyou
+NOTICE.md       @liufuyou

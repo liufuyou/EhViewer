@@ -23,3 +23,6 @@ id_ecdsa*
 *.kdbx
 
 *.bundle
+
+# 本地临时验证产物
+scratch/
