@@ -60,7 +60,7 @@ html[lang="en"] section h2{font-size:12px;letter-spacing:.08em;text-transform:up
 .cards{display:grid;gap:10px;grid-template-columns:1fr}
 @media (min-width:760px){.cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
 .card{border:1px solid var(--line);background:var(--card);border-radius:12px;padding:14px 16px}
-.card:target{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
+.card:target,.card.target{border-color:var(--accent);box-shadow:0 0 0 1px var(--accent)}
 .top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
 .name{font-weight:600;font-size:15px;line-height:1.45}
 .gone .name{color:var(--muted);text-decoration:line-through}
@@ -618,7 +618,8 @@ function syncURL(){
   if (q) p.set('q', q);
   const qs = p.toString();
   try {
-    history.replaceState(null, '', qs ? '?' + qs : location.pathname);
+    // 末尾拼回 hash，否则筛一次就把 #sxj 冲掉了
+    history.replaceState(null, '', (qs ? '?' + qs : location.pathname) + location.hash);
   } catch (e) { /* file:// 下部分浏览器不让改地址栏，忽略 */ }
 }
 
@@ -675,6 +676,16 @@ function rerender(){
   renderList();
 }
 
+// 卡片是脚本插进去的，浏览器解析 HTML 时这些 id 还不存在，不会自动定位，得自己补一次
+function jumpToHash(){
+  const id = decodeURIComponent(location.hash.slice(1));
+  if (!id) return;
+  const el = document.getElementById(id);
+  if (!el) return;  // 被当前筛选挡住了就什么也不做，不动用户自己选的筛选
+  el.classList.add('target');
+  el.scrollIntoView({block: 'center'});
+}
+
 $('#q').addEventListener('input', function(e){
   q = e.target.value.trim().toLowerCase();
   renderList();
@@ -692,6 +703,8 @@ $('#clear').addEventListener('click', function(){
 
 $('#q').value = q;
 rerender();
+jumpToHash();
+window.addEventListener('hashchange', jumpToHash);
 </script>
 </body>
 </html>
